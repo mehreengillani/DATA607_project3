@@ -1,0 +1,56 @@
+---
+title: "Project3"
+output: html_document
+date: "2025-10-12"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+library(tidyverse)
+library(dplyr)
+```
+
+```{r}
+users = read.csv('users.csv')
+colnames(users)
+user <- users %>%
+  distinct(user_id)
+print(user)
+```
+
+```{r}
+watch_history = read.csv('watch_history.csv')
+colnames(watch_history)
+head(watch_history)
+```
+```{r}
+movies = read.csv('movies.csv')
+colnames(movies)
+#head(movies)
+#unique_movies <- movies %>%
+#  distinct(movie_id)
+print(unique_movies)
+```
+
+```{r}
+reviews = read.csv('reviews.csv')
+colnames(reviews)
+head(reviews)
+```
+
+```{r}
+search_logs = read.csv('search_logs.csv')
+colnames(search_logs)
+head(search_logs)
+```
+```{r}
+recommendation_logs = read.csv('recommendation_logs.csv')
+colnames(recommendation_logs)
+head(recommendation_logs)
+
+unique_movies <- recommendation_logs %>%
+  distinct(movie_id)
+print(unique_movies)
+```
