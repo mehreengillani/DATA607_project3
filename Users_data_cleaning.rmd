@@ -1,0 +1,429 @@
+---
+title: "Project3"
+Author: "Mehreen Ali Gillani"
+output: html_document
+date: "2025-10-12"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+##  Data Cleaning of Users dataset of Netflix
+
+### Step 1. Import Libraries
+
+```{r import libraries}
+library(tidyverse)
+library(dplyr)
+library(naniar)
+library(gtExtras)
+```
+### Step 2. Read users dataset and store it in a Dataframe
+
+```{r read csv}
+users = read.csv('users.csv')
+colnames(users)
+user <- users %>%
+  distinct(user_id)
+print(user)
+```
+
+### Step 3: Data Cleaning
+
+####  3.1 Handling missing values
+```{r identify missing values}
+
+# Identify missing values
+miss_var_summary(users) %>%
+  gt() %>%
+  gt_theme_guardian() %>%
+  tab_header(title="Missing data in users table")
+
+#plot
+gg_miss_var(users)
+``` 
+
+Find missing data pattern
+
+```{r}
+md.pattern(users)
+```
+
+
+By looking at the pattern we can see there are 21 rows where all 3 column values are missing.
+
+We have missing data in 3 columns age, monthly_spend and household_size.
+With missing percentages of 11.93%, 9.87%, and 15% in our Netflix users dataset, 
+deletion would be a poor choice as we'd lose too much data. Here's the best strategy for handling this:
+
+
+
+```{r}
+# Get data types for specific columns
+class(users$household_size)
+class(users$monthly_spend)
+```
+
+Check density plot for handling missing data
+
+```{r}
+# Density plots show the shape better
+par(mfrow = c(1, 3))
+
+plot(density(users$age, na.rm = TRUE), main = "Age Density")
+plot(density(users$monthly_spend, na.rm = TRUE), main = "Spend Density") 
+plot(density(users$household_size, na.rm = TRUE), main = "Household Size Density")
+
+par(mfrow = c(1, 1))
+```
+
+####  Perform multiple imputation
+```{r}
+
+imputed_data <- mice(users, 
+                    m = 5,           # Create 5 complete datasets
+                    method = 'pmm',  # Predictive Mean Matching
+                    maxit = 10,      # Number of iterations
+                    seed = 123)
+
+# Check convergence (look for lines to converge)
+plot(imputed_data)
+
+# Create one completed dataset (or analyze all 5 and pool results)
+users_complete <- complete(imputed_data, 1)
+
+# Verify the imputation worked
+sapply(users_complete, function(x) sum(is.na(x)))
+
+```
+
+Check density plot after imputation to see if our distribution is still the same 
+```{r}
+# Density plots after imputation
+par(mfrow = c(1, 3))
+
+plot(density(users_complete$age, na.rm = TRUE), main = "Age Density")
+plot(density(users_complete$monthly_spend, na.rm = TRUE), main = "Spend Density") 
+plot(density(users_complete$household_size, na.rm = TRUE), main = "Household Size Density")
+
+par(mfrow = c(1, 1))
+```
+
+```{r}
+# Set up plotting area to show all three
+par(mfrow = c(1, 3))  # 1 row, 3 columns
+
+# Create histograms
+hist(users_complete$age, main = "Age Distribution", xlab = "Age", col = "lightblue")
+hist(users_complete$monthly_spend, main = "Monthly Spend Distribution", xlab = "Spend", col = "lightgreen")
+hist(users_complete$household_size, main = "Household Size Distribution", xlab = "Size", col = "lightcoral")
+
+# Reset plotting area
+par(mfrow = c(1, 1))
+```
+The density plot analysis reveals distinct distribution patterns across key variables. 
+The age variable maintains its approximately normal distribution following imputation, indicating the preservation of natural demographic patterns. <br>
+In contrast, both monthly spending and household size exhibit significant right-skewness.  <br>
+The monthly spend distribution features a concentration of users at lower price points with a long tail representing premium subscribers,  <br>
+while household size distribution is dominated by single-person accounts with progressively fewer multi-person households.  <br>
+Both monthly_spend and household_size distribution didn't change after performing multiple imputation. <br>
+
+
+```{r check missing values}
+#check if there is still any missing data
+miss_var_summary(users_complete)
+```
+
+
+#### Step 3.2: Removing Duplicates
+
+```{r check duplicates}
+# Identify total duplicates
+sum(duplicated(users_complete))
+duplicated_percent <- (sum(duplicated(users_complete)) / nrow(users_complete) * 100)
+print(duplicated_percent)
+
+```
+
+The percentage of duplicates is 2.34 so we will delete duplicated rows
+
+```{r remove duplicates}
+
+# Remove ALL duplicate rows (keeping first occurrence)
+users_unique <- distinct(users_complete)
+
+# Verify removal
+print(paste("Before:", nrow(users_complete), "rows"))
+print(paste("After:", nrow(users_unique), "rows"))
+print(paste("Removed:", nrow(users_complete) - nrow(users_unique), "duplicate rows"))
+```
+
+####  Step: 3.3 Data Type Conversion
+
+```{r check data types}
+# Basic structure
+str(users_unique)
+```
+```{r data type conversion}
+library(dplyr)
+library(lubridate)
+
+users_improved <- users_unique %>%
+  mutate(
+    # 1. Convert dates from character to proper date format
+    subscription_start_date = as.Date(subscription_start_date),
+    created_at = as.POSIXct(created_at),
+    
+    # 2. Convert boolean from character to logical
+    is_active = case_when(
+      is_active == "True" ~ TRUE,
+      is_active == "False" ~ FALSE,
+      TRUE ~ NA
+    ),
+    
+    # 3. Convert categorical variables to factors
+    gender = factor(gender),
+    country = factor(country),
+    state_province = factor(state_province),
+    city = factor(city),
+    subscription_plan = factor(subscription_plan),
+    primary_device = factor(primary_device),
+    
+    # 4. Ensure numeric columns are proper integers where appropriate
+    age = as.integer(age),
+    household_size = as.integer(round(household_size)),  # Household size should be whole numbers
+    
+    # 5. Keep user_id and email as character (correct)
+    # monthly_spend as numeric is correct (can have decimals)
+  )
+```
+
+We have converted created_at to date format, is_active to logical and categorical values to factors
+
+```{r}
+#check new structure 
+str(users_improved)
+```
+```{r}
+# Check for any remaining issues
+summary(users_improved)
+
+# Verify no data loss occurred
+stopifnot(nrow(users_unique) == nrow(users_improved))
+
+# Check factor levels
+sapply(users_improved[c("gender", "subscription_plan", "primary_device")], levels)
+```
+<b>subscription plan factors need to be revised </b>
+
+```{r proper ordering for subscription plan}
+users_improved <- users_improved %>%
+  mutate(
+    subscription_plan = factor(subscription_plan, 
+                              levels = c("Basic", "Standard", "Premium", "Premium+"),
+                              ordered = TRUE)
+  )
+```
+
+I have noticed there are negative values in age variable  lets deal with that problem. age cannot be negative.
+
+```{r}
+min(users_improved$age)
+
+# Count how many negative values exist
+negative_age_count <- sum(users_improved$age < 0, na.rm = TRUE)
+cat("Number of negative age values:", negative_age_count, "\n")
+
+# Calculate median age from valid values only
+median_age <- median(users_improved$age[users_improved$age >= 0], na.rm = TRUE)
+
+# Replace negative values with median
+users_improved <- users_improved %>%
+  mutate(age = ifelse(age < 0, median_age, age))
+
+# Verify
+summary(users_improved$age)
+```
+I have noticed an empty strings ("") in the gender column, which should be handled. Here are the best approaches:
+
+```{r}
+
+library(forcats)
+
+users_improved <- users_improved %>%
+  mutate(
+    # Step 1: Convert empty strings to "Unknown"
+    gender = fct_recode(gender, 'Unknown' = ""),
+    
+    # Step 2: Consolidate categories
+    gender = fct_collapse(gender,
+                         "Other" = c("Other", "Prefer not to say")
+    ),
+    
+    # Step 3: Relevel in the correct order
+    gender = fct_relevel(gender, "Female", "Male", "Other", "Unknown")
+  )
+
+# Verify
+cat("Gender levels in order:\n")
+levels(users_improved$gender)
+cat("Gender distribution:\n")
+table(users_improved$gender)
+```
+Instead of empty string I have filled it with unknown 
+
+####  Step 3.4. Handling Outliers
+
+```{r fine numeric columns}
+# Find numeric columns
+numeric_cols <- names(users_improved)[sapply(users_improved, is.numeric)]
+
+cat("Numeric columns:\n")
+print(numeric_cols)
+```
+
+
+```{r handling outliers}
+# Cap outliers instead of removing them (keeps all rows)
+users_clean <- users_improved %>%
+  mutate(across(where(is.numeric), ~ {
+    if(all(is.na(.))) return(.)
+    Q1 <- quantile(., 0.25, na.rm = TRUE)
+    Q3 <- quantile(., 0.75, na.rm = TRUE)
+    IQR <- Q3 - Q1
+    lower <- Q1 - 1.5 * IQR
+    upper <- Q3 + 1.5 * IQR
+    case_when(
+      . < lower ~ lower,
+      . > upper ~ upper,
+      TRUE ~ .
+    )
+  }))
+```
+
+BoxPlot before Outlier handling 
+
+```{r before outlier detection}
+
+boxplot(users_improved$age, main = "Age Outliers", col = "lightblue")
+boxplot(users_improved$monthly_spend, main = "Monthly Spend Outliers", col = "lightgreen")
+boxplot(users_improved$household_size, main = "Household Size Outliers", col = "lightcoral")
+
+# Reset plot layout
+par(mfrow = c(1, 1))
+```
+
+BoxPlot after outlier handling with cap method
+
+```{r after outlier detection}
+boxplot(users_clean$age, main = "Age Outliers", col = "lightblue")
+boxplot(users_clean$monthly_spend, main = "Monthly Spend Outliers", col = "lightgreen")
+boxplot(users_clean$household_size, main = "Household Size Outliers", col = "lightcoral")
+
+# Reset plot layout
+par(mfrow = c(1, 1))
+```
+
+Check how many outliers we had before placing cap
+
+```{r check number of outlera}
+# Check how many outliers we have before placing cap
+for(col in numeric_cols) {
+  data <- users_improved[[col]]
+  if(!all(is.na(data))) {
+    Q1 <- quantile(data, 0.25, na.rm = TRUE)
+    Q3 <- quantile(data, 0.75, na.rm = TRUE)
+    IQR <- Q3 - Q1
+    outliers <- sum(data < (Q1 - 1.5*IQR) | data > (Q3 + 1.5*IQR), na.rm = TRUE)
+    cat(col, ":", outliers, "outliers\n")
+  }
+}
+```
+
+
+####  3.5 String Cleaning
+
+
+```{r find textCols_string_cleaning}
+# Find all text columns
+text_cols <- names(users_clean)[sapply(users_clean, function(x) is.character(x) | is.factor(x))]
+
+cat("Text columns found:\n")
+print(text_cols)
+```
+
+Text cleaning: convert to lower case, convert empty string, remove whitespace
+```{r text_cleaning_p2}
+# Perform comprehensive text cleaning
+users_clean <- users_clean %>%
+  mutate(across(all_of(text_cols), ~ {
+    if(is.character(.)) {
+      # Remove leading/trailing whitespace
+      cleaned <- trimws(.)
+      # Convert to lowercase for standardization
+      cleaned <- tolower(cleaned)
+      # Remove multiple spaces
+      cleaned <- gsub("\\s+", " ", cleaned)
+      # Convert empty strings to NA
+      cleaned <- ifelse(cleaned == "", NA, cleaned)
+      return(cleaned)
+    } else {
+      return(.)
+    }
+  }))
+```
+
+
+####  3.6 Data Validation
+
+```{r}
+# Check for impossible values
+invalid_ages <- users_clean$age < 0 | users_clean$age > 120
+invalid_dates <- users_clean$date > Sys.Date()
+
+# Fix invalid values
+users_clean$age[users_clean$age < 0 | users_clean$age > 120] <- NA
+
+# Check consistency
+inconsistent <- users_clean$end_date < users_clean$start_date
+
+```
+
+Verify all issues are resolved
+
+```{r check data quality}
+
+cat("=== FINAL DATA QUALITY CHECK ===\n")
+cat("Ages < 0:", sum(users_clean$age < 0, na.rm = TRUE), "\n")
+cat("Ages > 120:", sum(users_clean$age > 120, na.rm = TRUE), "\n")
+cat("Negative monthly spend:", sum(users_clean$monthly_spend < 0, na.rm = TRUE), "\n")
+cat("Household size < 1:", sum(users_clean$household_size < 1, na.rm = TRUE), "\n")
+cat("Household size > 20:", sum(users_clean$household_size > 20, na.rm = TRUE), "\n")
+cat("Empty gender:", sum(users_clean$gender == "" | is.na(users_clean$gender), na.rm = TRUE), "\n")
+
+# Summary of cleaned data
+cat("\n=== CLEANED DATA SUMMARY ===\n")
+summary(users_clean[c("age", "monthly_spend", "household_size", "gender")])
+
+```
+
+
+This validation step is crucial before any analysis to ensure your results are reliable and meaningful!
+
+Write cleaned data to another csv file:
+
+```{r}
+# Write to CSV file
+write.csv(users_clean, "users_clean.csv", row.names = FALSE)
+
+cat("Cleaned data saved as 'users_clean.csv'\n")
+cat("File location:", getwd(), "\n")
+
+```
+
+```{r check new file}
+users_clean_data <- read_csv('users_clean.csv')
+str(users_clean_data)
+
+```
+
