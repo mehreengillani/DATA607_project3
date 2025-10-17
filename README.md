@@ -27,19 +27,25 @@ Kept first occurrence of each duplicate
 
 4. Data Type Conversion
   Logical: Converted is_netflix_original and content_warning from character to logical
+
   Date: Converted added_to_platform to proper Date format
+
   Factors: Converted categorical variables (content_type, genre_primary, rating, etc.) to factors
+  
   Ordered factor: Applied proper rating hierarchy from TV-Y to TV-MA
 
 4. Outlier Treatment
 Applied column-specific capping strategies:
-  Years: 1900 to current year+5
-  Duration: 1 minute to 99th percentile
-  Ratings: 0.5 to 10.0 (actual IMDB scale)
+
+Years: 1900 to current year+5
+
+Duration: 1 minute to 99th percentile
+
+Ratings: 0.5 to 10.0 (actual IMDB scale)
   Financial data: 0 to 95th percentile
   Seasons/Episodes: 0 to 99th percentile
 
-6. Text Cleaning
+5. Text Cleaning
 
   Converted all text to lowercase
   Removed leading/trailing whitespace
@@ -65,7 +71,7 @@ Watch_history Data Cleaning Summary
   Replaced NA values in action and quality with "unknown" category
   Verified: Distribution preserved with minimal statistical changes (<1% mean difference)
 
-3. Duplicate Removal
+2. Duplicate Removal
   Identified: 4.07% duplicate rows
   Removed: All duplicate records using distinct() function
   Result: Clean, unique watch sessions
