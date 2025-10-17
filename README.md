@@ -17,19 +17,19 @@ Cleaned data saved in users_clean.csv file
 Data Cleaning Summary for movies.csv
 
 1. Missing Value Handling
-High missingness variables (>60%): Set number_of_seasons and number_of_episodes to 0 for movies, used median for TV shows
-Financial data: Created missing indicators (budget_missing, revenue_missing) and set missing values to 0
-IMDB ratings (14.4% missing): Used multiple imputation (MICE) with PMM method using duration_minutes and rating as predictors
+  High missingness variables (>60%): Set number_of_seasons and number_of_episodes to 0 for movies, used median for TV shows
+  Financial data: Created missing indicators (budget_missing, revenue_missing) and set missing values to 0
+  IMDB ratings (14.4% missing): Used multiple imputation (MICE) with PMM method using duration_minutes and rating as predictors
 
 2. Duplicate Removal
 Identified and removed 34 duplicate rows (3.36% of data)
 Kept first occurrence of each duplicate
 
 4. Data Type Conversion
-Logical: Converted is_netflix_original and content_warning from character to logical
-Date: Converted added_to_platform to proper Date format
-Factors: Converted categorical variables (content_type, genre_primary, rating, etc.) to factors
-Ordered factor: Applied proper rating hierarchy from TV-Y to TV-MA
+  Logical: Converted is_netflix_original and content_warning from character to logical
+  Date: Converted added_to_platform to proper Date format
+  Factors: Converted categorical variables (content_type, genre_primary, rating, etc.) to factors
+  Ordered factor: Applied proper rating hierarchy from TV-Y to TV-MA
 
 4. Outlier Treatment
 Applied column-specific capping strategies:
