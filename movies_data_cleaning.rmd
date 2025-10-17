@@ -1,0 +1,753 @@
+---
+title: "Project3_movie_data_cleaning"
+Author: "Mehreen Ali Gillani"
+output: html_document
+date: "2025-10-12"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+##  Data Cleaning of movies table of Netflix
+
+### Step 1. Import Libraries
+
+```{r import libraries}
+library(tidyverse)
+library(dplyr)
+library(naniar)
+library(gtExtras)
+library(stringr)
+library(lubridate)
+```
+### Step 2. Read movies dataset and store it in a Dataframe
+
+```{r read csv}
+movies = read.csv('movies.csv')
+colnames(movies)
+
+#printing unique movie id's
+movie <- movies %>%
+  distinct(movie_id)
+print(movie)
+unique(movies$movie_id)
+#printing unique movie titles
+unique(movies$title)
+#data structure
+str(movies)
+```
+
+### Step 3: Data Cleaning
+
+####  3.1 Handling missing values
+```{r identify missing values}
+
+# Identify missing values
+miss_var_summary(movies) %>%
+  gt() %>%
+  gt_theme_guardian() %>%
+  tab_header(title="Missing data in movies table")
+
+#plot
+gg_miss_var(movies)
+``` 
+
+Immediate Assessment
+
+High missingness (>60%): number_of_seasons, number_of_episodes, box_office_revenue, production_budget
+Moderate missingness (14.4%): imdb_rating
+
+
+
+Find missing data pattern
+
+```{r}
+md.pattern(movies)
+```
+
+
+By looking at the pattern we can see there are 42 rows where all 5 column values are missing.
+
+
+
+Setting number_of_seasons and number_of_episodes to 0 for movies, since movies don't have seasons or episodes
+If it is a TV Show with missing seasons/episodes?
+  * Use median of other TV shows, or 1 season/12 episodes as default
+If it is missing for any other reason?
+  * Set to 1 season/12 episodes (catch-all)
+  
+For budgeting and revenue:
+  * Modeling: Can include budget_missing and revenue_missing as a predictor to account for data quality
+  * 0 budget/revenue clearly indicates "data not available" rather than "actually zero"
+
+```{r}
+# Final comprehensive missing data handling
+library(mice)
+library(naniar)
+
+movies_handle_missing <- movies %>%
+  mutate(
+    # Handle number_of_seasons
+    number_of_seasons = case_when(
+      content_type == "Movie" & is.na(number_of_seasons) ~ 0,
+      content_type == "TV Show" & is.na(number_of_seasons) ~ 
+        coalesce(median(number_of_seasons[content_type == "TV Show"], na.rm = TRUE), 1),
+      is.na(number_of_seasons) ~ 1,  # Catch any other missing
+      TRUE ~ number_of_seasons
+    ),
+    # Handle number_of_episodes
+    number_of_episodes = case_when(
+      content_type == "Movie" & is.na(number_of_episodes) ~ 0,
+      content_type == "TV Show" & is.na(number_of_episodes) ~ 
+        coalesce(median(number_of_episodes[content_type == "TV Show"], na.rm = TRUE), 12),
+      is.na(number_of_episodes) ~ 12,  # Catch any other missing
+      TRUE ~ number_of_episodes
+    )
+  ) %>%
+  mutate(
+    budget_missing = as.integer(is.na(production_budget)),
+    revenue_missing = as.integer(is.na(box_office_revenue)),
+    production_budget = ifelse(is.na(production_budget), 0, production_budget),
+    box_office_revenue = ifelse(is.na(box_office_revenue), 0, box_office_revenue)
+  )
+
+# verification
+cat("=== FINAL MISSINGNESS CHECK ===\n")
+print(miss_var_summary(movies_handle_missing))
+
+
+```
+
+####  Perform multiple imputation
+```{r}
+# Multiple Imputation on imdb_rating
+library(mice)
+
+# Create a clean dataset first
+movies_impute <- movies_handle_missing %>%
+  select(imdb_rating, duration_minutes, rating) %>%
+  filter(complete.cases(duration_minutes, rating))  # Remove rows where predictors are missing
+
+# Check the cleaned dataset
+cat("Rows after removing missing predictors:", nrow(movies_impute), "\n")
+cat("Missing imdb_rating in cleaned data:", sum(is.na(movies_impute$imdb_rating)), "\n")
+
+# Now try imputation on the clean dataset
+if(nrow(movies_impute) > 0 && sum(is.na(movies_impute$imdb_rating)) > 0) {
+  imputed_data <- mice(movies_impute,
+                      m = 3,
+                      maxit = 5,
+                      method = "pmm",
+                      printFlag = TRUE,
+                      seed = 123)
+  movies_imputed_small <- complete(imputed_data, 1)
+  
+  # Merge back with original data to get all columns
+  movies_complete <- movies_handle_missing %>%
+    # Remove rows that were used in imputation (they'll be replaced)
+    filter(!(complete.cases(duration_minutes, rating))) %>%
+    # Bind with the imputed data
+    bind_rows(
+      movies_handle_missing %>%
+        filter(complete.cases(duration_minutes, rating)) %>%
+        select(-imdb_rating) %>%  # Remove original imdb_rating
+        bind_cols(imdb_rating = movies_imputed_small$imdb_rating)  # Add imputed values
+    )
+  
+  print(summary(movies_complete$imdb_rating))
+  cat("Total rows in final dataset:", nrow(movies_complete), "\n")
+  cat("Columns in final dataset:", names(movies_complete), "\n")
+  
+} else {
+  cat("No data to impute after cleaning\n")
+}
+```
+
+Check density plot after imputation to see if our distribution is still the same 
+```{r}
+# Density plots of imdb_ratings before and after imputation
+par(mfrow = c(1, 2))
+plot(density(movies$imdb_rating, na.rm = TRUE), main = "imdb_rating Density \n before multiple imputation")
+plot(density(movies_complete$imdb_rating, na.rm = TRUE), main = "imdb_rating \n Density after imputation")
+
+
+par(mfrow = c(1, 1))
+```
+
+Distribution is overall the same but there are some small differences in the density plot shape. 
+Lets Calculate before/after statistics
+
+```{r}
+
+# Calculate before/after statistics
+before <- movies_handle_missing$imdb_rating[!is.na(movies_handle_missing$imdb_rating)]
+after <- movies_complete$imdb_rating
+
+# Basic statistics comparison
+stats_before <- c(
+  mean = mean(before),
+  sd = sd(before),
+  median = median(before),
+  min = min(before),
+  max = max(before),
+  n = length(before)
+)
+
+stats_after <- c(
+  mean = mean(after),
+  sd = sd(after),
+  median = median(after),
+  min = min(after),
+  max = max(after),
+  n = length(after)
+)
+
+comparison <- data.frame(Before = stats_before, After = stats_after, Change = stats_after - stats_before, percentage = ((stats_after - stats_before)/stats_before) * 100)
+print(round(comparison, 3))
+```
+
+
+Interpretation of Results
+
+✅ GOOD SIGNS:
+
+Minimal mean change: -3.03% (from 6.269 to 6.078) <br>
+Well within acceptable range (<5%) <br>
+
+Small SD increase: +5.09% (from 1.809 to 1.901)
+Within acceptable range (<15%)
+
+Range preserved: Min (0.5) and Max (10.0) unchanged
+
+Median stability: Small change from 6.4 to 6.3
+
+
+
+```{r check missing values}
+#check if there is still any missing data
+miss_var_summary(movies_complete)
+```
+
+
+#### Step 3.2: Removing Duplicates
+
+```{r check duplicates}
+# Identify total duplicates
+sum(duplicated(movies_complete))
+duplicated_percent <- (sum(duplicated(movies_complete)) / nrow(movies_complete) * 100)
+print(duplicated_percent)
+
+```
+
+The percentage of duplicates is 3.36 so we will delete duplicated rows
+
+```{r remove duplicates}
+
+# Remove ALL duplicate rows (keeping first occurrence)
+movies_unique <- distinct(movies_complete)
+
+# Verify removal
+print(paste("Before:", nrow(movies_complete), "rows"))
+print(paste("After:", nrow(movies_unique), "rows"))
+print(paste("Removed:", nrow(movies_complete) - nrow(movies_unique), "duplicate rows"))
+```
+
+####  Step: 3.3 Data Type Conversion
+
+```{r check data types}
+# Basic structure
+str(movies_unique)
+```
+
+```{r data type conversion}
+
+library(lubridate)
+rating_order <- c("TV-Y", "TV-Y7", "G", "TV-G", "PG", "TV-PG", "PG-13", "TV-14", "R", "NC-17", "TV-MA")
+movies_improved <- movies_unique %>%
+  mutate(
+    # 1. Convert logical strings to actual logical values
+    is_netflix_original = as.logical(is_netflix_original),
+    content_warning = as.logical(content_warning),
+    
+    # 2. Convert date strings to proper Date type
+    added_to_platform = as.Date(added_to_platform),
+    
+    # 3. Convert categorical variables to factors
+    content_type = as.factor(content_type),
+    genre_primary = as.factor(genre_primary),
+    genre_secondary = as.factor(genre_secondary),
+    rating = factor(rating, 
+                   levels = rating_order,
+                   ordered = TRUE),
+    language = as.factor(language),
+    country_of_origin = as.factor(country_of_origin),
+    
+    # 4. Keep binary indicators as integers (they're fine as-is)
+    # budget_missing and revenue_missing are correctly typed as integers
+    
+    # 5. Ensure numeric types are correct (they already are)
+    # imdb_rating, production_budget, box_office_revenue, etc. are correctly numeric
+  )
+  
+```
+
+We have converted added_to_platform to date format, is_netflix_original and content_warning to logical and
+categorical values to factors:
+content_type, genre_primary, genre_secondary, rating, language, country_of_origin
+
+```{r}
+#check new structure 
+str(movies_improved)
+```
+
+####  Step 3.4. Handling Outliers
+
+```{r fine numeric columns}
+# Find numeric columns
+numeric_cols <- names(movies_improved)[sapply(movies_improved, is.numeric)]
+
+cat("Numeric columns:\n")
+print(numeric_cols)
+
+```
+
+
+```{r handling outliers}
+
+
+# Create a copy for outlier treatment
+movies_outlier_treated <- movies_improved
+
+# Define outlier treatment for each column
+outlier_summary <- list()
+
+for(col in numeric_cols) {
+  data <- movies_outlier_treated[[col]]
+  
+  if(!all(is.na(data))) {
+    cat("\n=== Treating outliers in:", col, "===\n")
+    
+    # Store original stats
+    original_stats <- c(
+      min = min(data, na.rm = TRUE),
+      max = max(data, na.rm = TRUE),
+      mean = mean(data, na.rm = TRUE)
+    )
+    
+    # Column-specific outlier treatment
+    if(col == "release_year") {
+      # For years: use reasonable bounds (e.g., 1900-current year+5)
+      lower_cap <- 1900
+      upper_cap <- as.numeric(format(Sys.Date(), "%Y")) + 5
+      treated_data <- ifelse(data < lower_cap, lower_cap, 
+                            ifelse(data > upper_cap, upper_cap, data))
+      
+    } else if(col == "duration_minutes") {
+      # For duration: reasonable movie/TV show lengths
+      lower_cap <- 1       # Minimum 1 minute
+      upper_cap <- quantile(data, 0.99, na.rm = TRUE)  # Cap at 99th percentile
+      treated_data <- ifelse(data < lower_cap, lower_cap, 
+                            ifelse(data > upper_cap, upper_cap, data))
+      
+    } else if(col %in% c("imdb_rating")) {
+      # For ratings: use actual scale bounds (0.5-10)
+      lower_cap <- 0.5
+      upper_cap <- 10.0
+      treated_data <- ifelse(data < lower_cap, lower_cap, 
+                            ifelse(data > upper_cap, upper_cap, data))
+      
+    } else if(col %in% c("production_budget", "box_office_revenue")) {
+      # For financial data: 0 lower bound, 99.5% upper cap
+      lower_cap <- 0
+      upper_cap <- quantile(data, 0.95, na.rm = TRUE)
+      treated_data <- ifelse(data < lower_cap, lower_cap, 
+                            ifelse(data > upper_cap, upper_cap, data))
+      
+    } else if(col %in% c("number_of_seasons", "number_of_episodes")) {
+      # For seasons/episodes: 0 lower bound, robust upper cap
+      lower_cap <- 0
+      upper_cap <- quantile(data, 0.99, na.rm = TRUE)
+      treated_data <- ifelse(data < lower_cap, lower_cap, 
+                            ifelse(data > upper_cap, upper_cap, data))
+      
+    } else if(col %in% c("budget_missing")) {
+      # For binary indicators: no treatment needed (should be 0/1)
+      treated_data <- data
+      cat("  No treatment needed for binary indicator\n")
+      next
+    }
+    
+    # Apply the treatment
+    movies_outlier_treated[[col]] <- treated_data
+    
+    # Calculate treatment impact
+    new_stats <- c(
+      min = min(treated_data, na.rm = TRUE),
+      max = max(treated_data, na.rm = TRUE)
+    )
+    
+    capped_low <- sum(data < lower_cap, na.rm = TRUE)
+    capped_high <- sum(data > upper_cap, na.rm = TRUE)
+    
+    cat("  Lower cap:", lower_cap, "| Upper cap:", round(upper_cap, 2), "\n")
+    cat("  Values capped - Low:", capped_low, "| High:", capped_high, "\n")
+    cat("  Original range: [", original_stats["min"], ", ", original_stats["max"], "]\n", sep = "")
+    cat("  New range: [", new_stats["min"], ", ", new_stats["max"], "]\n", sep = "")
+    
+    # Store summary
+    outlier_summary[[col]] <- data.frame(
+      variable = col,
+      lower_cap = lower_cap,
+      upper_cap = upper_cap,
+      capped_low = capped_low,
+      capped_high = capped_high,
+      original_min = original_stats["min"],
+      original_max = original_stats["max"],
+      new_min = new_stats["min"],
+      new_max = new_stats["max"]
+    )
+  }
+}
+```
+
+BoxPlot before Outlier handling 
+
+```{r before outlier detection}
+
+boxplot(movies_improved$imdb_rating, main = "imdb_rating Outliers", col = "lightblue")
+boxplot(movies_improved$production_budget, main = "production_budget Spend Outliers", col = "lightgreen")
+boxplot(movies_improved$box_office_revenue, main = "box_office_revenue Size Outliers", col = "lightcoral")
+
+# Reset plot layout
+par(mfrow = c(1, 1))
+```
+```{r}
+library(ggplot2)
+library(patchwork)
+
+# Create comparison plots for key variables
+create_comparison_plot <- function(col) {
+  p1 <- ggplot(movies_improved, aes_string(x = col)) +
+    geom_histogram(fill = "red", alpha = 0.6, bins = 30) +
+    ggtitle(paste("Original", col)) +
+    theme_minimal()
+  
+  p2 <- ggplot(movies_outlier_treated, aes_string(x = col)) +
+    geom_histogram(fill = "blue", alpha = 0.6, bins = 30) +
+    ggtitle(paste("Treated", col)) +
+    theme_minimal()
+  
+  p1 + p2
+}
+
+# Plot comparisons for key columns
+key_columns <- c("production_budget", "box_office_revenue", "duration_minutes", "number_of_seasons")
+for(col in key_columns) {
+  print(create_comparison_plot(col))
+}
+```
+
+BoxPlot after outlier handling with cap method
+
+```{r after outlier detection}
+
+boxplot(movies_outlier_treated$imdb_rating, main = "imdb_rating Outliers", col = "lightblue")
+boxplot(movies_outlier_treated$production_budget, main = "production_budget Spend Outliers", col = "lightgreen")
+boxplot(movies_outlier_treated$box_office_revenue, main = "box_office_revenue Size Outliers", col = "lightcoral")
+boxplot(movies_outlier_treated$duration_minutes, main = "duration_minutes Spend Outliers", col = "lightgreen")
+boxplot(movies_outlier_treated$number_of_episodes, main = "number_of_episodes Size Outliers", col = "lightcoral")
+
+# Reset plot layout
+par(mfrow = c(1, 1))
+```
+
+
+
+```{r check number of outlier}
+# Check how many outliers we have before placing cap
+for(col in numeric_cols) {
+  data <- movies_improved[[col]]
+  if(!all(is.na(data))) {
+    Q1 <- quantile(data, 0.25, na.rm = TRUE)
+    Q3 <- quantile(data, 0.75, na.rm = TRUE)
+    IQR <- Q3 - Q1
+    outliers <- sum(data < (Q1 - 1.5*IQR) | data > (Q3 + 1.5*IQR), na.rm = TRUE)
+    cat(col, ":", outliers, "outliers\n")
+  }
+}
+```
+
+
+####  3.5 String Cleaning
+
+
+```{r find textCols_string_cleaning}
+# Find all text columns
+text_cols <- names(movies_outlier_treated)[sapply(movies_outlier_treated, function(x) is.character(x) | is.factor(x))]
+
+cat("Text columns found:\n")
+print(text_cols)
+```
+
+Text cleaning: convert to lower case, convert empty string, remove whitespace
+```{r text_cleaning_p2}
+# Perform comprehensive text cleaning
+movies_clean <- movies_outlier_treated %>%
+  mutate(across(all_of(text_cols), ~ {
+    if(is.character(.)) {
+      # Remove leading/trailing whitespace
+      cleaned <- trimws(.)
+      # Convert to lowercase for standardization
+      cleaned <- tolower(cleaned)
+      # Remove multiple spaces
+      cleaned <- gsub("\\s+", " ", cleaned)
+      # Convert empty strings to NA
+      cleaned <- ifelse(cleaned == "", NA, cleaned)
+      return(cleaned)
+    } else {
+      return(.)
+    }
+  }))
+```
+```{r column names}
+colnames(movies_clean)
+```
+
+
+####  3.6 Data Validation
+
+```{r Validate categorical variables}
+# Validate categorical variables
+cat("\n=== CATEGORICAL VALUE VALIDATION ===\n")
+
+categorical_vars <- c("content_type", "genre_primary", "rating", "language", "country_of_origin")
+
+for(var in categorical_vars) {
+  if(var %in% names(movies_clean)) {
+    unique_vals <- unique(movies_clean[[var]])
+    cat(var, ":", length(unique_vals), "unique values\n")
+    
+    # Show top 10 most frequent values
+    if(length(unique_vals) > 0) {
+      freq_table <- table(movies_clean[[var]])
+      cat("  Top values:", names(head(sort(freq_table, decreasing = TRUE), 5)), "\n")
+    }
+    
+    # Check for empty strings
+    if(is.character(movies_clean[[var]])) {
+      empty_count <- sum(movies_clean[[var]] == "" | is.na(movies_clean[[var]]), na.rm = TRUE)
+      cat("  Empty/NA values:", empty_count, "\n")
+    }
+  }
+}
+
+```
+```{r}
+# Simple quality check without all the details
+simple_quality_check <- function(movies_clean) {
+  total_rows <- nrow(movies_clean)
+  
+  # Basic metrics
+  completeness <- mean(complete.cases(movies_clean)) * 100
+  duplicates <- sum(duplicated(movies_clean))
+  uniqueness <- (1 - duplicates/total_rows) * 100
+  
+  # Simple quality score
+  quality_score <- mean(c(completeness, uniqueness))
+  
+  cat("Simple Quality Assessment:\n")
+  cat("Completeness:", round(completeness, 1), "%\n")
+  cat("Uniqueness:", round(uniqueness, 1), "%\n") 
+  cat("Overall Score:", round(quality_score, 1), "%\n")
+  
+  return(quality_score)
+}
+
+# Run simple version
+simple_quality_check(movies_clean)
+
+```
+```{r}
+# Complete data quality validation function
+validate_data_quality <- function(df) {
+  cat("=== COMPREHENSIVE DATA QUALITY VALIDATION ===\n")
+  
+  # Initialize all variables within the function
+  total_rows <- nrow(df)
+  total_cols <- ncol(df)
+  
+  # 1. Basic Structure Validation
+  cat("\n1. BASIC STRUCTURE VALIDATION\n")
+  cat("Total rows:", total_rows, "\n")
+  cat("Total columns:", total_cols, "\n")
+  cat("Complete cases:", sum(complete.cases(df)), "(", 
+      round(mean(complete.cases(df)) * 100, 1), "%)\n")
+  
+  duplicates <- sum(duplicated(df))
+  cat("Duplicate rows:", duplicates, "\n")
+  
+  # 2. Data Type Validation
+  cat("\n2. DATA TYPE VALIDATION\n")
+  data_types <- sapply(df, class)
+  print(data_types)
+  
+  # 3. Value Range Validation
+  cat("\n3. VALUE RANGE VALIDATION\n")
+  
+  # Define range checks within the function
+  range_checks <- list(
+    release_year = c(min = 1900, max = as.numeric(format(Sys.Date(), "%Y")) + 1),
+    duration_minutes = c(min = 1, max = 500),
+    imdb_rating = c(min = 0.5, max = 10.0),
+    production_budget = c(min = 0, max = NA),
+    box_office_revenue = c(min = 0, max = NA),
+    number_of_seasons = c(min = 0, max = 50),
+    number_of_episodes = c(min = 0, max = 500)
+  )
+  
+  range_violations_total <- 0
+  total_possible_checks <- 0
+  
+  for(var in names(range_checks)) {
+    if(var %in% names(df)) {
+      data <- df[[var]]
+      range <- range_checks[[var]]
+      
+      violations_min <- sum(data < range["min"], na.rm = TRUE)
+      violations_max <- ifelse(is.na(range["max"]), 0, sum(data > range["max"], na.rm = TRUE))
+      total_violations <- violations_min + violations_max
+      
+      range_violations_total <- range_violations_total + total_violations
+      total_possible_checks <- total_possible_checks + total_rows
+      
+      cat(var, ":\n")
+      cat("  Range violations:", total_violations, "\n")
+      cat("  Actual range: [", min(data, na.rm = TRUE), ", ", max(data, na.rm = TRUE), "]\n", sep = "")
+    }
+  }
+  
+  # 4. Business Logic Validation
+  cat("\n4. BUSINESS LOGIC VALIDATION\n")
+  logic_checks <- data.frame(
+    Check = character(),
+    Violations = integer(),
+    stringsAsFactors = FALSE
+  )
+  
+  # Add business logic checks
+  if("content_type" %in% names(df) && "number_of_seasons" %in% names(df)) {
+    movies_with_seasons <- sum(df$content_type == "Movie" & df$number_of_seasons > 0, na.rm = TRUE)
+    logic_checks <- rbind(logic_checks, data.frame(
+      Check = "Movies with seasons > 0",
+      Violations = movies_with_seasons
+    ))
+  }
+  
+  if("content_type" %in% names(df) && "number_of_episodes" %in% names(df)) {
+    movies_with_episodes <- sum(df$content_type == "Movie" & df$number_of_episodes > 0, na.rm = TRUE)
+    logic_checks <- rbind(logic_checks, data.frame(
+      Check = "Movies with episodes > 0",
+      Violations = movies_with_episodes
+    ))
+  }
+  
+  if("production_budget" %in% names(df) && "box_office_revenue" %in% names(df)) {
+    budget_exceeds_revenue <- sum(df$production_budget > df$box_office_revenue, na.rm = TRUE)
+    logic_checks <- rbind(logic_checks, data.frame(
+      Check = "Budget exceeds revenue",
+      Violations = budget_exceeds_revenue
+    ))
+  }
+  
+  print(logic_checks)
+  total_logic_violations <- sum(logic_checks$Violations)
+  
+  # 5. Missing Data Validation
+  cat("\n5. MISSING DATA VALIDATION\n")
+  missing_summary <- sapply(df, function(x) sum(is.na(x)))
+  missing_df <- data.frame(
+    Variable = names(missing_summary),
+    Missing_Count = missing_summary,
+    Missing_Percent = round(missing_summary / total_rows * 100, 2)
+  ) %>% arrange(desc(Missing_Percent))
+  
+  print(head(missing_df, 10))  # Show top 10 most missing
+  
+  # 6. Calculate Quality Score
+  cat("\n6. DATA QUALITY SCORE\n")
+  
+  quality_metrics <- c(
+    completeness = mean(complete.cases(df)),
+    uniqueness = ifelse(total_rows > 0, 1 - (duplicates / total_rows), 1),
+    valid_ranges = ifelse(total_possible_checks > 0, 
+                          1 - (range_violations_total / total_possible_checks), 1),
+    business_rules = ifelse(total_rows > 0, 
+                            1 - (total_logic_violations / (total_rows * nrow(logic_checks))), 1)
+  )
+  
+  # Handle any NaN values
+  quality_metrics <- sapply(quality_metrics, function(x) ifelse(is.nan(x), 1, x))
+  
+  quality_score <- mean(quality_metrics) * 100
+  
+  # Display quality metrics
+  for(i in seq_along(quality_metrics)) {
+    cat(names(quality_metrics)[i], ":", round(quality_metrics[i] * 100, 1), "%\n")
+  }
+  
+  cat("\nOVERALL DATA QUALITY SCORE:", round(quality_score, 1), "%\n")
+  
+  # Quality rating
+  if(quality_score >= 95) {
+    rating <- "EXCELLENT"
+    emoji <- "🎯"
+  } else if(quality_score >= 85) {
+    rating <- "VERY GOOD" 
+    emoji <- "✅"
+  } else if(quality_score >= 75) {
+    rating <- "GOOD"
+    emoji <- "✓"
+  } else if(quality_score >= 65) {
+    rating <- "ACCEPTABLE"
+    emoji <- "⚠️"
+  } else {
+    rating <- "NEEDS IMPROVEMENT"
+    emoji <- "❌"
+  }
+  
+  cat(emoji, " DATA QUALITY: ", rating, "\n", sep = "")
+  
+  # Return summary
+  return(list(
+    quality_score = quality_score,
+    rating = rating,
+    duplicates = duplicates,
+    range_violations = range_violations_total,
+    logic_violations = total_logic_violations
+  ))
+}
+
+# Run the validation
+quality_results <- validate_data_quality(movies_clean)
+
+```
+
+This validation step is crucial before any analysis to ensure your results are reliable and meaningful!
+
+Write cleaned data to another csv file:
+
+```{r}
+# Write to CSV file
+write.csv(movies_clean, "movies_clean.csv", row.names = FALSE)
+
+cat("Cleaned data saved as 'movies_clean.csv'\n")
+cat("File location:", getwd(), "\n")
+
+```
+
+```{r check new file}
+movies_clean_data <- read_csv('movies_clean.csv')
+str(movies_clean_data)
+
+```
+

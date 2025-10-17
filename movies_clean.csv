@@ -1,0 +1,1006 @@
+"movie_id","title","content_type","genre_primary","genre_secondary","release_year","duration_minutes","rating","language","country_of_origin","imdb_rating","production_budget","box_office_revenue","number_of_seasons","number_of_episodes","is_netflix_original","added_to_platform","content_warning","budget_missing","revenue_missing"
+"movie_0001","dragon legend","Stand-up Comedy","History","Thriller",2014,35,"TV-Y","French","Japan",0.5,0,0,1,12,FALSE,2023-08-07,FALSE,1,1
+"movie_0002","storm warrior","Stand-up Comedy","Sci-Fi","",2017,37,"PG","Japanese","USA",3.3,0,0,1,12,FALSE,2022-01-28,TRUE,1,1
+"movie_0003","fire family","Movie","Drama","",2003,142,"TV-MA","English","USA",8.5,2114120,0,0,0,FALSE,2021-05-04,TRUE,0,0
+"movie_0004","our princess","Documentary","Sci-Fi","",2011,131,"NC-17","Japanese","USA",5.3,0,0,1,12,FALSE,2022-11-26,FALSE,1,1
+"movie_0005","warrior mission","Documentary","Sport","Mystery",2015,91,"TV-G","English","USA",3.1,0,0,1,12,FALSE,2023-06-15,FALSE,1,1
+"movie_0006","kingdom phoenix","Movie","Documentary","Music",1997,113,"PG-13","English","USA",8,4214426,792291,0,0,FALSE,2021-01-21,FALSE,0,0
+"movie_0007","battle story","TV Series","Sci-Fi","",2003,52,"TV-Y7","English","USA",6.5,0,0,1,158,FALSE,2021-11-30,FALSE,1,1
+"movie_0008","old house","Movie","Horror","",1991,109,"TV-Y","Spanish","South Korea",7.7,629216,3995303,0,0,FALSE,2020-10-04,FALSE,0,0
+"movie_0009","dragon empire","Movie","Biography","",2013,123,"PG","Spanish","USA",8.4,0,0,0,0,FALSE,2024-05-09,FALSE,1,1
+"movie_0010","dream war","Limited Series","Thriller","Animation",2019,49,"TV-Y","Italian","Japan",8.2,0,0,12,32,FALSE,2021-09-20,FALSE,1,1
+"movie_0011","day dream","Movie","Western","",2022,148,"R","English","USA",0.5,16018207,0,0,0,TRUE,2025-06-02,FALSE,0,0
+"movie_0012","bright war","Movie","Crime","Sci-Fi",1997,95,"G","English","South Korea",9.9,0,72997481,0,0,FALSE,2025-05-22,FALSE,1,1
+"movie_0013","dream journey","Movie","Romance","",2013,138,"PG","English","Germany",8.6,1758821,3573506,0,0,FALSE,2021-01-20,TRUE,0,0
+"movie_0014","little war","Movie","Mystery","",1990,117,"TV-14","Korean","Japan",8.4,0,32793336,0,0,TRUE,2020-10-01,FALSE,1,1
+"movie_0015","hero empire","Movie","Sci-Fi","Mystery",2012,108,"TV-G","English","UK",4.6,2006408,0,0,0,FALSE,2022-09-18,FALSE,0,0
+"movie_0016","last dream","TV Series","Family","",1999,54,"PG-13","Spanish","USA",6,0,0,1,139,FALSE,2022-01-19,FALSE,1,1
+"movie_0017","kingdom battle","Stand-up Comedy","War","",2018,72,"NC-17","Italian","UK",5.9,0,0,1,12,TRUE,2021-10-13,FALSE,1,1
+"movie_0018","princess phoenix","Movie","Adventure","",2011,116,"PG","English","France",7.6,10555440,7278095,0,0,TRUE,2021-04-04,FALSE,0,0
+"movie_0019","an legend","Limited Series","Sci-Fi","Crime",2004,48,"TV-PG","English","UK",9.3,0,0,1,155,FALSE,2022-05-12,FALSE,1,1
+"movie_0020","an mystery","TV Series","Fantasy","",2009,41,"PG-13","English","Canada",7.1,0,0,14,168,FALSE,2022-08-21,FALSE,1,1
+"movie_0021","family love","Limited Series","Family","Thriller",2020,52,"TV-PG","English","USA",8.5,0,0,5,106,FALSE,2023-07-25,FALSE,1,1
+"movie_0022","first mystery","Movie","Sci-Fi","",1998,115,"TV-PG","English","South Korea",6.6,2934549,40080746,0,0,TRUE,2022-09-12,FALSE,0,0
+"movie_0023","mystery night","TV Series","Adventure","",2020,60,"TV-MA","English","USA",4.8,0,0,6,196.96,TRUE,2024-10-18,FALSE,1,1
+"movie_0024","fire mystery","Movie","Biography","",1990,114,"TV-Y7","English","South Korea",4.4,895311,52104449,0,0,FALSE,2023-04-04,FALSE,0,0
+"movie_0025","quest queen","Movie","Family","",2013,127,"PG","English","UK",9.2,0,1286089,0,0,FALSE,2024-12-21,FALSE,1,1
+"movie_0026","last love","TV Series","Comedy","",2000,78,"PG","English","India",8.6,0,0,10,121,FALSE,2025-02-23,FALSE,1,1
+"movie_0027","house house","Stand-up Comedy","Western","",2012,60,"PG-13","English","South Korea",7,0,0,1,12,TRUE,2021-09-19,FALSE,1,1
+"movie_0028","legend hero","Stand-up Comedy","Biography","Romance",2003,417,"PG","French","USA",7.8,0,0,1,12,FALSE,2024-01-07,FALSE,1,1
+"movie_0029","dark princess","Movie","Horror","Sport",1998,117,"PG","English","Japan",5.4,0,6128075,0,0,FALSE,2022-04-16,FALSE,1,1
+"movie_0030","dragon king","Movie","Documentary","",2017,151,"G","English","India",7.5,0,9373734,0,0,FALSE,2024-06-10,TRUE,1,1
+"movie_0031","warrior war","Movie","Romance","",2024,129,"TV-Y7","English","USA",4.7,0,2057069,0,0,FALSE,2022-06-10,FALSE,1,1
+"movie_0032","house hero","TV Series","Crime","",2000,31,"TV-Y7","German","UK",0.5,0,0,3,24,FALSE,2024-02-13,FALSE,1,1
+"movie_0033","mystery city","Movie","Horror","",1995,116,"TV-MA","Korean","USA",7.3,0,0,0,0,FALSE,2022-06-24,FALSE,1,1
+"movie_0034","mission kingdom","TV Series","War","Horror",2018,48,"TV-PG","English","India",7.7,0,0,14,138,TRUE,2023-10-22,TRUE,1,1
+"movie_0035","princess love","TV Series","Family","Romance",1994,38,"TV-PG","English","USA",7.4,0,0,1,62,FALSE,2021-03-01,FALSE,1,1
+"movie_0036","house legend","TV Series","Adventure","Action",2018,61,"PG-13","Spanish","Germany",6.5,0,0,10,57,FALSE,2025-04-18,FALSE,1,1
+"movie_0037","empire king","TV Series","Comedy","",2011,51,"TV-G","French","USA",6.6,0,0,5,23,FALSE,2025-05-02,FALSE,1,1
+"movie_0038","a empire","Movie","Action","",1993,98,"TV-MA","Korean","USA",5.6,3127772,99312954.4,0,0,TRUE,2021-06-29,FALSE,0,0
+"movie_0039","love queen","Movie","Mystery","",2019,80,"PG-13","German","USA",7.3,5603605,0,0,0,FALSE,2022-01-10,FALSE,0,0
+"movie_0040","mystery quest","Movie","War","Music",2005,116,"PG-13","Japanese","UK",6.4,1816487,2016406,0,0,FALSE,2023-02-04,FALSE,0,0
+"movie_0041","kingdom war","Documentary","Biography","Sport",2003,83,"TV-14","English","USA",5.1,0,0,1,12,FALSE,2023-03-23,FALSE,1,1
+"movie_0042","first hero","Movie","Action","",2020,452,"TV-G","Hindi","India",6.7,2146992,55547817,0,0,TRUE,2024-06-01,FALSE,0,0
+"movie_0043","city queen","Documentary","Family","",2005,80,"PG-13","Spanish","USA",6.3,0,0,1,12,FALSE,2022-12-12,FALSE,1,1
+"movie_0044","dragon city","Stand-up Comedy","War","Documentary",1998,379,"TV-G","English","USA",5.2,0,0,1,12,FALSE,2023-01-31,FALSE,1,1
+"movie_0045","battle day","Documentary","History","",2003,92,"PG","English","USA",5.4,0,0,1,12,TRUE,2025-02-18,FALSE,1,1
+"movie_0046","the dragon","TV Series","Family","",2002,43,"PG-13","English","USA",6.7,0,0,8,113,FALSE,2023-08-15,FALSE,1,1
+"movie_0047","day journey","TV Series","Thriller","",2008,47,"PG","English","Japan",5.4,0,0,9,54,FALSE,2020-12-15,FALSE,1,1
+"movie_0048","secret legend","Movie","Family","",1994,102,"TV-14","Hindi","UK",4.6,19244906.2,99312954.4,0,0,FALSE,2024-08-30,FALSE,0,0
+"movie_0049","kingdom day","Movie","Thriller","",2023,111,"NC-17","English","Germany",4.6,629194,2736647,0,0,FALSE,2024-03-03,FALSE,0,0
+"movie_0050","last quest","TV Series","Biography","",2015,41,"TV-PG","French","USA",6.1,0,0,8,116,FALSE,2023-08-10,FALSE,1,1
+"movie_0051","hero mystery","TV Series","Western","Comedy",1995,52,"TV-PG","English","USA",8,0,0,12,178,FALSE,2023-09-10,FALSE,1,1
+"movie_0052","hero journey","Movie","Sport","Biography",2002,104,"PG-13","Italian","USA",4.9,6117844,16638609,0,0,TRUE,2022-11-01,FALSE,0,0
+"movie_0053","princess city","Documentary","History","",2018,90,"TV-Y7","English","Canada",4.7,0,0,1,12,FALSE,2022-02-28,FALSE,1,1
+"movie_0054","phoenix journey","TV Series","Romance","History",2021,35,"TV-MA","English","France",8.8,0,0,1,78,FALSE,2024-11-17,FALSE,1,1
+"movie_0055","queen quest","Movie","Sci-Fi","",2002,84,"G","Italian","India",4.7,6494786,0,0,0,TRUE,2023-11-21,TRUE,0,0
+"movie_0056","big princess","Movie","Adventure","Comedy",1997,137,"TV-Y","English","USA",6.2,3593765,2259750,0,0,TRUE,2021-01-18,FALSE,0,0
+"movie_0057","mission dream","Movie","Biography","",2017,82,"TV-14","Spanish","USA",5.9,4186498,7674756,0,0,TRUE,2021-10-30,FALSE,0,0
+"movie_0058","day mystery","Stand-up Comedy","Drama","",2020,57,"R","English","USA",6.6,0,0,1,12,TRUE,2022-10-16,FALSE,1,1
+"movie_0059","night secret","TV Series","Romance","Sci-Fi",1992,489.600000000001,"TV-14","French","USA",6.3,0,0,4,42,TRUE,2020-08-24,FALSE,1,1
+"movie_0060","night warrior","TV Series","Biography","",1993,44,"PG-13","English","USA",4.9,0,0,10,46,FALSE,2024-08-08,FALSE,1,1
+"movie_0061","journey night","Movie","Drama","",2017,100,"TV-MA","English","UK",6.9,11264097,0,0,0,FALSE,2021-11-25,FALSE,0,0
+"movie_0062","phoenix mission","Movie","Action","",2012,129,"TV-Y","English","USA",4.4,4494260,53848956,0,0,FALSE,2022-08-16,FALSE,0,0
+"movie_0063","hero kingdom","Movie","Adventure","",1997,165,"G","Hindi","UK",6.9,1360448,656952,0,0,FALSE,2021-04-22,FALSE,0,0
+"movie_0064","last city","Documentary","Animation","Crime",1994,115,"TV-PG","Japanese","South Korea",5.8,0,0,1,12,FALSE,2021-07-03,FALSE,1,1
+"movie_0065","day queen","Movie","Sport","",1991,109,"TV-14","Italian","USA",6.5,11397312,32147534,0,0,TRUE,2024-11-16,FALSE,0,0
+"movie_0066","adventure king","Movie","Comedy","Romance",2013,104,"TV-14","English","Canada",7.9,4687811,26772080,0,0,FALSE,2022-06-24,FALSE,0,0
+"movie_0067","story mystery","TV Series","Crime","",2005,50,"PG","English","USA",6.8,0,0,2,73,FALSE,2023-05-21,FALSE,1,1
+"movie_0068","secret night","TV Series","Horror","",1994,46,"R","English","USA",7.5,0,0,5,44,FALSE,2021-10-22,FALSE,1,1
+"movie_0069","an quest","TV Series","Documentary","",2020,42,"NC-17","Spanish","South Korea",8.1,0,0,9,6,FALSE,2024-02-13,FALSE,1,1
+"movie_0070","battle city","Documentary","Biography","",2023,81,"R","Hindi","France",6.5,0,0,1,12,FALSE,2022-12-31,TRUE,1,1
+"movie_0071","phoenix ice","TV Series","Music","Sci-Fi",2016,70,"TV-MA","English","Canada",6.7,0,0,3,79,TRUE,2024-06-17,FALSE,1,1
+"movie_0072","storm warrior","Limited Series","Sci-Fi","Drama",2015,73,"TV-14","French","South Korea",5.1,0,0,14,75,FALSE,2021-06-09,FALSE,1,1
+"movie_0073","house family","TV Series","Action","",2021,42,"TV-PG","German","Canada",4.8,0,0,5,121,TRUE,2023-03-24,FALSE,1,1
+"movie_0074","dark ice","Movie","Comedy","",2005,150,"PG","English","Canada",0.5,1915176,3628760,0,0,TRUE,2021-11-07,FALSE,0,0
+"movie_0075","war hero","TV Series","Animation","Crime",2016,18,"TV-PG","English","USA",6.5,0,0,1,177,FALSE,2023-04-21,TRUE,1,1
+"movie_0076","empire battle","Movie","Family","Documentary",2023,108,"G","English","USA",6.8,19244906.2,4643156,0,0,TRUE,2023-05-30,FALSE,0,0
+"movie_0077","our battle","TV Series","War","History",2018,26,"TV-14","English","USA",6.4,0,0,5,95,TRUE,2024-12-03,FALSE,1,1
+"movie_0078","little war","Movie","Fantasy","Mystery",1999,143,"NC-17","Hindi","USA",6.5,1035450,0,0,0,FALSE,2022-03-30,FALSE,0,0
+"movie_0079","mission dream","Movie","War","",2005,414,"TV-G","Hindi","USA",5.9,4204348,24367896,0,0,FALSE,2021-02-07,FALSE,0,0
+"movie_0080","day queen","Movie","Documentary","Documentary",2014,89,"TV-Y","English","USA",7.8,5453306,32981493,0,0,FALSE,2022-12-26,FALSE,0,0
+"movie_0081","mission fire","Movie","Documentary","",2023,119,"TV-14","Italian","Japan",7.8,19244906.2,5603722,0,0,FALSE,2021-06-05,FALSE,0,0
+"movie_0082","bright phoenix","Movie","Western","",1995,408,"TV-MA","German","South Korea",4.6,8461755,99312954.4,0,0,TRUE,2021-04-14,FALSE,0,0
+"movie_0083","journey phoenix","Movie","Sci-Fi","",2024,101,"TV-Y","English","USA",7,97100,69320180,0,0,TRUE,2020-08-14,TRUE,0,0
+"movie_0084","night phoenix","Movie","Documentary","Crime",1998,114,"PG","English","Germany",6.8,0,39250966,0,0,TRUE,2023-09-08,TRUE,1,1
+"movie_0085","mission secret","Stand-up Comedy","Crime","Crime",2009,44,"TV-Y","Korean","USA",5.7,0,0,1,12,FALSE,2024-05-03,TRUE,1,1
+"movie_0086","big adventure","Documentary","Biography","Family",1998,68,"G","English","UK",0.6,0,0,1,12,TRUE,2024-07-11,FALSE,1,1
+"movie_0087","our storm","Movie","Comedy","",2010,38,"PG-13","Italian","USA",6.6,0,0,0,0,FALSE,2021-02-22,TRUE,1,1
+"movie_0088","journey love","TV Series","Sport","",1990,63,"PG-13","English","Canada",7.2,0,0,4,79,FALSE,2023-03-02,FALSE,1,1
+"movie_0089","mystery day","Movie","Romance","",2014,79,"TV-Y7","Hindi","Japan",0.9,19244906.2,16348642,0,0,TRUE,2021-06-07,TRUE,0,0
+"movie_0090","ice kingdom","Documentary","Animation","Biography",2003,107,"TV-PG","English","USA",8.7,0,0,1,12,FALSE,2021-12-24,TRUE,1,1
+"movie_0091","dragon ice","Documentary","Horror","",1993,79,"PG-13","English","Japan",4.7,0,0,1,12,TRUE,2022-11-24,FALSE,1,1
+"movie_0092","story kingdom","TV Series","War","",1991,35,"PG","English","UK",8.8,0,0,14,62,FALSE,2024-04-23,FALSE,1,1
+"movie_0093","city queen","Movie","History","Biography",2020,101,"R","English","USA",9.7,0,41795066,0,0,TRUE,2024-03-31,FALSE,1,1
+"movie_0094","dark city","Stand-up Comedy","Western","Western",1993,68,"TV-Y7","English","USA",5.3,0,0,1,12,FALSE,2021-08-03,FALSE,1,1
+"movie_0095","legend storm","TV Series","Fantasy","",2003,32,"TV-MA","English","USA",3.6,0,0,9,76,TRUE,2025-05-06,FALSE,1,1
+"movie_0096","king fire","Movie","Action","",2018,105,"G","English","UK",4.5,8939550,4931077,0,0,FALSE,2024-06-22,TRUE,0,0
+"movie_0097","secret war","Movie","Fantasy","",2001,102,"TV-Y","Hindi","Canada",3.1,2137471,36710118,0,0,FALSE,2021-05-15,FALSE,0,0
+"movie_0098","a war","Stand-up Comedy","Adventure","",2001,77,"PG-13","English","USA",6.4,0,0,1,12,TRUE,2022-07-27,FALSE,1,1
+"movie_0099","dragon day","Documentary","Western","",2021,110,"PG","English","UK",8.3,0,0,1,12,FALSE,2021-07-06,TRUE,1,1
+"movie_0100","adventure dream","Movie","Fantasy","",1996,99,"TV-G","English","Canada",6,8590064,0,0,0,FALSE,2024-07-30,FALSE,0,0
+"movie_0101","king house","TV Series","Animation","",2008,45,"TV-MA","English","South Korea",6.9,0,0,3,96,FALSE,2025-07-19,FALSE,1,1
+"movie_0102","fire war","TV Series","Comedy","Sci-Fi",2003,32,"TV-14","Italian","South Korea",5.1,0,0,6,74,FALSE,2023-08-17,TRUE,1,1
+"movie_0103","family battle","Stand-up Comedy","Sci-Fi","Action",2017,52,"NC-17","Italian","France",8.2,0,0,1,12,FALSE,2024-04-16,FALSE,1,1
+"movie_0104","mystery mystery","Movie","War","Fantasy",2001,107,"TV-Y","English","South Korea",4.6,0,13208249,0,0,FALSE,2024-11-24,FALSE,1,1
+"movie_0105","adventure house","Movie","Animation","Adventure",1992,109,"TV-MA","Korean","USA",6.3,1354517,3059547,0,0,TRUE,2023-09-28,FALSE,0,0
+"movie_0106","dragon night","Documentary","Animation","Family",1991,89,"NC-17","Spanish","South Korea",7.3,0,0,1,12,FALSE,2020-08-25,TRUE,1,1
+"movie_0107","love kingdom","Documentary","Biography","",2014,87,"TV-MA","English","UK",6.1,0,0,1,12,FALSE,2023-03-02,TRUE,1,1
+"movie_0108","first phoenix","Movie","Fantasy","",2000,128,"TV-G","Italian","USA",7.8,747506,99312954.4,0,0,FALSE,2021-03-14,TRUE,0,0
+"movie_0109","family story","Movie","War","",2023,119,"PG-13","English","USA",6.5,2792744,99312954.4,0,0,FALSE,2022-12-24,FALSE,0,0
+"movie_0110","queen day","Movie","Comedy","Adventure",1998,122,"NC-17","English","USA",5.5,3551286,0,0,0,TRUE,2022-06-03,FALSE,0,0
+"movie_0111","kingdom mission","Movie","Sport","",1995,106,"TV-Y7","English","USA",5.1,770163,3222643,0,0,FALSE,2021-03-12,TRUE,0,0
+"movie_0112","king princess","TV Series","Music","Biography",1991,69,"R","English","USA",6.6,0,0,2,103,TRUE,2022-01-22,FALSE,1,1
+"movie_0113","a quest","Movie","History","",2022,110,"PG-13","French","Germany",5.9,845349,4568753,0,0,FALSE,2020-12-09,TRUE,0,0
+"movie_0114","journey king","TV Series","Animation","Mystery",2008,46,"TV-PG","English","India",9.7,0,0,9,48,FALSE,2022-10-24,FALSE,1,1
+"movie_0115","war dragon","Movie","Crime","",2021,69,"NC-17","English","USA",6,18860431,57338013,0,0,TRUE,2021-04-09,FALSE,0,0
+"movie_0116","secret story","Documentary","Biography","Documentary",1990,134,"TV-14","French","France",4.7,0,0,1,12,FALSE,2024-02-27,TRUE,1,1
+"movie_0117","little dragon","Movie","Family","",2013,109,"R","English","USA",5.2,794995,24268353,0,0,TRUE,2022-04-27,TRUE,0,0
+"movie_0118","hero love","Documentary","Sport","",2014,96,"TV-14","English","USA",4.6,0,0,1,12,FALSE,2021-07-14,FALSE,1,1
+"movie_0119","little warrior","Documentary","Action","Adventure",2019,98,"G","Hindi","South Korea",8.5,0,0,1,12,FALSE,2025-07-26,TRUE,1,1
+"movie_0120","last mission","Movie","Mystery","Comedy",2022,152,"TV-Y","English","USA",5.2,0,22144747,0,0,FALSE,2024-04-21,FALSE,1,1
+"movie_0121","last dream","Movie","Mystery","",2004,113,"G","English","USA",6.1,1666756,0,0,0,FALSE,2022-09-09,FALSE,0,0
+"movie_0122","little queen","Movie","History","",2019,125,"TV-MA","English","USA",3.9,9321651,5551808,0,0,FALSE,2024-08-01,FALSE,0,0
+"movie_0123","family fire","Movie","Documentary","History",2008,109,"R","English","USA",4.5,556402,8920240,0,0,TRUE,2023-04-03,FALSE,0,0
+"movie_0124","bright house","TV Series","Comedy","",2003,38,"TV-Y","English","USA",6.6,0,0,12,14,TRUE,2024-01-14,FALSE,1,1
+"movie_0125","our queen","Movie","Western","Music",2010,105,"PG","English","Canada",5,16341730,39189864,0,0,TRUE,2022-01-10,FALSE,0,0
+"movie_0126","journey princess","Movie","Sci-Fi","Biography",2003,125,"TV-MA","Spanish","USA",7.4,19244906.2,5582578,0,0,FALSE,2022-12-29,FALSE,0,0
+"movie_0127","dragon quest","Documentary","Music","Drama",2016,85,"PG","English","USA",4.4,0,0,1,12,FALSE,2024-12-22,FALSE,1,1
+"movie_0128","a quest","Limited Series","History","",2008,58,"NC-17","English","Canada",4.9,0,0,2,153,FALSE,2022-03-29,FALSE,1,1
+"movie_0129","mission fire","Stand-up Comedy","Sci-Fi","Crime",2000,36,"TV-Y7","English","USA",0.5,0,0,1,12,TRUE,2023-10-10,FALSE,1,1
+"movie_0130","last house","Movie","Action","",1990,36,"NC-17","English","Japan",6.4,10949397,45443003,0,0,FALSE,2020-11-19,FALSE,0,0
+"movie_0131","story mystery","Movie","Sci-Fi","",2024,115,"TV-Y7","English","USA",6.4,19244906.2,4303498,0,0,TRUE,2025-04-25,FALSE,0,0
+"movie_0132","dragon war","Documentary","Comedy","",2022,95,"TV-PG","Spanish","Japan",7.7,0,0,1,12,FALSE,2021-01-12,FALSE,1,1
+"movie_0133","adventure princess","Movie","Family","",1993,97,"R","English","USA",7.8,9889659,36933865,0,0,FALSE,2021-12-12,FALSE,0,0
+"movie_0134","story night","Stand-up Comedy","Adventure","Animation",1999,52,"PG","Spanish","France",7.3,0,0,1,12,FALSE,2023-08-24,FALSE,1,1
+"movie_0135","princess house","Movie","Western","",2016,73,"TV-G","Japanese","USA",5.3,0,99312954.4,0,0,FALSE,2023-08-10,FALSE,1,1
+"movie_0136","first house","Documentary","Adventure","",2001,404,"NC-17","English","Canada",1,0,0,1,12,FALSE,2023-05-25,FALSE,1,1
+"movie_0137","first mission","Movie","History","",2023,106,"TV-Y7","English","USA",7.6,992285,84883879,0,0,FALSE,2020-12-26,FALSE,0,0
+"movie_0138","kingdom fire","Movie","Biography","Comedy",2024,118,"PG","English","Canada",5.6,2785266,20178073,0,0,FALSE,2023-05-29,FALSE,0,0
+"movie_0139","last war","Limited Series","Mystery","",1993,23,"TV-G","English","USA",4.4,0,0,2,102,FALSE,2024-05-05,FALSE,1,1
+"movie_0140","city empire","Documentary","Sport","",2023,19,"TV-14","English","France",5.6,0,0,1,12,FALSE,2025-06-20,FALSE,1,1
+"movie_0141","war story","Movie","Action","Crime",1990,96,"PG","Korean","Japan",3.9,0,351613,0,0,FALSE,2024-10-30,TRUE,1,1
+"movie_0142","battle secret","Limited Series","Western","",2018,71,"TV-Y7","English","UK",5.1,0,0,14,169,FALSE,2021-02-26,TRUE,1,1
+"movie_0143","adventure fire","Movie","Biography","",2006,143,"NC-17","German","Germany",5,792013,5298432,0,0,TRUE,2022-12-28,FALSE,0,0
+"movie_0144","our dream","TV Series","Comedy","",2013,37,"TV-14","Korean","India",9.4,0,0,11,42,TRUE,2020-12-07,FALSE,1,1
+"movie_0145","fire empire","TV Series","Thriller","Sci-Fi",1990,40,"G","English","UK",8.4,0,0,10,196.96,TRUE,2024-03-09,FALSE,1,1
+"movie_0146","bright love","Movie","War","",2014,79,"PG-13","English","USA",4.4,0,0,0,0,FALSE,2024-11-22,FALSE,1,1
+"movie_0147","dark love","Documentary","Action","",1996,34,"G","Japanese","UK",3.9,0,0,1,12,FALSE,2023-02-11,FALSE,1,1
+"movie_0148","war storm","TV Series","Mystery","",1997,66,"TV-Y7","Spanish","USA",8.9,0,0,1,101,TRUE,2022-07-29,FALSE,1,1
+"movie_0149","the fire","Documentary","Action","",2000,364,"TV-PG","Spanish","USA",3,0,0,1,12,FALSE,2023-09-12,FALSE,1,1
+"movie_0150","story fire","Movie","Adventure","Sport",2013,157,"TV-14","English","Japan",8.1,19244906.2,26250908,0,0,FALSE,2022-12-26,TRUE,0,0
+"movie_0151","night love","Movie","Animation","",2005,98,"TV-Y","English","South Korea",6.2,5071451,235899,0,0,FALSE,2022-12-11,FALSE,0,0
+"movie_0152","fire quest","Movie","Documentary","Sport",1991,104,"TV-MA","Hindi","USA",3.6,0,0,0,0,FALSE,2020-10-13,FALSE,1,1
+"movie_0153","phoenix dragon","Movie","Animation","",2007,148,"NC-17","Spanish","USA",7.8,1445488,0,0,0,TRUE,2024-01-30,FALSE,0,0
+"movie_0154","bright phoenix","TV Series","Sci-Fi","",1998,19,"TV-Y","Italian","UK",5,0,0,14,187,TRUE,2024-01-15,FALSE,1,1
+"movie_0155","dream battle","Movie","Romance","",2005,140,"TV-Y7","English","USA",6.5,0,10889136,0,0,FALSE,2025-07-01,FALSE,1,1
+"movie_0156","an ice","Movie","History","Thriller",2019,111,"TV-14","English","France",6,19244906.2,10427828,0,0,TRUE,2023-07-16,FALSE,0,0
+"movie_0157","last ice","Documentary","Sport","",2001,77,"R","German","USA",10,0,0,1,12,FALSE,2022-02-15,FALSE,1,1
+"movie_0158","storm princess","Documentary","War","",2019,110,"R","English","USA",5.1,0,0,1,12,FALSE,2022-02-27,TRUE,1,1
+"movie_0159","battle family","Movie","Drama","Mystery",2001,121,"NC-17","Korean","India",7.7,6129856,6244192,0,0,FALSE,2023-01-23,FALSE,0,0
+"movie_0160","love journey","Movie","Comedy","",2016,10,"R","Italian","Canada",6.6,9355608,99312954.4,0,0,FALSE,2023-08-19,FALSE,0,0
+"movie_0161","our king","Movie","Western","",1993,97,"TV-Y","English","Germany",6.5,3405303,894261,0,0,FALSE,2021-02-20,FALSE,0,0
+"movie_0162","day fire","TV Series","Animation","Sci-Fi",2005,40,"TV-PG","Spanish","South Korea",5.8,0,0,5,111,FALSE,2021-08-23,FALSE,1,1
+"movie_0163","bright war","Movie","Comedy","",2015,85,"TV-PG","English","USA",5.7,503735,58761541,0,0,FALSE,2021-01-10,TRUE,0,0
+"movie_0164","quest ice","Movie","Romance","Western",1995,111,"TV-14","English","USA",6.6,2398917,35707634,0,0,FALSE,2021-01-13,FALSE,0,0
+"movie_0165","bright day","Movie","Action","Sci-Fi",2018,91,"G","English","Germany",7.6,456624,82210,0,0,FALSE,2023-11-21,FALSE,0,0
+"movie_0166","mystery princess","TV Series","Western","",2012,66,"TV-G","English","USA",3.3,0,0,10,54,TRUE,2024-02-03,FALSE,1,1
+"movie_0167","battle night","TV Series","Adventure","",2010,37,"TV-MA","Italian","USA",6.6,0,0,9,178,FALSE,2021-06-26,FALSE,1,1
+"movie_0168","love love","Movie","Crime","Mystery",1997,103,"G","English","USA",6.9,5781768,0,0,0,TRUE,2023-02-13,FALSE,0,0
+"movie_0169","storm day","TV Series","Western","",1998,53,"TV-PG","English","Canada",6.9,0,0,13,81,FALSE,2025-01-20,FALSE,1,1
+"movie_0170","phoenix love","Movie","Horror","",1997,489.600000000001,"R","English","South Korea",6.1,431570,6675003,0,0,FALSE,2024-03-10,TRUE,0,0
+"movie_0171","dream warrior","Movie","Biography","",1994,110,"TV-14","English","USA",1.4,3768477,11316045,0,0,FALSE,2021-05-21,FALSE,0,0
+"movie_0172","my story","Movie","Horror","",1993,94,"TV-Y","Spanish","USA",10,5064920,11553135,0,0,FALSE,2023-09-10,FALSE,0,0
+"movie_0173","little dragon","Stand-up Comedy","Sci-Fi","History",2002,58,"TV-Y","Hindi","Canada",7.2,0,0,1,12,TRUE,2022-02-04,FALSE,1,1
+"movie_0174","city battle","TV Series","Thriller","",2020,50,"TV-Y7","Spanish","France",5.1,0,0,7,78,FALSE,2023-11-06,FALSE,1,1
+"movie_0175","fire day","Movie","Fantasy","",2002,137,"TV-G","German","USA",8.9,365831,0,0,0,TRUE,2023-07-13,FALSE,0,0
+"movie_0176","dream city","TV Series","Documentary","",2008,39,"TV-Y7","French","USA",4.4,0,0,10,116,TRUE,2022-09-02,FALSE,1,1
+"movie_0177","fire princess","Movie","Drama","",2022,99,"PG","Italian","USA",9.1,19244906.2,5829409,0,0,TRUE,2024-09-21,FALSE,0,0
+"movie_0178","our princess","TV Series","Animation","",2002,55,"G","English","South Korea",5.6,0,0,1,6,FALSE,2023-11-30,FALSE,1,1
+"movie_0179","battle empire","TV Series","Documentary","",2014,41,"TV-PG","Spanish","UK",0.8,0,0,6,20,TRUE,2023-03-30,FALSE,1,1
+"movie_0180","story queen","TV Series","Action","",2010,26,"G","English","USA",6.5,0,0,1,159,FALSE,2020-11-18,FALSE,1,1
+"movie_0181","phoenix hero","TV Series","Crime","",2020,43,"G","English","UK",7.4,0,0,4,134,FALSE,2023-09-22,FALSE,1,1
+"movie_0182","mystery adventure","Movie","Thriller","",1990,125,"TV-14","English","USA",5.7,5738797,1406285,0,0,FALSE,2024-10-09,FALSE,0,0
+"movie_0183","house phoenix","TV Series","Music","Romance",1999,42,"G","English","USA",6.5,0,0,14,85,TRUE,2024-05-04,FALSE,1,1
+"movie_0184","legend house","Documentary","Documentary","",2000,84,"PG-13","English","USA",7.3,0,0,1,12,TRUE,2021-06-26,FALSE,1,1
+"movie_0185","king ice","Documentary","History","",2020,83,"TV-G","English","USA",7.4,0,0,1,12,FALSE,2023-04-29,FALSE,1,1
+"movie_0186","old house","TV Series","Comedy","",1999,70,"TV-G","English","USA",4.6,0,0,9,151,FALSE,2024-03-08,TRUE,1,1
+"movie_0187","first journey","Documentary","Crime","",2012,102,"TV-Y","English","South Korea",8.2,0,0,1,12,FALSE,2024-02-07,FALSE,1,1
+"movie_0188","our hero","Movie","Comedy","",1998,111,"TV-PG","English","USA",9.3,6199801,15193445,0,0,FALSE,2022-09-12,FALSE,0,0
+"movie_0189","family mission","Movie","Documentary","",1993,85,"TV-MA","Japanese","USA",5.8,593000,99312954.4,0,0,FALSE,2020-10-10,FALSE,0,0
+"movie_0190","princess night","Documentary","Fantasy","",2010,94,"TV-MA","English","USA",6,0,0,1,12,TRUE,2020-11-19,TRUE,1,1
+"movie_0191","war kingdom","Stand-up Comedy","Adventure","",2006,36,"G","English","USA",5.5,0,0,1,12,FALSE,2022-07-12,FALSE,1,1
+"movie_0192","family queen","Movie","Comedy","Horror",2021,127,"PG","Korean","Canada",6.1,19244906.2,24037884,0,0,FALSE,2020-09-10,FALSE,0,0
+"movie_0193","love story","Movie","Animation","",2002,53,"TV-MA","English","India",4.3,5819919,20052531,0,0,TRUE,2023-01-24,FALSE,0,0
+"movie_0194","the phoenix","Movie","Western","",2016,153,"PG","German","USA",5.9,7058434,11893984,0,0,FALSE,2022-12-03,FALSE,0,0
+"movie_0195","new phoenix","Limited Series","Music","",1996,18,"NC-17","Korean","Canada",6.4,0,0,6,151,FALSE,2022-06-15,FALSE,1,1
+"movie_0196","legend mission","Movie","Mystery","",2014,69,"TV-Y","Korean","Japan",4.3,5542251,1949871,0,0,FALSE,2022-10-21,FALSE,0,0
+"movie_0197","adventure war","Documentary","History","Biography",1998,78,"TV-MA","French","South Korea",7.3,0,0,1,12,TRUE,2021-10-04,FALSE,1,1
+"movie_0198","phoenix family","TV Series","Sport","",2007,48,"TV-PG","Hindi","USA",4.9,0,0,6,141,TRUE,2023-01-02,FALSE,1,1
+"movie_0199","a love","TV Series","Music","",1992,23,"TV-Y7","English","India",8.3,0,0,3,53,FALSE,2020-08-30,FALSE,1,1
+"movie_0200","legend secret","TV Series","Drama","",2002,10,"NC-17","English","USA",4.6,0,0,14,79,FALSE,2024-10-15,FALSE,1,1
+"movie_0201","secret battle","Movie","Adventure","",2012,142,"R","English","USA",5.6,573288,0,0,0,FALSE,2022-05-27,TRUE,0,0
+"movie_0202","city empire","Stand-up Comedy","Horror","Adventure",1961,47,"TV-14","Spanish","France",6.1,0,0,1,12,FALSE,2020-11-30,FALSE,1,1
+"movie_0203","first journey","Documentary","Action","Family",2008,87,"TV-PG","English","Canada",4.6,0,0,1,12,TRUE,2023-01-19,FALSE,1,1
+"movie_0204","my quest","Movie","Action","",1998,100,"TV-14","English","UK",5.3,1055495,1732903,0,0,FALSE,2023-04-24,TRUE,0,0
+"movie_0205","adventure legend","TV Series","Drama","Adventure",2021,73,"R","Japanese","USA",6.5,0,0,2,109,FALSE,2020-11-18,FALSE,1,1
+"movie_0206","big dragon","TV Series","Romance","",2003,50,"PG-13","English","Canada",6,0,0,9,97,FALSE,2023-04-13,FALSE,1,1
+"movie_0207","family ice","TV Series","Sport","Mystery",1992,34,"R","English","USA",7.5,0,0,8,15,TRUE,2020-08-02,TRUE,1,1
+"movie_0208","the story","Movie","Thriller","",1993,109,"R","Spanish","USA",7.4,5539041,0,0,0,TRUE,2021-04-28,FALSE,0,0
+"movie_0209","king dragon","TV Series","History","",2023,44,"TV-G","English","USA",6.2,0,0,9,89,TRUE,2022-06-16,TRUE,1,1
+"movie_0210","princess kingdom","Movie","Sport","",2018,83,"TV-14","German","Canada",2.7,2206961,0,0,0,FALSE,2022-02-15,FALSE,0,0
+"movie_0211","kingdom princess","TV Series","Romance","",1998,39,"PG-13","Italian","USA",6.1,0,0,2,97,FALSE,2022-04-12,FALSE,1,1
+"movie_0212","story king","Stand-up Comedy","War","",2011,33,"TV-Y","Hindi","UK",8,0,0,1,12,FALSE,2022-12-08,FALSE,1,1
+"movie_0213","queen house","TV Series","Fantasy","",2015,44,"PG","English","Canada",7.9,0,0,10,115,TRUE,2025-03-15,FALSE,1,1
+"movie_0214","last dragon","Stand-up Comedy","Animation","Comedy",1966,47,"TV-Y7","English","USA",4.3,0,0,1,12,FALSE,2024-11-12,FALSE,1,1
+"movie_0215","city warrior","Movie","Western","",2008,135,"NC-17","English","USA",6.8,10268769,1769234,0,0,FALSE,2024-02-24,FALSE,0,0
+"movie_0216","day city","Documentary","Action","",1993,85,"G","Spanish","South Korea",8.5,0,0,1,12,FALSE,2024-03-02,FALSE,1,1
+"movie_0217","quest secret","Movie","Drama","",2008,93,"TV-G","English","UK",6.9,1331293,99312954.4,0,0,FALSE,2024-10-25,FALSE,0,0
+"movie_0218","journey mission","Movie","Action","Documentary",1995,93,"NC-17","English","India",6.2,8955476,5873907,0,0,FALSE,2020-12-19,FALSE,0,0
+"movie_0219","bright adventure","Movie","Comedy","",2021,102,"NC-17","English","Canada",7.1,1852812,323259,0,0,TRUE,2025-03-09,FALSE,0,0
+"movie_0220","an war","TV Series","Comedy","History",2009,47,"TV-MA","French","Germany",8.1,0,0,9,40,FALSE,2022-02-21,FALSE,1,1
+"movie_0221","empire kingdom","Documentary","Crime","",2016,46,"TV-PG","English","USA",8.7,0,0,1,12,FALSE,2021-06-25,FALSE,1,1
+"movie_0222","battle phoenix","TV Series","Western","Drama",1994,329,"TV-MA","Japanese","USA",5.9,0,0,11,153,FALSE,2020-10-30,FALSE,1,1
+"movie_0223","story phoenix","TV Series","History","",2006,50,"TV-G","Hindi","USA",6.3,0,0,1,156,FALSE,2020-10-22,FALSE,1,1
+"movie_0224","the princess","TV Series","Drama","",1994,62,"R","German","USA",5.1,0,0,2,43,FALSE,2021-05-12,FALSE,1,1
+"movie_0225","our family","Movie","Adventure","Drama",1994,119,"PG-13","Spanish","India",7.4,13813223,0,0,0,TRUE,2023-05-16,FALSE,0,0
+"movie_0226","a dream","Stand-up Comedy","Western","",1998,67,"TV-MA","English","USA",5.7,0,0,1,12,FALSE,2022-03-23,FALSE,1,1
+"movie_0227","last storm","Stand-up Comedy","Family","",2012,59,"G","English","USA",6.8,0,0,1,12,FALSE,2023-08-14,FALSE,1,1
+"movie_0228","city family","Movie","Family","",2015,144,"TV-G","Korean","UK",6.4,951503,8854233,0,0,FALSE,2023-06-04,TRUE,0,0
+"movie_0229","last secret","Movie","Drama","",2003,115,"PG-13","English","India",6.1,2856217,7370946,0,0,FALSE,2024-03-04,FALSE,0,0
+"movie_0230","kingdom king","Movie","Biography","",2005,489.600000000001,"TV-14","Spanish","USA",7.2,7047373,7555541,0,0,FALSE,2021-06-04,FALSE,0,0
+"movie_0231","storm quest","Limited Series","Mystery","",2020,36,"TV-Y","German","South Korea",7.5,0,0,10,88,FALSE,2025-06-19,FALSE,1,1
+"movie_0232","kingdom war","TV Series","Sci-Fi","",2023,38,"R","English","USA",5.5,0,0,14,42,FALSE,2023-12-01,FALSE,1,1
+"movie_0233","storm ice","Movie","History","War",2020,131,"PG","English","USA",7.1,0,5648567,0,0,FALSE,2021-07-31,FALSE,1,1
+"movie_0234","an fire","TV Series","Horror","Music",1991,58,"TV-Y7","Japanese","South Korea",8.5,0,0,1,178,FALSE,2021-01-11,FALSE,1,1
+"movie_0235","empire story","Limited Series","Crime","Action",2011,45,"G","English","USA",3.7,0,0,10,18,FALSE,2022-03-06,FALSE,1,1
+"movie_0236","queen warrior","Stand-up Comedy","Action","Animation",2006,81,"TV-14","English","Canada",4.6,0,0,1,12,FALSE,2024-08-22,FALSE,1,1
+"movie_0237","legend warrior","TV Series","Animation","",2002,24,"PG-13","English","Japan",5.1,0,0,8,82,FALSE,2020-09-30,FALSE,1,1
+"movie_0238","bright journey","TV Series","Adventure","",2011,46,"PG-13","Korean","USA",8.7,0,0,4,133,FALSE,2022-02-03,FALSE,1,1
+"movie_0239","kingdom dream","Documentary","Sci-Fi","Drama",2015,79,"G","Italian","USA",5.7,0,0,1,12,FALSE,2022-10-17,FALSE,1,1
+"movie_0240","last house","Movie","Drama","",2022,152,"NC-17","French","USA",6.5,0,38401267,0,0,FALSE,2024-12-02,FALSE,1,1
+"movie_0241","dark ice","TV Series","War","",2003,13,"TV-14","Japanese","USA",4.9,0,0,10,90,FALSE,2022-06-22,FALSE,1,1
+"movie_0242","mission storm","Documentary","Sci-Fi","",2022,56,"TV-14","English","USA",6.9,0,0,1,12,TRUE,2021-06-16,FALSE,1,1
+"movie_0243","new quest","Movie","Comedy","",1997,147,"TV-MA","Italian","USA",6.9,1340534,7497976,0,0,TRUE,2022-12-11,FALSE,0,0
+"movie_0244","little city","Movie","History","",2005,489.600000000001,"TV-G","English","USA",5,2185872,99312954.4,0,0,FALSE,2020-12-25,FALSE,0,0
+"movie_0245","night king","Movie","Mystery","Comedy",2010,81,"TV-Y7","German","USA",5.5,0,0,0,0,FALSE,2024-05-28,FALSE,1,1
+"movie_0246","empire adventure","Documentary","Documentary","",2001,71,"NC-17","English","UK",1.2,0,0,1,12,FALSE,2022-10-12,FALSE,1,1
+"movie_0247","bright princess","Documentary","Documentary","",2014,84,"TV-PG","English","France",6.4,0,0,1,12,FALSE,2022-07-16,TRUE,1,1
+"movie_0248","love storm","TV Series","Mystery","",2002,17,"TV-PG","Spanish","Japan",7,0,0,3,39,FALSE,2024-02-13,FALSE,1,1
+"movie_0249","city storm","Documentary","War","Action",2009,67,"TV-14","Hindi","USA",6.5,0,0,1,12,FALSE,2025-07-14,FALSE,1,1
+"movie_0250","first ice","Limited Series","Sci-Fi","Mystery",2002,21,"G","English","USA",2.6,0,0,5,170,FALSE,2024-07-24,TRUE,1,1
+"movie_0251","queen mystery","Limited Series","Comedy","",2013,1,"TV-G","English","South Korea",6.6,0,0,2,24,FALSE,2021-01-16,FALSE,1,1
+"movie_0252","my quest","Movie","Romance","",1995,140,"TV-14","Spanish","USA",6.2,19244906.2,99312954.4,0,0,FALSE,2020-10-12,FALSE,0,0
+"movie_0253","city queen","Documentary","Fantasy","",2013,99,"TV-G","Spanish","USA",5.1,0,0,1,12,TRUE,2020-11-04,TRUE,1,1
+"movie_0254","empire mystery","TV Series","Drama","",2024,38,"TV-14","English","Japan",7.1,0,0,3,84,FALSE,2021-09-19,FALSE,1,1
+"movie_0255","dark legend","Movie","Animation","Sport",2024,127,"R","Hindi","USA",3.4,247987,11671074,0,0,FALSE,2023-02-21,TRUE,0,0
+"movie_0256","kingdom war","Stand-up Comedy","Thriller","",2007,71,"TV-14","English","USA",6.6,0,0,1,12,FALSE,2025-03-07,TRUE,1,1
+"movie_0257","dragon king","Movie","History","",2001,109,"PG-13","English","Japan",6.6,3393573,40319055,0,0,TRUE,2022-07-25,FALSE,0,0
+"movie_0258","adventure love","Movie","Music","",2009,161,"TV-PG","English","USA",8.8,1206373,0,0,0,FALSE,2021-10-29,FALSE,0,0
+"movie_0259","princess warrior","Movie","Crime","",2004,114,"TV-Y7","English","Canada",6.9,702469,25878525,0,0,TRUE,2022-02-03,FALSE,0,0
+"movie_0260","love love","Stand-up Comedy","Action","",2018,55,"PG-13","French","USA",4.7,0,0,1,12,FALSE,2023-04-29,FALSE,1,1
+"movie_0261","hero dream","Movie","Biography","Crime",2013,88,"G","Italian","USA",9.1,19244906.2,0,0,0,FALSE,2025-04-11,TRUE,0,0
+"movie_0262","house secret","Movie","Sport","",2020,127,"TV-G","English","USA",4.8,0,5863373,0,0,FALSE,2023-02-02,FALSE,1,1
+"movie_0263","big ice","Movie","Music","Western",1994,93,"TV-MA","Hindi","South Korea",4.6,3501146,1126300,0,0,TRUE,2023-06-25,FALSE,0,0
+"movie_0264","our queen","Movie","Biography","Drama",2013,121,"PG","English","South Korea",8.4,8714072,35270961,0,0,FALSE,2022-09-26,FALSE,0,0
+"movie_0265","warrior fire","Movie","Western","",1994,98,"G","English","USA",4.5,19244906.2,6020161,0,0,FALSE,2020-10-07,FALSE,0,0
+"movie_0266","ice fire","TV Series","Romance","Family",2005,59,"TV-MA","English","Germany",4.1,0,0,12,136,FALSE,2025-05-31,FALSE,1,1
+"movie_0267","our war","Stand-up Comedy","Animation","",2024,51,"PG","Japanese","South Korea",8.3,0,0,1,12,FALSE,2021-03-22,FALSE,1,1
+"movie_0268","quest empire","Movie","Comedy","",2022,120,"G","English","Japan",6.7,11481343,727483,0,0,FALSE,2025-01-20,FALSE,0,0
+"movie_0269","secret mystery","Documentary","Drama","",2012,74,"PG-13","Italian","UK",9.8,0,0,1,12,FALSE,2024-10-25,FALSE,1,1
+"movie_0270","secret ice","Movie","Romance","",2020,152,"TV-G","English","UK",0.9,389524,492518,0,0,FALSE,2022-11-01,TRUE,0,0
+"movie_0271","our mission","TV Series","Music","War",2013,66,"PG-13","French","Japan",7.3,0,0,1,78,TRUE,2020-12-04,TRUE,1,1
+"movie_0272","day fire","Movie","Family","",2024,127,"TV-Y","English","South Korea",6.9,4158763,99312954.4,0,0,FALSE,2021-12-20,TRUE,0,0
+"movie_0273","new adventure","Stand-up Comedy","Adventure","",2003,54,"TV-Y7","Italian","UK",6.1,0,0,1,12,FALSE,2024-09-09,FALSE,1,1
+"movie_0274","story phoenix","Stand-up Comedy","Horror","",1996,51,"NC-17","Korean","USA",6.8,0,0,1,12,TRUE,2024-11-11,FALSE,1,1
+"movie_0275","night city","Stand-up Comedy","Drama","",2007,67,"TV-MA","English","USA",6.6,0,0,1,12,FALSE,2025-05-09,FALSE,1,1
+"movie_0276","dark storm","TV Series","Family","",1991,24,"TV-Y","English","India",1.7,0,0,7,106,FALSE,2022-02-23,FALSE,1,1
+"movie_0277","an empire","TV Series","Adventure","",1991,25,"PG","English","USA",4.9,0,0,12,183,TRUE,2025-04-04,FALSE,1,1
+"movie_0278","dragon storm","TV Series","Documentary","",2023,63,"TV-MA","Hindi","USA",6.6,0,0,9,50,FALSE,2024-06-09,FALSE,1,1
+"movie_0279","my adventure","TV Series","War","Sport",2011,53,"TV-Y","English","USA",6.6,0,0,13,77,FALSE,2022-06-21,TRUE,1,1
+"movie_0280","legend story","Movie","Mystery","",1995,100,"TV-14","Italian","USA",6.7,4869656,99312954.4,0,0,FALSE,2020-09-23,FALSE,0,0
+"movie_0281","house phoenix","Movie","Crime","",2017,115,"PG","English","USA",6.5,0,394055,0,0,FALSE,2022-07-21,FALSE,1,1
+"movie_0282","secret ice","Movie","Comedy","Drama",1997,90,"TV-Y","English","USA",4.2,2199222,32143697,0,0,FALSE,2024-03-05,TRUE,0,0
+"movie_0283","big mission","Movie","History","",2009,118,"TV-Y7","Spanish","UK",6.1,1107126,0,0,0,TRUE,2024-04-22,TRUE,0,0
+"movie_0284","king dragon","Movie","Romance","Western",1990,112,"TV-14","English","USA",6.8,3329576,45321,0,0,TRUE,2021-05-15,FALSE,0,0
+"movie_0285","dragon dragon","Documentary","Horror","",2024,85,"PG","English","South Korea",5.1,0,0,1,12,FALSE,2023-10-13,FALSE,1,1
+"movie_0286","first queen","Stand-up Comedy","Thriller","",1995,63,"TV-Y7","Spanish","Germany",7.3,0,0,1,12,FALSE,2022-10-03,TRUE,1,1
+"movie_0287","the adventure","TV Series","Animation","",1995,76,"TV-Y7","Japanese","USA",2.7,0,0,1,196.96,FALSE,2021-12-24,FALSE,1,1
+"movie_0288","mystery adventure","Stand-up Comedy","Music","Sci-Fi",2005,66,"PG","German","USA",5.8,0,0,1,12,TRUE,2021-02-24,FALSE,1,1
+"movie_0289","love city","TV Series","Action","Adventure",2007,57,"NC-17","English","Canada",8.2,0,0,12,75,FALSE,2021-05-14,TRUE,1,1
+"movie_0290","dark city","Documentary","Animation","War",1992,84,"TV-MA","English","Germany",5.9,0,0,1,12,FALSE,2023-03-16,FALSE,1,1
+"movie_0291","princess war","Stand-up Comedy","Romance","",2002,58,"TV-G","English","USA",7.6,0,0,1,12,FALSE,2024-11-06,FALSE,1,1
+"movie_0292","family princess","Movie","Adventure","",2000,67,"G","English","France",8.4,0,35807632,0,0,FALSE,2023-05-17,FALSE,1,1
+"movie_0293","quest adventure","Movie","Adventure","",2009,85,"NC-17","English","Canada",7,6918517,13786456,0,0,FALSE,2025-01-30,FALSE,0,0
+"movie_0294","king kingdom","Movie","Horror","Western",1999,118,"TV-MA","English","Canada",8.5,3103842,1012901,0,0,FALSE,2025-05-01,FALSE,0,0
+"movie_0295","little dragon","TV Series","Fantasy","History",2011,50,"G","English","USA",5.2,0,0,2,27,FALSE,2020-11-06,FALSE,1,1
+"movie_0296","ice mystery","Movie","Documentary","",2011,102,"PG","French","USA",7.5,2650811,0,0,0,FALSE,2024-11-01,FALSE,0,0
+"movie_0297","secret mission","Documentary","Thriller","",1995,99,"NC-17","English","USA",4.8,0,0,1,12,FALSE,2022-11-02,FALSE,1,1
+"movie_0298","city dream","Movie","Adventure","",2014,121,"PG-13","Korean","USA",6.9,2411775,4770765,0,0,TRUE,2021-02-08,FALSE,0,0
+"movie_0299","quest mystery","TV Series","Biography","",1986,36,"R","French","Japan",7.4,0,0,3,54,TRUE,2022-12-15,TRUE,1,1
+"movie_0300","house war","Movie","Sci-Fi","",2024,155,"NC-17","English","USA",6.9,0,0,0,0,FALSE,2021-02-25,FALSE,1,1
+"movie_0301","fire battle","Movie","Horror","",1991,108,"TV-Y7","Japanese","USA",5.6,902788,27378941,0,0,FALSE,2024-11-20,FALSE,0,0
+"movie_0302","bright battle","Movie","Drama","",1997,105,"TV-MA","English","USA",6.5,5521994,0,0,0,FALSE,2021-09-06,FALSE,0,0
+"movie_0303","quest princess","Movie","History","Western",1990,132,"TV-Y","Japanese","USA",6.3,19244906.2,12209704,0,0,FALSE,2022-04-28,TRUE,0,0
+"movie_0304","dragon warrior","Movie","History","Horror",2011,122,"NC-17","Hindi","USA",6.3,13039164,51016239,0,0,TRUE,2023-06-05,FALSE,0,0
+"movie_0305","legend house","Movie","Adventure","Fantasy",1984,113,"TV-MA","English","Japan",4.6,0,53455628,0,0,TRUE,2021-06-14,FALSE,1,1
+"movie_0306","warrior house","TV Series","Comedy","",2009,45,"G","English","UK",6.6,0,0,1,83,FALSE,2021-10-02,FALSE,1,1
+"movie_0307","dark ice","Stand-up Comedy","Crime","",2023,48,"TV-Y","Italian","India",10,0,0,1,12,FALSE,2024-03-02,FALSE,1,1
+"movie_0308","old dragon","Documentary","Western","",2010,86,"PG-13","Korean","Canada",3.2,0,0,1,12,FALSE,2023-10-30,FALSE,1,1
+"movie_0309","war legend","Movie","Sci-Fi","",2006,151,"TV-PG","English","USA",7.3,809242,69363028,0,0,FALSE,2023-11-03,TRUE,0,0
+"movie_0310","legend ice","Limited Series","Family","War",2003,32,"R","English","USA",6.3,0,0,14,86,FALSE,2021-01-24,FALSE,1,1
+"movie_0311","war empire","Stand-up Comedy","Adventure","",1993,72,"TV-MA","English","USA",3.9,0,0,1,12,TRUE,2023-01-16,FALSE,1,1
+"movie_0312","king legend","TV Series","Romance","",2019,64,"PG","English","UK",7.4,0,0,1,192,TRUE,2022-11-24,TRUE,1,1
+"movie_0313","quest love","TV Series","Adventure","War",2004,9,"NC-17","English","Canada",0.5,0,0,1,124,FALSE,2023-10-24,FALSE,1,1
+"movie_0314","adventure princess","Movie","Sci-Fi","",2023,113,"PG","English","India",5.1,4061469,9300295,0,0,FALSE,2024-11-01,FALSE,0,0
+"movie_0315","big hero","Stand-up Comedy","Mystery","Fantasy",1997,51,"R","English","Canada",7.9,0,0,1,12,TRUE,2021-02-05,FALSE,1,1
+"movie_0316","mystery kingdom","Movie","History","",2018,119,"NC-17","Hindi","USA",6.8,0,0,0,0,FALSE,2024-03-25,FALSE,1,1
+"movie_0317","mystery love","Movie","Drama","",1996,87,"TV-Y","French","South Korea",8.6,0,544577,0,0,TRUE,2025-03-25,TRUE,1,1
+"movie_0318","mission day","Movie","Crime","",1994,117,"TV-Y","English","USA",5.5,1807059,57074574,0,0,FALSE,2021-05-12,FALSE,0,0
+"movie_0319","my journey","Movie","Crime","",1990,121,"TV-Y7","Japanese","South Korea",5.3,0,5454814,0,0,TRUE,2021-04-06,TRUE,1,1
+"movie_0320","fire queen","Movie","Documentary","",1991,101,"R","English","USA",5.3,9012419,0,0,0,FALSE,2021-08-02,FALSE,0,0
+"movie_0321","first family","Stand-up Comedy","Comedy","",2014,489.600000000001,"TV-MA","English","Germany",7,0,0,1,12,FALSE,2024-03-24,TRUE,1,1
+"movie_0322","day night","Movie","Western","",2015,109,"PG","Spanish","USA",6.2,18695365,99312954.4,0,0,TRUE,2022-07-30,FALSE,0,0
+"movie_0323","little city","Movie","Adventure","Mystery",2011,145,"NC-17","English","Canada",4.4,183679,99312954.4,0,0,FALSE,2022-11-09,TRUE,0,0
+"movie_0324","phoenix dragon","Documentary","Fantasy","",1994,66,"PG","English","Canada",6.9,0,0,1,12,FALSE,2021-01-02,TRUE,1,1
+"movie_0325","dream family","Stand-up Comedy","Sport","",2011,64,"TV-14","Hindi","Canada",4.8,0,0,1,12,FALSE,2025-07-31,FALSE,1,1
+"movie_0326","our queen","Movie","Family","",2018,98,"TV-MA","English","South Korea",4.8,0,0,0,0,FALSE,2023-02-12,FALSE,1,1
+"movie_0327","the storm","TV Series","History","Drama",2005,48,"G","English","USA",7.4,0,0,2,164,FALSE,2021-10-05,FALSE,1,1
+"movie_0328","mystery day","Documentary","Horror","Family",2024,46,"TV-Y7","Italian","USA",9.3,0,0,1,12,FALSE,2021-04-15,FALSE,1,1
+"movie_0329","battle phoenix","Stand-up Comedy","Documentary","",2021,49,"TV-Y7","English","USA",6.6,0,0,1,12,FALSE,2025-07-25,TRUE,1,1
+"movie_0330","legend king","Documentary","Biography","",2010,71,"PG","English","UK",9.5,0,0,1,12,FALSE,2023-12-06,FALSE,1,1
+"movie_0331","a quest","TV Series","Family","",2018,36,"PG","Italian","UK",6.6,0,0,3,138,TRUE,2020-12-01,FALSE,1,1
+"movie_0332","queen dream","Stand-up Comedy","Fantasy","Crime",1997,75,"TV-Y7","Spanish","USA",6.5,0,0,1,12,TRUE,2023-07-11,FALSE,1,1
+"movie_0333","the dream","Movie","Action","",2019,72,"TV-14","Korean","USA",8,3004314,0,0,0,TRUE,2020-11-09,FALSE,0,0
+"movie_0334","story warrior","Limited Series","Comedy","",1998,39,"TV-14","Hindi","India",6.2,0,0,13,31,FALSE,2022-10-31,FALSE,1,1
+"movie_0335","quest mission","TV Series","Crime","",2016,27,"TV-14","Japanese","South Korea",6.6,0,0,1,149,FALSE,2022-12-28,FALSE,1,1
+"movie_0336","queen warrior","Movie","Comedy","",2006,183,"G","English","UK",7.8,1807604,71561859,0,0,TRUE,2021-02-09,FALSE,0,0
+"movie_0337","storm dream","TV Series","Documentary","",2014,31,"TV-Y7","French","USA",5.9,0,0,7,196.96,TRUE,2024-08-12,FALSE,1,1
+"movie_0338","old mission","Movie","Romance","Sci-Fi",2004,106,"NC-17","English","Canada",4.7,262233,90979995,0,0,TRUE,2022-01-24,FALSE,0,0
+"movie_0339","big empire","Movie","Fantasy","Sport",1961,106,"PG-13","Spanish","Japan",7.5,945058,0,0,0,FALSE,2024-10-19,FALSE,0,0
+"movie_0340","mission quest","Movie","Documentary","",2010,124,"TV-Y","English","USA",6.3,1398006,0,0,0,TRUE,2020-12-14,FALSE,0,0
+"movie_0341","battle ice","TV Series","Western","",2005,64,"NC-17","English","USA",6.3,0,0,1,8,FALSE,2024-02-18,TRUE,1,1
+"movie_0342","adventure story","Movie","Biography","",2001,103,"TV-Y7","English","USA",7.4,1502147,99312954.4,0,0,FALSE,2023-07-03,FALSE,0,0
+"movie_0343","legend mission","Movie","Animation","",2022,119,"PG-13","English","USA",5.1,0,42547797,0,0,FALSE,2023-01-19,FALSE,1,1
+"movie_0344","mystery fire","Movie","Thriller","",2017,110,"PG","English","South Korea",5.1,6458405,2367644,0,0,FALSE,2022-09-26,TRUE,0,0
+"movie_0345","dark secret","TV Series","Fantasy","",2001,64,"NC-17","English","USA",7.5,0,0,3,146,FALSE,2023-02-19,FALSE,1,1
+"movie_0346","house city","TV Series","Animation","Sci-Fi",2008,30,"TV-PG","English","South Korea",6.6,0,0,2,50,FALSE,2023-01-02,FALSE,1,1
+"movie_0347","story warrior","TV Series","Comedy","Family",1996,51,"NC-17","French","USA",4.9,0,0,9,168,TRUE,2021-05-23,FALSE,1,1
+"movie_0348","quest adventure","TV Series","Sport","Family",2024,43,"TV-PG","Spanish","USA",6.4,0,0,13,123,TRUE,2025-01-10,FALSE,1,1
+"movie_0349","fire king","Documentary","Romance","",2018,101,"PG","English","USA",7.3,0,0,1,12,FALSE,2023-03-27,TRUE,1,1
+"movie_0350","dragon hero","Movie","History","Family",2020,91,"G","English","South Korea",8,16253067,0,0,0,FALSE,2021-08-19,TRUE,0,0
+"movie_0351","family story","TV Series","Family","",2018,28,"TV-Y","English","USA",4.6,0,0,2,191,TRUE,2020-09-11,FALSE,1,1
+"movie_0352","new kingdom","Documentary","Thriller","",2022,54,"TV-Y","Japanese","USA",6.1,0,0,1,12,FALSE,2024-03-23,FALSE,1,1
+"movie_0353","quest hero","Limited Series","Action","Adventure",2009,437,"NC-17","Italian","USA",5.5,0,0,7,19,FALSE,2020-08-21,FALSE,1,1
+"movie_0354","new adventure","Documentary","Adventure","Thriller",2010,85,"G","Spanish","USA",7,0,0,1,12,FALSE,2021-01-20,FALSE,1,1
+"movie_0355","dream dream","Limited Series","Family","Crime",2019,65,"R","English","USA",5.9,0,0,4,177,FALSE,2024-07-24,FALSE,1,1
+"movie_0356","love empire","TV Series","Music","History",1999,43,"TV-PG","Korean","USA",7.9,0,0,14,67,FALSE,2023-07-28,FALSE,1,1
+"movie_0357","our queen","Movie","Crime","",2006,115,"TV-Y","English","USA",6.6,1750267,0,0,0,FALSE,2025-06-22,FALSE,0,0
+"movie_0358","legend secret","TV Series","Drama","",1992,37,"TV-MA","English","Japan",9,0,0,4,148,FALSE,2025-04-21,FALSE,1,1
+"movie_0359","quest hero","Movie","Biography","",1973,103,"TV-14","Korean","USA",6.6,19244906.2,99312954.4,0,0,FALSE,2025-06-13,TRUE,0,0
+"movie_0360","fire night","TV Series","Comedy","Adventure",1953,52,"TV-14","English","USA",4,0,0,2,116,FALSE,2022-12-14,TRUE,1,1
+"movie_0361","war adventure","Movie","Drama","",2022,22,"TV-MA","English","USA",6.8,0,0,0,0,TRUE,2022-06-04,FALSE,1,1
+"movie_0362","bright phoenix","Documentary","Drama","",2021,84,"TV-Y","English","UK",7.9,0,0,1,12,TRUE,2023-05-09,FALSE,1,1
+"movie_0363","night secret","Movie","Animation","",1990,150,"PG","German","USA",0.5,9373108,1233608,0,0,FALSE,2022-02-11,FALSE,0,0
+"movie_0364","princess house","Movie","Thriller","",2009,95,"TV-Y7","English","USA",7.9,19244906.2,4193030,0,0,TRUE,2020-11-02,FALSE,0,0
+"movie_0365","first quest","TV Series","Action","Mystery",2011,70,"NC-17","English","USA",7.3,0,0,1,170,FALSE,2025-06-30,TRUE,1,1
+"movie_0366","war dragon","Limited Series","Crime","Family",2001,24,"TV-14","English","Canada",8.2,0,0,10,185,FALSE,2024-07-19,FALSE,1,1
+"movie_0367","storm secret","Movie","Drama","",1991,92,"TV-MA","English","USA",4.7,6921573,0,0,0,FALSE,2022-11-29,TRUE,0,0
+"movie_0368","the empire","Movie","Western","Fantasy",2018,95,"TV-PG","French","Canada",6.1,19244906.2,0,0,0,TRUE,2021-05-17,FALSE,0,0
+"movie_0369","big ice","Documentary","Family","Adventure",2008,58,"TV-Y","Hindi","Japan",5.9,0,0,1,12,FALSE,2023-05-08,FALSE,1,1
+"movie_0370","princess quest","Movie","Music","Thriller",2015,87,"PG-13","Spanish","USA",4.6,1373809,0,0,0,FALSE,2021-09-16,FALSE,0,0
+"movie_0371","king love","TV Series","Biography","Drama",2017,46,"TV-PG","Hindi","South Korea",6.3,0,0,1,168,TRUE,2025-07-23,FALSE,1,1
+"movie_0372","love fire","Movie","Documentary","",2022,93,"TV-Y7","English","South Korea",9.5,3882573,0,0,0,FALSE,2023-02-04,FALSE,0,0
+"movie_0373","queen journey","TV Series","War","",2001,51,"TV-MA","Spanish","South Korea",5.5,0,0,7,147,FALSE,2021-06-17,FALSE,1,1
+"movie_0374","the story","Movie","Adventure","",2023,104,"TV-14","English","USA",7.5,766474,7301565,0,0,FALSE,2024-03-05,TRUE,0,0
+"movie_0375","last kingdom","Movie","Fantasy","Animation",2019,129,"TV-Y7","Japanese","Canada",7.3,11990701,0,0,0,FALSE,2021-03-15,FALSE,0,0
+"movie_0376","city legend","Movie","Family","Animation",2021,106,"TV-PG","English","USA",7.6,19244906.2,0,0,0,FALSE,2023-06-21,FALSE,0,0
+"movie_0377","ice journey","Movie","Animation","",2016,105,"NC-17","Japanese","USA",5.6,4268594,3435870,0,0,FALSE,2024-10-10,FALSE,0,0
+"movie_0378","quest family","Stand-up Comedy","Sport","",2005,42,"TV-PG","English","USA",5.1,0,0,1,12,FALSE,2025-02-28,FALSE,1,1
+"movie_0379","our battle","TV Series","Horror","",2007,41,"TV-G","Japanese","South Korea",4.6,0,0,13,164,FALSE,2021-03-23,FALSE,1,1
+"movie_0380","house dragon","Stand-up Comedy","Animation","",2015,66,"PG-13","Hindi","USA",8.2,0,0,1,12,TRUE,2023-06-17,FALSE,1,1
+"movie_0381","dragon princess","Movie","Biography","Sport",2023,116,"TV-G","English","Germany",6.2,8059992,1032562,0,0,FALSE,2021-11-26,FALSE,0,0
+"movie_0382","love empire","Documentary","War","War",2012,66,"TV-G","English","Canada",5.5,0,0,1,12,FALSE,2021-10-10,TRUE,1,1
+"movie_0383","day city","TV Series","Crime","",2022,42,"G","English","USA",5.7,0,0,6,89,FALSE,2023-09-28,FALSE,1,1
+"movie_0384","night adventure","Stand-up Comedy","Music","Thriller",2013,42,"G","English","USA",8.8,0,0,1,12,TRUE,2022-02-27,FALSE,1,1
+"movie_0385","little journey","Documentary","Family","Animation",2020,72,"TV-Y7","English","USA",7.1,0,0,1,12,FALSE,2025-02-27,FALSE,1,1
+"movie_0386","hero hero","Stand-up Comedy","War","Adventure",2015,42,"PG","English","USA",8.6,0,0,1,12,FALSE,2020-10-11,FALSE,1,1
+"movie_0387","night king","Movie","Animation","",2024,90,"TV-14","English","India",5.1,0,0,0,0,FALSE,2025-06-09,TRUE,1,1
+"movie_0388","an mission","Documentary","Animation","Thriller",1994,35,"TV-G","Spanish","USA",2,0,0,1,12,FALSE,2024-07-29,FALSE,1,1
+"movie_0389","last mission","Movie","History","Western",2023,122,"TV-14","German","Canada",8.7,17655990,7400330,0,0,FALSE,2023-03-20,TRUE,0,0
+"movie_0390","old night","Movie","Fantasy","Sci-Fi",2004,94,"TV-Y7","Spanish","USA",2.7,1231347,2483539,0,0,FALSE,2024-07-05,FALSE,0,0
+"movie_0391","night night","Stand-up Comedy","Crime","Biography",2006,87,"TV-PG","French","USA",1.2,0,0,1,12,TRUE,2021-04-22,FALSE,1,1
+"movie_0392","hero city","TV Series","Adventure","",2010,49,"PG-13","French","USA",8.9,0,0,8,101,FALSE,2024-09-26,TRUE,1,1
+"movie_0393","a storm","Stand-up Comedy","Sci-Fi","",1999,57,"TV-MA","English","South Korea",7.7,0,0,1,12,FALSE,2020-12-07,FALSE,1,1
+"movie_0394","dark kingdom","TV Series","Adventure","",2014,26,"R","Spanish","South Korea",6.1,0,0,6,97,TRUE,2023-12-17,FALSE,1,1
+"movie_0395","princess queen","Stand-up Comedy","Family","Drama",2022,36,"NC-17","English","USA",4.6,0,0,1,12,FALSE,2024-04-04,FALSE,1,1
+"movie_0396","storm night","Movie","War","",2003,120,"PG-13","English","USA",7.2,282251,4665806,0,0,FALSE,2023-08-15,FALSE,0,0
+"movie_0397","legend adventure","Stand-up Comedy","Sci-Fi","",2016,72,"G","Spanish","USA",6,0,0,1,12,FALSE,2022-01-18,TRUE,1,1
+"movie_0398","hero story","Movie","Animation","",1997,101,"R","English","South Korea",5.5,19244906.2,0,0,0,FALSE,2023-09-28,FALSE,0,0
+"movie_0399","our ice","Documentary","Horror","",1996,87,"TV-Y7","French","USA",6.8,0,0,1,12,FALSE,2021-12-16,FALSE,1,1
+"movie_0400","night queen","Movie","Action","",2002,73,"TV-MA","Korean","UK",4.6,179175,28601135,0,0,FALSE,2024-05-29,FALSE,0,0
+"movie_0401","queen war","Movie","Family","Action",2022,159,"TV-Y","English","USA",5.5,1612758,0,0,0,FALSE,2022-06-29,FALSE,0,0
+"movie_0402","fire dream","Stand-up Comedy","Romance","",2005,41,"NC-17","German","Canada",7.1,0,0,1,12,FALSE,2023-04-05,FALSE,1,1
+"movie_0403","legend legend","Movie","History","",1992,106,"R","Japanese","USA",2,0,99312954.4,0,0,TRUE,2022-01-07,FALSE,1,1
+"movie_0404","family story","TV Series","War","",1990,53,"TV-14","Korean","India",7.2,0,0,2,53,TRUE,2020-09-21,FALSE,1,1
+"movie_0405","old ice","Documentary","Biography","Crime",2006,44,"R","English","South Korea",6.9,0,0,1,12,FALSE,2021-08-27,FALSE,1,1
+"movie_0406","mystery empire","Movie","Adventure","",2015,95,"G","English","UK",7.2,3408376,0,0,0,TRUE,2023-07-14,FALSE,0,0
+"movie_0407","phoenix adventure","Stand-up Comedy","Action","",1954,48,"TV-PG","English","USA",6.4,0,0,1,12,TRUE,2021-09-14,TRUE,1,1
+"movie_0408","adventure love","Stand-up Comedy","Music","",2008,43,"R","English","Canada",7.8,0,0,1,12,FALSE,2023-10-20,TRUE,1,1
+"movie_0409","mystery storm","Documentary","Fantasy","Drama",2020,99,"TV-14","English","USA",7.8,0,0,1,12,FALSE,2023-04-18,TRUE,1,1
+"movie_0410","last battle","Movie","Drama","",2022,489.600000000001,"TV-14","English","USA",5.4,19244906.2,99312954.4,0,0,FALSE,2024-04-24,FALSE,0,0
+"movie_0411","dream dream","Movie","Music","Romance",2013,126,"TV-Y","Japanese","USA",5.1,0,5867475,0,0,FALSE,2025-03-15,TRUE,1,1
+"movie_0412","princess adventure","Limited Series","Comedy","",1996,68,"TV-G","Spanish","USA",3.8,0,0,9,132,FALSE,2025-01-13,FALSE,1,1
+"movie_0413","legend day","Movie","Family","Family",2006,80,"TV-Y","Hindi","UK",3.5,11692054,4330263,0,0,FALSE,2022-10-29,FALSE,0,0
+"movie_0414","adventure queen","TV Series","Documentary","Drama",1999,42,"G","English","Germany",7.4,0,0,13,141,TRUE,2025-07-19,FALSE,1,1
+"movie_0415","last quest","Documentary","Horror","Biography",1993,71,"PG-13","English","UK",5,0,0,1,12,TRUE,2025-03-24,FALSE,1,1
+"movie_0416","a mystery","Stand-up Comedy","Mystery","",1992,45,"R","Spanish","USA",9.1,0,0,1,12,FALSE,2021-06-11,FALSE,1,1
+"movie_0417","dragon day","Documentary","Western","",2011,91,"PG-13","English","USA",5.4,0,0,1,12,FALSE,2023-06-07,FALSE,1,1
+"movie_0418","big story","Movie","Western","",2020,146,"TV-14","English","UK",5.8,2059746,0,0,0,FALSE,2020-10-15,FALSE,0,0
+"movie_0419","new fire","TV Series","Fantasy","",1993,65,"TV-14","Spanish","India",5.2,0,0,8,98,FALSE,2025-01-03,FALSE,1,1
+"movie_0420","war hero","Stand-up Comedy","Western","",1990,53,"PG","Spanish","South Korea",6.8,0,0,1,12,FALSE,2023-09-04,FALSE,1,1
+"movie_0421","legend love","Documentary","War","",1997,66,"PG","English","USA",5.2,0,0,1,12,FALSE,2025-05-30,FALSE,1,1
+"movie_0422","city night","TV Series","Family","",2021,46,"PG-13","Hindi","Germany",5.8,0,0,5,129,FALSE,2022-12-20,FALSE,1,1
+"movie_0423","our night","Movie","Biography","",2005,143,"TV-PG","English","USA",3.4,1053266,99312954.4,0,0,FALSE,2022-11-05,FALSE,0,0
+"movie_0424","battle secret","Documentary","Mystery","",2004,56,"TV-Y7","English","USA",0.9,0,0,1,12,FALSE,2021-04-06,FALSE,1,1
+"movie_0425","storm kingdom","TV Series","Adventure","",1994,53,"NC-17","English","USA",6.6,0,0,8,134,FALSE,2023-01-09,FALSE,1,1
+"movie_0426","warrior king","Movie","Action","",2004,131,"PG","French","USA",5.2,5821087,15559765,0,0,FALSE,2024-03-17,FALSE,0,0
+"movie_0427","a king","Movie","Western","",2023,59,"PG-13","English","South Korea",7.2,19244906.2,99312954.4,0,0,FALSE,2024-02-15,FALSE,0,0
+"movie_0428","empire king","Movie","Thriller","Adventure",2020,105,"TV-Y7","English","Japan",6.9,19244906.2,65276378,0,0,TRUE,2022-12-25,TRUE,0,0
+"movie_0429","kingdom city","TV Series","History","",1994,53,"NC-17","English","USA",5.7,0,0,9,99,FALSE,2020-10-22,FALSE,1,1
+"movie_0430","dragon princess","Movie","Sci-Fi","Romance",1990,126,"TV-Y","English","USA",5.2,300376,31428491,0,0,FALSE,2021-03-02,TRUE,0,0
+"movie_0431","a adventure","Movie","History","",2003,97,"R","English","USA",6.9,816637,21732153,0,0,FALSE,2021-05-30,FALSE,0,0
+"movie_0432","love journey","Limited Series","Animation","",2019,60,"R","French","USA",6.7,0,0,1,29,TRUE,2021-04-26,FALSE,1,1
+"movie_0433","our city","Movie","Crime","",1999,113,"TV-MA","English","France",6.5,0,2627409,0,0,FALSE,2024-07-19,TRUE,1,1
+"movie_0434","princess battle","Movie","Fantasy","",2011,90,"TV-Y","English","France",6.5,1346945,0,0,0,FALSE,2024-10-25,FALSE,0,0
+"movie_0435","mission phoenix","Documentary","Family","Thriller",2009,101,"TV-PG","English","Canada",6.2,0,0,1,12,FALSE,2023-11-25,TRUE,1,1
+"movie_0436","story city","Documentary","History","",2012,98,"NC-17","English","Germany",6.4,0,0,1,12,FALSE,2025-01-29,FALSE,1,1
+"movie_0437","ice secret","Movie","Animation","Drama",2016,93,"TV-PG","English","USA",8,237105,0,0,0,TRUE,2023-02-19,FALSE,0,0
+"movie_0438","mission fire","TV Series","Mystery","Animation",2007,40,"NC-17","Korean","USA",0.7,0,0,12,138,FALSE,2025-01-16,FALSE,1,1
+"movie_0439","little kingdom","Movie","Documentary","",2023,99,"TV-Y","English","USA",1.4,1745829,1894665,0,0,FALSE,2023-08-08,FALSE,0,0
+"movie_0440","love war","Movie","Biography","Animation",2023,132,"TV-G","Hindi","USA",7.4,8101114,18148075,0,0,TRUE,2021-08-30,FALSE,0,0
+"movie_0441","day legend","TV Series","Comedy","Thriller",1993,56,"TV-G","Hindi","USA",4,0,0,8,196.96,FALSE,2021-07-14,FALSE,1,1
+"movie_0442","dragon storm","Stand-up Comedy","War","",1990,59,"G","English","USA",6.6,0,0,1,12,TRUE,2022-08-05,FALSE,1,1
+"movie_0443","battle legend","Movie","Documentary","Thriller",2011,88,"R","English","South Korea",6.5,1448215,7347430,0,0,FALSE,2020-09-10,FALSE,0,0
+"movie_0444","dragon mystery","TV Series","Romance","",2010,58,"TV-Y","English","USA",7.8,0,0,3,129,FALSE,2023-03-23,TRUE,1,1
+"movie_0445","secret family","Movie","Thriller","Fantasy",1999,76,"TV-Y7","English","UK",4.6,460104,11699392,0,0,FALSE,2022-08-05,FALSE,0,0
+"movie_0446","queen mission","TV Series","Adventure","",1994,50,"PG","English","Canada",8.5,0,0,12,123,TRUE,2024-09-21,TRUE,1,1
+"movie_0447","house night","Stand-up Comedy","History","",2005,31,"G","Italian","Germany",4.7,0,0,1,12,FALSE,2023-04-30,TRUE,1,1
+"movie_0448","story hero","Movie","Comedy","",1993,101,"TV-MA","English","USA",0.5,3865797,5081496,0,0,TRUE,2020-12-15,FALSE,0,0
+"movie_0449","night house","TV Series","Horror","Western",2003,16,"TV-Y7","English","France",7.5,0,0,3,126,TRUE,2024-12-04,FALSE,1,1
+"movie_0450","a quest","Stand-up Comedy","Action","",2005,57,"NC-17","English","USA",10,0,0,1,12,FALSE,2025-05-13,TRUE,1,1
+"movie_0451","family legend","Movie","Family","Sport",2005,109,"TV-MA","Japanese","Japan",6.8,2290910,0,0,0,TRUE,2024-11-16,FALSE,0,0
+"movie_0452","family secret","Limited Series","Romance","",2024,56,"TV-Y7","French","USA",0.5,0,0,11,58,TRUE,2023-12-23,FALSE,1,1
+"movie_0453","princess dream","Movie","Adventure","",2007,92,"TV-MA","English","Germany",9.2,3945580,99312954.4,0,0,FALSE,2021-03-16,FALSE,0,0
+"movie_0454","princess queen","Movie","Mystery","",1998,113,"NC-17","Hindi","UK",6.6,357135,1413140,0,0,FALSE,2022-07-31,FALSE,0,0
+"movie_0455","journey quest","Movie","Fantasy","",2008,117,"PG-13","English","France",6.5,0,49402926,0,0,FALSE,2025-02-22,FALSE,1,1
+"movie_0456","ice legend","Movie","War","",1979,104,"PG-13","Hindi","USA",4.6,0,96016345,0,0,FALSE,2025-07-18,FALSE,1,1
+"movie_0457","the day","TV Series","Drama","Family",1995,45,"G","Hindi","USA",1.7,0,0,1,97,FALSE,2023-03-02,FALSE,1,1
+"movie_0458","secret hero","TV Series","Action","",2018,57,"R","English","USA",6.5,0,0,6,173,TRUE,2023-03-08,FALSE,1,1
+"movie_0459","ice phoenix","Movie","War","",1997,98,"TV-MA","English","USA",8.1,0,2089087,0,0,TRUE,2024-08-04,TRUE,1,1
+"movie_0460","family journey","TV Series","Documentary","History",2013,24,"TV-14","Italian","Japan",6.5,0,0,9,66,FALSE,2022-02-23,FALSE,1,1
+"movie_0461","king queen","Stand-up Comedy","Fantasy","",2003,61,"TV-PG","Spanish","Canada",5.6,0,0,1,12,TRUE,2024-05-07,FALSE,1,1
+"movie_0462","last kingdom","TV Series","Drama","",2007,53,"TV-PG","Spanish","USA",9,0,0,13,17,TRUE,2023-05-23,FALSE,1,1
+"movie_0463","phoenix day","TV Series","Comedy","",2007,28,"TV-14","English","USA",8.3,0,0,13,166,FALSE,2022-11-14,FALSE,1,1
+"movie_0464","old house","Limited Series","Sport","",1993,38,"TV-Y","English","USA",4.9,0,0,6,176,FALSE,2021-05-04,TRUE,1,1
+"movie_0465","battle fire","Documentary","Romance","",2006,91,"R","Korean","USA",7.4,0,0,1,12,FALSE,2023-08-04,FALSE,1,1
+"movie_0466","ice secret","Movie","Horror","",2011,132,"G","English","USA",5.5,6517048,0,0,0,FALSE,2021-06-26,FALSE,0,0
+"movie_0467","city fire","Documentary","Sci-Fi","Fantasy",1996,68,"NC-17","English","USA",7.1,0,0,1,12,FALSE,2023-11-05,FALSE,1,1
+"movie_0468","king phoenix","TV Series","Action","Western",1992,27,"TV-Y7","Spanish","USA",7,0,0,1,117,FALSE,2023-06-17,FALSE,1,1
+"movie_0469","hero empire","Documentary","Crime","",2002,92,"TV-Y","English","South Korea",6.6,0,0,1,12,TRUE,2020-12-27,FALSE,1,1
+"movie_0470","mystery house","Documentary","Biography","",1994,112,"TV-Y","Italian","USA",5.7,0,0,1,12,FALSE,2025-06-30,FALSE,1,1
+"movie_0471","our journey","TV Series","Documentary","",2017,45,"G","Italian","India",8,0,0,8,177,FALSE,2023-11-19,FALSE,1,1
+"movie_0472","quest house","Movie","Action","",1995,113,"TV-MA","English","USA",5.9,19244906.2,1149791,0,0,FALSE,2021-09-05,FALSE,0,0
+"movie_0473","journey house","Movie","Animation","Drama",1998,95,"NC-17","German","USA",5.5,1622983,0,0,0,TRUE,2021-11-01,FALSE,0,0
+"movie_0474","family quest","TV Series","Drama","",2007,37,"TV-Y7","English","Canada",7,0,0,14,21,TRUE,2020-08-19,FALSE,1,1
+"movie_0475","a secret","Movie","Drama","",2014,112,"PG","French","Germany",5.2,1942432,50827785,0,0,FALSE,2022-10-20,FALSE,0,0
+"movie_0476","bright storm","Limited Series","Action","Animation",2016,35,"TV-G","Spanish","South Korea",5.1,0,0,14,176,FALSE,2024-09-11,FALSE,1,1
+"movie_0477","dragon war","TV Series","Mystery","Family",2003,489.600000000001,"NC-17","Spanish","USA",5,0,0,4,196.96,TRUE,2024-05-09,FALSE,1,1
+"movie_0478","house storm","Movie","Comedy","Drama",2004,138,"NC-17","English","Canada",3.2,0,3733955,0,0,TRUE,2022-09-01,FALSE,1,1
+"movie_0479","little house","TV Series","Biography","Family",2013,56,"PG-13","Spanish","South Korea",6.8,0,0,8,94,FALSE,2020-09-13,FALSE,1,1
+"movie_0480","princess secret","Movie","History","Comedy",2013,118,"TV-G","English","USA",5.1,19244906.2,32785848,0,0,FALSE,2025-07-21,FALSE,0,0
+"movie_0481","ice story","Movie","War","",2021,122,"TV-Y7","English","UK",6.3,0,9899916,0,0,FALSE,2024-09-05,TRUE,1,1
+"movie_0482","love battle","TV Series","History","",1997,32,"TV-PG","English","USA",4.6,0,0,3,120,TRUE,2022-10-15,FALSE,1,1
+"movie_0483","war journey","Movie","Family","Thriller",2018,170,"R","English","USA",4,1509950,9208234,0,0,FALSE,2023-01-26,FALSE,0,0
+"movie_0484","secret king","Movie","Animation","Adventure",1994,90,"TV-MA","Japanese","South Korea",4.8,360993,2993307,0,0,FALSE,2020-08-24,FALSE,0,0
+"movie_0485","bright queen","Movie","Drama","",1998,133,"NC-17","French","USA",7.8,3337484,33861358,0,0,FALSE,2023-11-06,FALSE,0,0
+"movie_0486","story warrior","Movie","Sci-Fi","",1999,126,"TV-14","English","South Korea",6.4,857249,816259,0,0,TRUE,2023-01-04,FALSE,0,0
+"movie_0487","mystery secret","Documentary","History","Biography",1999,75,"TV-Y7","Korean","USA",6.6,0,0,1,12,FALSE,2021-05-26,FALSE,1,1
+"movie_0488","my mystery","Movie","Thriller","",2013,111,"NC-17","Hindi","Canada",5.1,252254,161575,0,0,FALSE,2023-07-16,FALSE,0,0
+"movie_0489","new dream","Movie","Sport","Thriller",2023,97,"NC-17","English","USA",0.5,19244906.2,2124537,0,0,FALSE,2021-07-11,FALSE,0,0
+"movie_0490","a storm","Documentary","Sci-Fi","Romance",1996,118,"TV-Y","Hindi","Canada",6.5,0,0,1,12,FALSE,2022-11-12,FALSE,1,1
+"movie_0491","new warrior","Documentary","Romance","",1999,80,"PG","English","Japan",8.1,0,0,1,12,FALSE,2025-06-18,TRUE,1,1
+"movie_0492","battle love","TV Series","Documentary","Thriller",2009,54,"NC-17","English","Canada",5.8,0,0,13,9,FALSE,2021-09-14,FALSE,1,1
+"movie_0493","story fire","Stand-up Comedy","War","",2023,34,"TV-PG","English","UK",6.1,0,0,1,12,TRUE,2024-04-16,FALSE,1,1
+"movie_0494","last day","TV Series","Music","",2005,44,"R","English","Germany",5.6,0,0,2,10,FALSE,2023-07-17,FALSE,1,1
+"movie_0495","city legend","TV Series","War","Biography",1997,44,"PG","English","USA",7.7,0,0,1,64,TRUE,2024-01-14,FALSE,1,1
+"movie_0496","last mission","Stand-up Comedy","Action","",2002,65,"NC-17","German","Japan",1.2,0,0,1,12,FALSE,2023-01-07,TRUE,1,1
+"movie_0497","big warrior","TV Series","Family","",1990,31,"TV-G","English","USA",4.7,0,0,1,31,FALSE,2025-07-13,TRUE,1,1
+"movie_0498","day dragon","TV Series","Western","",2024,71,"TV-G","English","USA",6.3,0,0,14,37,TRUE,2021-03-04,FALSE,1,1
+"movie_0499","family story","TV Series","Western","",1998,43,"TV-Y7","English","USA",7.9,0,0,10,163,FALSE,2023-10-01,FALSE,1,1
+"movie_0500","my journey","TV Series","Music","",1990,33,"TV-PG","English","USA",3.9,0,0,13,196.96,TRUE,2025-06-10,FALSE,1,1
+"movie_0501","hero dragon","Movie","Comedy","War",1995,100,"TV-Y","English","USA",9,16854758,2474372,0,0,TRUE,2022-09-13,TRUE,0,0
+"movie_0502","love legend","Stand-up Comedy","Sci-Fi","Crime",1993,51,"TV-Y7","Spanish","USA",6,0,0,1,12,FALSE,2024-02-16,FALSE,1,1
+"movie_0503","an dragon","TV Series","Horror","",1999,31,"R","Japanese","USA",7,0,0,1,80,FALSE,2020-08-03,FALSE,1,1
+"movie_0504","princess queen","TV Series","Animation","Adventure",2001,36,"R","English","USA",8.4,0,0,11,8,FALSE,2023-10-08,FALSE,1,1
+"movie_0505","phoenix day","Movie","Western","",1994,117,"TV-14","Korean","USA",8.5,994027,12250323,0,0,FALSE,2023-07-08,FALSE,0,0
+"movie_0506","love dream","TV Series","Drama","",1997,73,"TV-PG","French","USA",7.4,0,0,3,73,FALSE,2024-03-12,FALSE,1,1
+"movie_0507","old empire","Movie","Thriller","",1991,118,"PG-13","Spanish","USA",4.9,5168542,23957389,0,0,FALSE,2025-06-14,TRUE,0,0
+"movie_0508","last hero","Movie","Adventure","Crime",1956,123,"PG","English","Canada",8.1,1074818,32843910,0,0,FALSE,2023-10-13,FALSE,0,0
+"movie_0509","queen house","Movie","Western","Fantasy",1996,112,"PG","English","USA",6.1,4019610,0,0,0,FALSE,2025-05-23,FALSE,0,0
+"movie_0510","queen kingdom","Movie","History","",2015,100,"PG","Japanese","USA",0.7,0,0,0,0,TRUE,2020-12-23,TRUE,1,1
+"movie_0511","dragon princess","Movie","Music","",2018,92,"G","Spanish","South Korea",5.2,1893934,1115568,0,0,FALSE,2022-06-04,FALSE,0,0
+"movie_0512","an princess","Stand-up Comedy","Romance","",2017,93,"NC-17","English","USA",0.7,0,0,1,12,TRUE,2021-12-02,FALSE,1,1
+"movie_0513","night dragon","Movie","Drama","",2008,117,"TV-G","English","South Korea",8.1,1958252,3878800,0,0,TRUE,2023-03-03,FALSE,0,0
+"movie_0514","love love","Movie","Animation","Horror",2003,89,"TV-Y","French","USA",5.4,0,221786,0,0,TRUE,2021-09-08,FALSE,1,1
+"movie_0515","secret house","TV Series","Sci-Fi","",2006,30,"TV-G","English","Canada",6.5,0,0,11,58,FALSE,2021-03-22,FALSE,1,1
+"movie_0516","dragon storm","Documentary","Action","Comedy",2020,78,"TV-14","English","Canada",4.9,0,0,1,12,TRUE,2024-08-17,FALSE,1,1
+"movie_0517","storm legend","TV Series","War","",1998,48,"TV-MA","English","Japan",6,0,0,9,85,FALSE,2021-07-21,FALSE,1,1
+"movie_0518","a quest","Movie","Horror","",2002,89,"G","Spanish","USA",8.3,0,2839053,0,0,FALSE,2025-01-09,FALSE,1,1
+"movie_0519","quest house","Documentary","Fantasy","Drama",2020,98,"TV-PG","English","USA",5.9,0,0,1,12,FALSE,2025-06-11,FALSE,1,1
+"movie_0520","big queen","TV Series","Biography","",1992,28,"PG-13","English","Germany",6.5,0,0,5,9,FALSE,2023-05-25,FALSE,1,1
+"movie_0521","quest house","Movie","Crime","Mystery",2017,114,"TV-14","French","USA",5.6,2053432,99312954.4,0,0,FALSE,2024-07-31,FALSE,0,0
+"movie_0522","big warrior","Documentary","Romance","",2018,62,"TV-G","Hindi","Germany",8.1,0,0,1,12,TRUE,2022-08-31,FALSE,1,1
+"movie_0523","mystery war","Movie","Fantasy","",1981,159,"G","Italian","South Korea",6.9,5347853,30379004,0,0,FALSE,2023-12-08,FALSE,0,0
+"movie_0524","kingdom city","Movie","Crime","",2019,105,"TV-PG","English","Germany",4.3,8179501,0,0,0,FALSE,2023-02-07,FALSE,0,0
+"movie_0525","night warrior","Movie","Animation","Horror",2006,69,"TV-PG","English","USA",5.1,19244906.2,0,0,0,FALSE,2022-05-10,FALSE,0,0
+"movie_0526","journey warrior","Stand-up Comedy","Drama","Drama",2000,61,"TV-14","English","Canada",5.1,0,0,1,12,FALSE,2023-02-20,FALSE,1,1
+"movie_0527","hero story","Movie","Crime","",1993,95,"TV-Y7","English","South Korea",4.6,9430381,345877,0,0,FALSE,2025-01-22,FALSE,0,0
+"movie_0528","queen empire","Movie","Biography","",1995,91,"TV-G","French","USA",1.3,5268267,98546720,0,0,TRUE,2020-08-20,TRUE,0,0
+"movie_0529","legend warrior","Movie","Music","",1996,62,"PG","Korean","USA",7.5,0,4201576,0,0,FALSE,2024-04-17,FALSE,1,1
+"movie_0530","night legend","Documentary","Romance","",2015,91,"TV-MA","Japanese","USA",5.3,0,0,1,12,TRUE,2025-04-22,FALSE,1,1
+"movie_0531","last night","Movie","Western","Biography",2000,106,"PG","English","Japan",10,0,99312954.4,0,0,FALSE,2025-04-01,FALSE,1,1
+"movie_0532","first phoenix","TV Series","Adventure","Thriller",1998,36,"TV-14","English","USA",5.1,0,0,13,15,FALSE,2025-04-11,FALSE,1,1
+"movie_0533","first ice","Stand-up Comedy","Thriller","",2007,61,"TV-14","English","USA",6,0,0,1,12,FALSE,2025-01-11,TRUE,1,1
+"movie_0534","big family","TV Series","War","Sport",1991,14,"PG-13","English","USA",7.9,0,0,8,36,FALSE,2022-08-26,TRUE,1,1
+"movie_0535","last phoenix","TV Series","Romance","Thriller",1993,71,"R","Hindi","Canada",4.8,0,0,12,126,TRUE,2021-11-21,TRUE,1,1
+"movie_0536","bright hero","TV Series","Western","",1992,36,"TV-14","Japanese","USA",6.5,0,0,1,76,FALSE,2023-08-28,FALSE,1,1
+"movie_0537","new story","Movie","Horror","",1998,67,"PG-13","Italian","UK",5.6,3291844,9314738,0,0,TRUE,2022-08-16,TRUE,0,0
+"movie_0538","storm dream","Movie","Thriller","",2002,80,"NC-17","Spanish","France",4.9,13375163,0,0,0,FALSE,2022-10-21,TRUE,0,0
+"movie_0539","queen queen","Movie","Family","",2021,106,"TV-Y","English","USA",6.2,0,5088419,0,0,TRUE,2021-03-18,FALSE,1,1
+"movie_0540","warrior story","Documentary","Music","Mystery",2004,86,"TV-MA","Italian","USA",7.7,0,0,1,12,TRUE,2020-09-03,FALSE,1,1
+"movie_0541","princess love","Documentary","Adventure","",2024,76,"TV-G","Japanese","USA",4.8,0,0,1,12,FALSE,2021-02-28,FALSE,1,1
+"movie_0542","storm empire","Documentary","Horror","",2004,82,"TV-Y","English","USA",4.9,0,0,1,12,TRUE,2022-09-29,FALSE,1,1
+"movie_0543","war adventure","TV Series","War","Fantasy",2003,24,"G","English","Germany",4.8,0,0,3,170,FALSE,2024-08-24,FALSE,1,1
+"movie_0544","hero quest","Movie","Comedy","Music",1990,70,"TV-PG","English","Germany",5.9,1855152,0,0,0,FALSE,2022-10-26,FALSE,0,0
+"movie_0545","little mission","Documentary","Western","",1998,90,"G","Spanish","USA",8.6,0,0,1,12,TRUE,2022-02-22,FALSE,1,1
+"movie_0546","new queen","Movie","Adventure","Sport",2011,100,"G","Korean","Canada",5.2,19244906.2,1247942,0,0,FALSE,2024-04-18,FALSE,0,0
+"movie_0547","fire mission","TV Series","History","",2011,55,"PG","Italian","South Korea",4.6,0,0,8,41,TRUE,2025-07-30,FALSE,1,1
+"movie_0548","story hero","Documentary","Comedy","Adventure",1990,92,"R","English","Germany",6.6,0,0,1,12,FALSE,2024-04-13,FALSE,1,1
+"movie_0549","a adventure","Movie","Crime","Western",1995,130,"TV-PG","English","USA",6.6,19244906.2,0,0,0,FALSE,2021-10-04,TRUE,0,0
+"movie_0550","dark ice","Movie","War","",2001,59,"PG-13","Spanish","USA",6.2,1930583,0,0,0,FALSE,2023-11-03,FALSE,0,0
+"movie_0551","warrior quest","Movie","Mystery","Romance",2012,109,"R","English","USA",4.6,1558696,4818745,0,0,FALSE,2023-09-08,FALSE,0,0
+"movie_0552","a mission","Documentary","Romance","",2017,88,"TV-14","English","UK",4.6,0,0,1,12,TRUE,2025-01-17,TRUE,1,1
+"movie_0553","mystery city","Documentary","Music","",2010,93,"NC-17","English","Germany",6,0,0,1,12,TRUE,2024-06-22,FALSE,1,1
+"movie_0554","fire queen","Documentary","History","",2009,84,"NC-17","German","Canada",7.8,0,0,1,12,FALSE,2021-11-28,FALSE,1,1
+"movie_0555","ice phoenix","TV Series","Comedy","Sci-Fi",2011,22,"R","English","Germany",3,0,0,1,141,FALSE,2025-04-06,TRUE,1,1
+"movie_0556","empire princess","Documentary","Animation","",2001,108,"TV-Y","English","USA",6.8,0,0,1,12,FALSE,2023-09-10,FALSE,1,1
+"movie_0557","queen hero","Movie","Sport","",2020,147,"TV-G","English","USA",7.8,13882650,99312954.4,0,0,FALSE,2022-03-09,FALSE,0,0
+"movie_0558","last phoenix","TV Series","Music","",2011,28,"NC-17","Spanish","USA",5.6,0,0,2,185,FALSE,2020-08-13,FALSE,1,1
+"movie_0559","mystery dragon","Documentary","Romance","",2001,73,"TV-Y7","English","South Korea",4.6,0,0,1,12,TRUE,2021-07-05,FALSE,1,1
+"movie_0560","ice queen","Stand-up Comedy","Adventure","",1997,51,"TV-Y","English","Germany",6.5,0,0,1,12,FALSE,2025-04-19,FALSE,1,1
+"movie_0561","quest secret","TV Series","Western","Crime",1990,54,"R","English","UK",3.8,0,0,5,38,FALSE,2023-03-05,FALSE,1,1
+"movie_0562","legend queen","Movie","Action","",2006,137,"G","English","Germany",6.5,8709831,1267443,0,0,FALSE,2024-06-18,FALSE,0,0
+"movie_0563","ice secret","Movie","Sport","",1995,121,"R","English","USA",7,14078805,0,0,0,FALSE,2024-10-08,FALSE,0,0
+"movie_0564","mystery mystery","TV Series","Documentary","",2006,6,"NC-17","English","USA",6.5,0,0,1,177,FALSE,2024-04-18,FALSE,1,1
+"movie_0565","dragon family","Stand-up Comedy","Music","",2005,54,"G","English","USA",6.9,0,0,1,12,FALSE,2021-07-18,FALSE,1,1
+"movie_0566","a city","Movie","History","Mystery",2022,110,"TV-Y","Hindi","USA",7.2,0,99312954.4,0,0,FALSE,2024-10-11,FALSE,1,1
+"movie_0567","journey kingdom","TV Series","Fantasy","",1993,50,"PG","English","USA",5.6,0,0,13,167,TRUE,2025-01-15,TRUE,1,1
+"movie_0568","dark legend","Movie","Sci-Fi","",1956,125,"TV-Y7","English","Canada",6.2,1464928,7568167,0,0,FALSE,2025-03-22,FALSE,0,0
+"movie_0569","legend king","Documentary","War","",1990,59,"TV-14","English","USA",6.3,0,0,1,12,FALSE,2022-04-12,TRUE,1,1
+"movie_0570","mission storm","Stand-up Comedy","Sci-Fi","War",1999,87,"TV-G","German","USA",5.8,0,0,1,12,FALSE,2023-08-31,FALSE,1,1
+"movie_0571","city princess","Documentary","Family","History",2011,73,"TV-MA","Japanese","South Korea",4.4,0,0,1,12,TRUE,2024-11-04,FALSE,1,1
+"movie_0572","dream secret","TV Series","Documentary","Sci-Fi",2024,33,"PG-13","English","UK",4.5,0,0,8,105,FALSE,2021-06-08,FALSE,1,1
+"movie_0573","fire kingdom","Limited Series","Action","History",2020,34,"PG","Spanish","Germany",6.9,0,0,3,35,FALSE,2021-08-28,FALSE,1,1
+"movie_0574","journey princess","Limited Series","Comedy","Drama",2012,57,"PG","Spanish","USA",5.3,0,0,6,10,FALSE,2024-08-14,TRUE,1,1
+"movie_0575","city quest","Documentary","Drama","",2021,86,"NC-17","Spanish","South Korea",1.4,0,0,1,12,FALSE,2024-10-22,FALSE,1,1
+"movie_0576","love kingdom","Movie","Crime","",2001,104,"G","Hindi","France",7.1,5073775,0,0,0,FALSE,2024-09-13,FALSE,0,0
+"movie_0577","family house","TV Series","Action","",2003,53,"TV-PG","Japanese","Japan",8.6,0,0,7,74,TRUE,2023-10-22,FALSE,1,1
+"movie_0578","little phoenix","TV Series","Sport","Horror",2000,55,"PG-13","Hindi","USA",6.6,0,0,3,29,FALSE,2023-06-19,FALSE,1,1
+"movie_0579","last story","Movie","Documentary","",1978,349,"G","English","South Korea",7,5312135,69251153,0,0,FALSE,2024-02-05,FALSE,0,0
+"movie_0580","last love","Stand-up Comedy","Crime","",2014,74,"PG","English","South Korea",6.2,0,0,1,12,TRUE,2022-01-19,FALSE,1,1
+"movie_0581","ice kingdom","Documentary","Sci-Fi","War",2016,111,"TV-Y","English","USA",2.7,0,0,1,12,FALSE,2023-07-19,TRUE,1,1
+"movie_0582","my queen","TV Series","Sci-Fi","",1990,62,"TV-Y","English","USA",7.4,0,0,1,192,FALSE,2020-11-19,FALSE,1,1
+"movie_0583","hero ice","Movie","Comedy","",1999,101,"PG","English","USA",6.8,3951401,32741225,0,0,FALSE,2023-07-24,FALSE,0,0
+"movie_0584","family storm","Documentary","Romance","",2006,89,"TV-Y","English","USA",3.8,0,0,1,12,FALSE,2023-10-31,TRUE,1,1
+"movie_0585","quest battle","TV Series","Comedy","",2023,59,"G","Spanish","USA",4.6,0,0,6,101,FALSE,2020-11-25,FALSE,1,1
+"movie_0586","a adventure","Documentary","Drama","Documentary",2021,99,"R","English","USA",4.4,0,0,1,12,TRUE,2021-10-26,FALSE,1,1
+"movie_0587","a quest","Stand-up Comedy","Family","",2020,51,"R","English","India",5.9,0,0,1,12,FALSE,2022-05-14,FALSE,1,1
+"movie_0588","queen queen","Movie","Sci-Fi","",1997,122,"TV-Y","English","India",2.5,447581,99312954.4,0,0,FALSE,2023-09-15,FALSE,0,0
+"movie_0589","family adventure","Limited Series","Mystery","",2011,332,"TV-Y","Korean","USA",7.3,0,0,3,79,TRUE,2021-08-11,FALSE,1,1
+"movie_0590","secret city","Documentary","War","",2012,104,"NC-17","English","India",5.4,0,0,1,12,FALSE,2022-12-15,TRUE,1,1
+"movie_0591","city empire","Limited Series","Mystery","Sci-Fi",1995,94,"TV-Y","German","USA",6.6,0,0,6,77,FALSE,2024-08-01,FALSE,1,1
+"movie_0592","king adventure","Movie","Drama","",2018,117,"TV-G","Italian","USA",6.2,19244906.2,7744943,0,0,FALSE,2025-03-12,FALSE,0,0
+"movie_0593","queen dragon","Documentary","Family","Family",2001,72,"TV-14","Spanish","Germany",5.1,0,0,1,12,TRUE,2022-04-24,FALSE,1,1
+"movie_0594","journey day","Movie","Drama","",2003,153,"PG-13","French","Canada",6.6,1442937,23502658,0,0,TRUE,2024-11-16,TRUE,0,0
+"movie_0595","an empire","TV Series","Animation","",1998,28,"PG-13","English","France",8.3,0,0,8,104,TRUE,2022-06-30,FALSE,1,1
+"movie_0596","phoenix adventure","Limited Series","Documentary","",1993,33,"TV-G","English","USA",7.5,0,0,4,12,FALSE,2020-11-12,FALSE,1,1
+"movie_0597","war journey","Stand-up Comedy","Comedy","History",1996,77,"TV-MA","English","USA",3.6,0,0,1,12,FALSE,2021-12-24,FALSE,1,1
+"movie_0598","queen quest","Movie","Biography","",1995,166,"TV-PG","English","India",6.9,719932,0,0,0,FALSE,2022-10-11,FALSE,0,0
+"movie_0599","quest war","Documentary","Thriller","",1994,89,"TV-14","English","USA",4.9,0,0,1,12,FALSE,2022-02-26,FALSE,1,1
+"movie_0600","big adventure","TV Series","History","Fantasy",1992,40,"TV-Y","Korean","South Korea",0.5,0,0,14,173,FALSE,2022-12-08,FALSE,1,1
+"movie_0601","secret mission","Documentary","Horror","",2016,99,"G","Japanese","Germany",6.5,0,0,1,12,FALSE,2021-01-20,FALSE,1,1
+"movie_0602","queen family","Movie","Mystery","Sci-Fi",2012,70,"TV-14","Japanese","Japan",4.6,0,3500926,0,0,TRUE,2020-12-15,FALSE,1,1
+"movie_0603","last kingdom","Movie","War","Crime",1996,113,"TV-14","English","USA",6.6,0,0,0,0,FALSE,2024-06-23,FALSE,1,1
+"movie_0604","empire war","TV Series","Western","",2019,42,"TV-MA","English","USA",5.4,0,0,14,112,FALSE,2021-08-22,TRUE,1,1
+"movie_0605","an war","Movie","Romance","War",2014,138,"PG","English","South Korea",5.6,3696939,99312954.4,0,0,TRUE,2024-09-07,FALSE,0,0
+"movie_0606","legend fire","Movie","Comedy","Animation",1993,96,"NC-17","English","UK",9.3,0,13896745,0,0,FALSE,2024-04-25,FALSE,1,1
+"movie_0607","the war","Documentary","Romance","",2002,86,"TV-Y7","English","USA",7.6,0,0,1,12,TRUE,2024-06-15,FALSE,1,1
+"movie_0608","king warrior","TV Series","Western","",1991,6,"G","English","India",5.1,0,0,9,99,FALSE,2023-06-05,FALSE,1,1
+"movie_0609","old family","Limited Series","Action","War",2018,43,"TV-G","Spanish","South Korea",5.1,0,0,5,182,FALSE,2024-10-14,FALSE,1,1
+"movie_0610","princess legend","Documentary","Thriller","",2004,43,"TV-Y7","French","Japan",4.4,0,0,1,12,FALSE,2022-10-08,TRUE,1,1
+"movie_0611","big adventure","Movie","Documentary","Fantasy",2017,126,"TV-Y7","English","USA",1.3,2250753,99312954.4,0,0,FALSE,2023-07-31,FALSE,0,0
+"movie_0612","kingdom empire","Movie","Music","Mystery",2009,66,"TV-Y","English","USA",5.4,2775406,18385689,0,0,TRUE,2021-12-19,TRUE,0,0
+"movie_0613","princess day","Limited Series","Sci-Fi","Crime",1993,30,"TV-Y7","English","USA",4.6,0,0,8,19,FALSE,2024-12-27,FALSE,1,1
+"movie_0614","day day","Movie","Comedy","",2019,108,"TV-G","English","Japan",4.6,1559466,0,0,0,FALSE,2024-11-20,FALSE,0,0
+"movie_0615","an fire","Movie","Crime","",2016,136,"PG","English","Japan",5.1,1121652,99312954.4,0,0,TRUE,2022-02-02,TRUE,0,0
+"movie_0616","first ice","Documentary","Adventure","",2007,96,"G","English","South Korea",7.1,0,0,1,12,FALSE,2022-12-06,FALSE,1,1
+"movie_0617","quest war","Movie","War","War",2023,146,"PG","English","Germany",7.1,19244906.2,7924508,0,0,FALSE,2024-06-27,FALSE,0,0
+"movie_0618","first kingdom","TV Series","War","Romance",2014,58,"NC-17","English","South Korea",6.5,0,0,1,152,FALSE,2024-05-30,FALSE,1,1
+"movie_0619","my story","Documentary","Crime","Adventure",2014,489.600000000001,"TV-G","Japanese","UK",4.8,0,0,1,12,TRUE,2021-03-03,TRUE,1,1
+"movie_0620","dark secret","Movie","Animation","",1997,111,"TV-Y7","English","USA",7.9,5640579,96414255,0,0,TRUE,2020-10-28,FALSE,0,0
+"movie_0621","battle war","TV Series","History","Horror",2023,53,"PG","Hindi","USA",7,0,0,5,95,TRUE,2022-06-05,FALSE,1,1
+"movie_0622","an journey","Movie","Western","Comedy",2005,130,"R","Italian","South Korea",3.4,5596184,43187317,0,0,TRUE,2020-08-06,FALSE,0,0
+"movie_0623","family day","Stand-up Comedy","Family","",2013,54,"PG","English","USA",9.3,0,0,1,12,FALSE,2023-08-08,FALSE,1,1
+"movie_0624","mystery mystery","Movie","Romance","Sport",2015,101,"G","English","USA",5.7,5694534,99312954.4,0,0,TRUE,2021-03-11,FALSE,0,0
+"movie_0625","day night","Movie","Documentary","",2003,105,"TV-Y","English","USA",6.5,0,0,0,0,FALSE,2021-10-13,FALSE,1,1
+"movie_0626","journey mystery","Movie","Western","",2009,21,"NC-17","English","South Korea",5.3,350706,146051,0,0,FALSE,2025-03-18,FALSE,0,0
+"movie_0627","love legend","Movie","Western","",2018,121,"NC-17","English","Germany",6.5,2533936,45685991,0,0,FALSE,2024-12-29,FALSE,0,0
+"movie_0628","phoenix story","TV Series","Music","",2010,45,"TV-14","English","Canada",8,0,0,13,170,FALSE,2024-04-11,FALSE,1,1
+"movie_0629","adventure secret","Documentary","Adventure","",1999,104,"TV-MA","Japanese","USA",8.2,0,0,1,12,TRUE,2023-11-14,FALSE,1,1
+"movie_0630","war secret","Documentary","Sport","War",2024,56,"TV-G","Japanese","USA",5.1,0,0,1,12,TRUE,2024-04-15,FALSE,1,1
+"movie_0631","warrior kingdom","Movie","War","War",2003,81,"TV-PG","English","South Korea",4.8,19244906.2,99312954.4,0,0,FALSE,2022-11-26,FALSE,0,0
+"movie_0632","day dragon","Movie","Adventure","",2004,89,"G","French","Germany",6.4,220840,0,0,0,TRUE,2020-11-20,FALSE,0,0
+"movie_0633","warrior ice","TV Series","Biography","History",2000,43,"TV-G","English","USA",6.6,0,0,6,29,TRUE,2020-09-15,FALSE,1,1
+"movie_0634","war phoenix","Stand-up Comedy","Action","",1997,74,"TV-MA","English","Germany",8,0,0,1,12,FALSE,2022-04-20,TRUE,1,1
+"movie_0635","dream family","TV Series","Comedy","",1995,30,"TV-Y7","French","South Korea",4.8,0,0,1,172,FALSE,2023-05-29,FALSE,1,1
+"movie_0636","last mission","Stand-up Comedy","Music","",2009,51,"TV-MA","English","USA",5.1,0,0,1,12,TRUE,2023-01-23,FALSE,1,1
+"movie_0637","old battle","TV Series","Family","History",2006,58,"TV-MA","English","USA",5.5,0,0,1,83,TRUE,2021-10-03,FALSE,1,1
+"movie_0638","quest family","TV Series","Romance","",2001,65,"G","English","USA",6.1,0,0,8,25,FALSE,2024-05-16,FALSE,1,1
+"movie_0639","quest fire","Limited Series","Sport","War",1996,68,"TV-Y7","English","Canada",4.8,0,0,11,37,TRUE,2021-05-03,FALSE,1,1
+"movie_0640","warrior legend","Movie","Horror","",2002,88,"TV-MA","Korean","India",6.1,19244906.2,0,0,0,FALSE,2023-02-28,TRUE,0,0
+"movie_0641","first dream","TV Series","Thriller","Thriller",2023,62,"R","English","USA",10,0,0,12,54,TRUE,2025-01-29,FALSE,1,1
+"movie_0642","hero dragon","Limited Series","Romance","",2011,20,"TV-14","Italian","Canada",6.6,0,0,3,37,TRUE,2021-04-26,TRUE,1,1
+"movie_0643","fire phoenix","TV Series","Drama","",2018,45,"TV-Y7","Japanese","South Korea",5.3,0,0,11,91,FALSE,2020-09-07,TRUE,1,1
+"movie_0644","kingdom hero","TV Series","Mystery","",2010,24,"NC-17","Italian","South Korea",6.2,0,0,5,196.96,FALSE,2021-12-13,FALSE,1,1
+"movie_0645","last secret","Stand-up Comedy","Adventure","Mystery",1991,62,"TV-G","Korean","France",1.8,0,0,1,12,TRUE,2022-11-07,TRUE,1,1
+"movie_0646","king adventure","Movie","Fantasy","",2015,104,"TV-MA","English","France",7.5,2435028,296405,0,0,TRUE,2021-09-09,FALSE,0,0
+"movie_0647","story journey","Movie","Music","",2010,159,"TV-Y7","French","France",8.2,12844095,34444993,0,0,FALSE,2020-10-30,FALSE,0,0
+"movie_0648","an ice","Movie","Horror","",2012,138,"TV-Y7","English","USA",4.9,0,0,0,0,TRUE,2020-12-17,FALSE,1,1
+"movie_0649","king battle","TV Series","War","Sport",2014,52,"TV-Y7","Spanish","UK",0.5,0,0,6,45,FALSE,2023-02-22,FALSE,1,1
+"movie_0650","first kingdom","Movie","Adventure","",2020,99,"TV-G","English","USA",5.2,19244906.2,3132808,0,0,FALSE,2022-11-28,FALSE,0,0
+"movie_0651","phoenix day","Movie","Documentary","Action",2019,114,"R","English","USA",4.1,386155,51575130,0,0,FALSE,2024-02-29,TRUE,0,0
+"movie_0652","our night","Movie","History","",2015,102,"TV-MA","English","USA",10,14939487,21771252,0,0,FALSE,2024-10-15,TRUE,0,0
+"movie_0653","house story","Stand-up Comedy","Music","Sci-Fi",1993,334,"TV-Y","English","South Korea",5,0,0,1,12,FALSE,2025-06-05,FALSE,1,1
+"movie_0654","adventure legend","Stand-up Comedy","Drama","Romance",2011,67,"TV-Y","English","USA",6.5,0,0,1,12,FALSE,2022-12-09,FALSE,1,1
+"movie_0655","hero kingdom","Movie","Fantasy","Adventure",1995,166,"TV-Y","English","USA",7.5,1537325,14483384,0,0,TRUE,2022-11-10,FALSE,0,0
+"movie_0656","phoenix ice","TV Series","Animation","",2024,63,"R","English","USA",4.9,0,0,6,132,TRUE,2025-03-17,TRUE,1,1
+"movie_0657","battle queen","Limited Series","Romance","",2014,52,"TV-14","English","South Korea",6.5,0,0,14,178,TRUE,2024-08-04,FALSE,1,1
+"movie_0658","empire love","TV Series","Mystery","",2010,51,"R","Japanese","USA",4.6,0,0,5,58,FALSE,2023-09-05,TRUE,1,1
+"movie_0659","little night","TV Series","Sci-Fi","",2009,40,"TV-14","English","USA",0.5,0,0,3,171,TRUE,2025-06-01,FALSE,1,1
+"movie_0660","fire secret","Movie","Adventure","",1990,121,"PG-13","English","South Korea",8.6,0,3300259,0,0,TRUE,2023-12-04,FALSE,1,1
+"movie_0661","house night","Limited Series","Horror","",1992,58,"NC-17","English","South Korea",6.5,0,0,3,162,TRUE,2021-04-22,TRUE,1,1
+"movie_0662","bright family","Movie","Documentary","",1997,65,"TV-MA","English","USA",7.9,10706001,1631334,0,0,FALSE,2020-09-13,FALSE,0,0
+"movie_0663","phoenix legend","Limited Series","Biography","",2008,32,"G","English","South Korea",6.5,0,0,1,23,TRUE,2025-05-16,FALSE,1,1
+"movie_0664","an princess","Movie","History","Horror",2020,107,"TV-G","English","USA",6.5,19244906.2,16858783,0,0,FALSE,2021-08-23,FALSE,0,0
+"movie_0665","legend dragon","Movie","Biography","Adventure",2009,136,"TV-MA","French","South Korea",8.7,8291129,10411548,0,0,TRUE,2020-09-13,FALSE,0,0
+"movie_0666","day city","Documentary","Adventure","",2014,110,"R","English","India",9.6,0,0,1,12,FALSE,2025-04-06,FALSE,1,1
+"movie_0667","empire story","Movie","Sci-Fi","",1995,143,"TV-G","English","USA",6.7,19244906.2,38879782,0,0,FALSE,2023-03-06,FALSE,0,0
+"movie_0668","day journey","Movie","Crime","",2013,50,"TV-PG","Korean","South Korea",3.1,5519943,0,0,0,TRUE,2022-02-22,FALSE,0,0
+"movie_0669","dark phoenix","TV Series","Biography","",2012,56,"PG-13","English","France",6.8,0,0,3,123,FALSE,2023-11-10,FALSE,1,1
+"movie_0670","phoenix queen","Documentary","Drama","",2007,72,"TV-14","English","India",6.9,0,0,1,12,FALSE,2021-11-23,FALSE,1,1
+"movie_0671","war storm","TV Series","Animation","",2006,57,"TV-Y","Hindi","USA",6.4,0,0,9,180,FALSE,2022-10-25,FALSE,1,1
+"movie_0672","kingdom dream","Movie","Biography","",2011,152,"PG-13","French","Canada",5.6,68373,5231163,0,0,FALSE,2023-03-26,FALSE,0,0
+"movie_0673","fire hero","Documentary","Fantasy","",2004,141,"TV-14","Spanish","UK",8.3,0,0,1,12,FALSE,2024-04-24,FALSE,1,1
+"movie_0674","storm night","TV Series","Adventure","Documentary",1997,77,"TV-Y","Italian","India",7.1,0,0,2,26,FALSE,2022-12-01,FALSE,1,1
+"movie_0675","phoenix princess","TV Series","Action","",2019,76,"NC-17","German","USA",6.3,0,0,1,73,TRUE,2021-08-11,TRUE,1,1
+"movie_0676","dream hero","Movie","Adventure","Adventure",2004,174,"TV-Y7","English","France",9,416301,99312954.4,0,0,TRUE,2024-02-04,FALSE,0,0
+"movie_0677","legend journey","Stand-up Comedy","Adventure","Crime",1991,74,"TV-MA","Italian","UK",7.7,0,0,1,12,FALSE,2021-03-03,FALSE,1,1
+"movie_0678","secret legend","Documentary","Documentary","Family",2005,97,"TV-Y7","French","USA",5.1,0,0,1,12,FALSE,2023-06-25,FALSE,1,1
+"movie_0679","dark dragon","Documentary","Horror","",2015,87,"TV-G","English","South Korea",5.2,0,0,1,12,FALSE,2024-03-10,FALSE,1,1
+"movie_0680","battle dream","Movie","Thriller","",2007,128,"TV-14","French","USA",7.5,846327,36844960,0,0,TRUE,2024-07-20,FALSE,0,0
+"movie_0681","a family","Stand-up Comedy","Thriller","",2015,27,"PG","Spanish","Canada",7.4,0,0,1,12,FALSE,2024-11-08,FALSE,1,1
+"movie_0682","old queen","Movie","Romance","",2013,111,"G","English","South Korea",6.6,2615689,0,0,0,TRUE,2020-11-11,TRUE,0,0
+"movie_0683","little dream","Limited Series","Animation","Documentary",1998,61,"TV-Y7","English","USA",3.7,0,0,7,120,TRUE,2024-07-08,TRUE,1,1
+"movie_0684","dragon mission","Movie","War","Fantasy",1997,137,"TV-G","English","USA",4.6,4450850,0,0,0,FALSE,2021-01-30,FALSE,0,0
+"movie_0685","family mystery","Stand-up Comedy","Romance","",1999,489.600000000001,"TV-G","Korean","USA",5.9,0,0,1,12,FALSE,2024-12-14,FALSE,1,1
+"movie_0686","night princess","TV Series","History","War",1998,12,"TV-14","English","Canada",6.4,0,0,11,41,FALSE,2022-09-21,FALSE,1,1
+"movie_0687","adventure warrior","TV Series","Crime","",2014,47,"TV-PG","English","USA",8.4,0,0,2,57,FALSE,2021-10-25,TRUE,1,1
+"movie_0688","battle storm","Movie","Animation","",2024,103,"TV-Y","English","South Korea",4.8,2676591,0,0,0,FALSE,2025-07-11,FALSE,0,0
+"movie_0689","city story","Movie","Western","Drama",2006,97,"TV-Y","English","Germany",6.5,0,0,0,0,FALSE,2022-10-01,TRUE,1,1
+"movie_0690","secret family","Documentary","Romance","",1990,100,"TV-Y","Hindi","France",5.4,0,0,1,12,TRUE,2022-11-22,FALSE,1,1
+"movie_0691","dream adventure","Movie","Fantasy","",2014,106,"TV-PG","English","South Korea",6.4,6586991,23899749,0,0,FALSE,2025-01-05,FALSE,0,0
+"movie_0692","little phoenix","Movie","Fantasy","",2002,83,"PG-13","English","Germany",6.6,19244906.2,0,0,0,FALSE,2023-02-15,FALSE,0,0
+"movie_0693","storm kingdom","Movie","Crime","",2016,149,"G","Spanish","USA",6.5,0,0,0,0,TRUE,2023-09-10,TRUE,1,1
+"movie_0694","kingdom day","Movie","Action","",1996,89,"PG","English","UK",5.9,6072218,37239804,0,0,FALSE,2023-01-14,FALSE,0,0
+"movie_0695","storm journey","TV Series","Mystery","",2013,52,"PG","Korean","India",6.6,0,0,10,89,FALSE,2021-02-15,FALSE,1,1
+"movie_0696","house empire","Limited Series","Biography","",2010,54,"G","Korean","USA",7.2,0,0,10,174,FALSE,2023-08-19,FALSE,1,1
+"movie_0697","journey fire","TV Series","Music","",2015,38,"TV-MA","Italian","South Korea",4,0,0,5,65,FALSE,2020-08-15,FALSE,1,1
+"movie_0698","a adventure","Movie","Western","Romance",2018,126,"R","English","USA",4.7,4641680,26325930,0,0,FALSE,2023-06-21,FALSE,0,0
+"movie_0699","our king","TV Series","Western","Family",2007,22,"PG","English","Canada",8,0,0,4,151,FALSE,2022-07-22,FALSE,1,1
+"movie_0700","a secret","Movie","Biography","",1995,94,"G","English","USA",6.3,1080214,26058332,0,0,TRUE,2024-04-09,FALSE,0,0
+"movie_0701","adventure mission","Limited Series","Animation","History",2012,74,"NC-17","Hindi","Canada",4.9,0,0,2,196.96,FALSE,2024-05-08,FALSE,1,1
+"movie_0702","mystery legend","Movie","Fantasy","",2007,87,"TV-MA","German","UK",5.1,19244906.2,99312954.4,0,0,FALSE,2021-09-30,FALSE,0,0
+"movie_0703","mystery legend","Movie","History","",1993,128,"R","English","Germany",5.6,9853801,58384599,0,0,TRUE,2023-12-01,TRUE,0,0
+"movie_0704","dark mystery","Movie","Western","",2000,144,"PG","English","USA",6.6,1579910,0,0,0,FALSE,2024-11-06,FALSE,0,0
+"movie_0705","house secret","Stand-up Comedy","Romance","",2022,61,"PG-13","Hindi","USA",5.1,0,0,1,12,FALSE,2025-03-08,FALSE,1,1
+"movie_0706","new city","Movie","Drama","Mystery",2011,72,"TV-PG","English","USA",6.4,602601,0,0,0,FALSE,2021-03-05,TRUE,0,0
+"movie_0707","fire warrior","TV Series","Romance","",2003,29,"R","Korean","India",2.6,0,0,3,143,TRUE,2022-08-16,FALSE,1,1
+"movie_0708","my love","Movie","Music","",2012,134,"PG","English","USA",0.5,999917,93806,0,0,TRUE,2022-04-17,FALSE,0,0
+"movie_0709","kingdom princess","Movie","Sci-Fi","",2011,109,"TV-PG","English","UK",6.5,0,250370,0,0,FALSE,2022-10-06,FALSE,1,1
+"movie_0710","little warrior","Movie","Sci-Fi","",2002,104,"TV-MA","French","USA",8.7,1185845,80728679,0,0,FALSE,2024-03-02,FALSE,0,0
+"movie_0711","empire kingdom","Movie","Drama","Thriller",1963,92,"G","German","Japan",7.7,3853848,0,0,0,FALSE,2023-11-25,FALSE,0,0
+"movie_0712","a day","Movie","Family","",1994,28,"G","Spanish","Canada",6.6,319285,0,0,0,TRUE,2023-11-22,TRUE,0,0
+"movie_0713","princess quest","Movie","War","",1992,103,"TV-MA","Spanish","Canada",6.6,0,16977476,0,0,TRUE,2024-05-02,TRUE,1,1
+"movie_0714","house dream","Limited Series","Adventure","Fantasy",2002,47,"PG","English","USA",7,0,0,7,108,FALSE,2023-11-18,TRUE,1,1
+"movie_0715","city mystery","Movie","Horror","",2002,116,"PG-13","English","USA",5.6,2496199,5147384,0,0,FALSE,2024-11-07,FALSE,0,0
+"movie_0716","love battle","Stand-up Comedy","War","",2022,91,"R","English","Germany",4.4,0,0,1,12,FALSE,2020-10-15,TRUE,1,1
+"movie_0717","queen legend","TV Series","Sport","",1995,40,"TV-Y","French","UK",5.1,0,0,14,147,FALSE,2023-10-17,FALSE,1,1
+"movie_0718","mystery dream","TV Series","Sci-Fi","",2018,35,"TV-MA","French","USA",7,0,0,7,66,FALSE,2025-04-22,FALSE,1,1
+"movie_0719","warrior dream","Movie","Sci-Fi","Drama",1991,99,"NC-17","English","Germany",6.5,0,99312954.4,0,0,FALSE,2023-10-16,FALSE,1,1
+"movie_0720","legend war","Stand-up Comedy","Western","History",2007,80,"PG-13","English","USA",6.5,0,0,1,12,TRUE,2023-11-07,FALSE,1,1
+"movie_0721","dream dream","TV Series","Horror","",2022,37,"TV-Y","French","USA",5.9,0,0,6,67,FALSE,2024-06-23,FALSE,1,1
+"movie_0722","battle mission","TV Series","Romance","",2024,15,"TV-MA","Japanese","USA",5.6,0,0,3,185,TRUE,2022-07-13,FALSE,1,1
+"movie_0723","house day","Documentary","Thriller","",2000,128,"TV-MA","Hindi","UK",8,0,0,1,12,FALSE,2025-02-25,FALSE,1,1
+"movie_0724","war story","TV Series","War","",2017,26,"NC-17","English","USA",8,0,0,6,93,FALSE,2022-01-24,FALSE,1,1
+"movie_0725","old king","Documentary","Music","",2018,110,"TV-G","Italian","USA",8.1,0,0,1,12,FALSE,2021-03-20,FALSE,1,1
+"movie_0726","the mystery","Movie","Action","",2021,13,"PG-13","Korean","South Korea",4.6,0,0,0,0,FALSE,2021-01-12,TRUE,1,1
+"movie_0727","last journey","TV Series","Western","",2003,41,"TV-Y","English","UK",8.2,0,0,1,88,FALSE,2021-11-22,FALSE,1,1
+"movie_0728","phoenix day","Stand-up Comedy","Crime","",1998,89,"TV-Y7","English","UK",7.6,0,0,1,12,FALSE,2025-04-11,FALSE,1,1
+"movie_0729","big mission","Limited Series","Sci-Fi","Thriller",2011,47,"PG-13","English","Canada",7.4,0,0,5,109,TRUE,2022-02-03,FALSE,1,1
+"movie_0730","adventure fire","Documentary","Comedy","",2000,91,"R","Spanish","France",5.1,0,0,1,12,FALSE,2025-01-19,FALSE,1,1
+"movie_0731","house mission","Movie","Documentary","",1998,123,"TV-Y","English","Canada",8.6,821338,2563997,0,0,TRUE,2024-10-27,FALSE,0,0
+"movie_0732","legend ice","Stand-up Comedy","Mystery","",2000,35,"TV-PG","English","USA",6,0,0,1,12,TRUE,2021-03-18,FALSE,1,1
+"movie_0733","story love","Movie","Animation","Action",1992,121,"TV-PG","English","USA",7.2,1205813,99312954.4,0,0,FALSE,2024-08-24,FALSE,0,0
+"movie_0734","queen warrior","TV Series","Adventure","",2017,62,"TV-Y7","English","Canada",6.5,0,0,3,64,FALSE,2024-08-15,FALSE,1,1
+"movie_0735","princess hero","Documentary","Fantasy","Biography",2001,107,"PG","German","USA",9.2,0,0,1,12,FALSE,2024-04-01,TRUE,1,1
+"movie_0736","mystery legend","Stand-up Comedy","Music","",2004,69,"PG","German","Germany",6.3,0,0,1,12,FALSE,2021-09-09,TRUE,1,1
+"movie_0737","legend love","Movie","Comedy","",2024,117,"TV-Y7","Spanish","USA",6.3,3778470,57571931,0,0,FALSE,2021-05-31,FALSE,0,0
+"movie_0738","mission storm","Movie","Animation","",2020,107,"TV-G","English","USA",4.6,5259672,10814474,0,0,FALSE,2025-01-07,TRUE,0,0
+"movie_0739","love warrior","Movie","Action","",2020,121,"NC-17","Japanese","UK",7.1,3121206,3827361,0,0,TRUE,2024-11-14,FALSE,0,0
+"movie_0740","city mystery","Movie","Animation","",2011,119,"PG","German","USA",5.5,1882096,0,0,0,FALSE,2023-07-31,FALSE,0,0
+"movie_0741","our love","Movie","Mystery","",1992,131,"G","English","UK",4.1,1703864,2238705,0,0,FALSE,2023-04-08,FALSE,0,0
+"movie_0742","battle city","Movie","Thriller","",2009,117,"TV-MA","English","USA",6.3,4127966,782958,0,0,FALSE,2024-10-16,FALSE,0,0
+"movie_0743","phoenix city","Documentary","Documentary","",2015,68,"PG","Korean","Japan",8.1,0,0,1,12,TRUE,2023-05-29,FALSE,1,1
+"movie_0744","a adventure","Stand-up Comedy","Documentary","",1994,49,"G","English","South Korea",6.6,0,0,1,12,FALSE,2022-04-19,FALSE,1,1
+"movie_0745","warrior mystery","TV Series","Music","Animation",2000,54,"TV-MA","English","USA",4.6,0,0,1,157,FALSE,2025-04-29,TRUE,1,1
+"movie_0746","fire journey","Movie","Music","",1995,82,"TV-MA","Hindi","USA",0.8,954741,0,0,0,FALSE,2025-03-09,FALSE,0,0
+"movie_0747","last king","Movie","Biography","",2000,120,"PG","Japanese","South Korea",9.3,0,0,0,0,FALSE,2023-04-21,FALSE,1,1
+"movie_0748","war love","Documentary","Western","Sci-Fi",2020,90,"TV-PG","Italian","South Korea",4.6,0,0,1,12,TRUE,2024-12-21,FALSE,1,1
+"movie_0749","queen princess","TV Series","Documentary","Horror",2016,32,"TV-Y","English","USA",6.1,0,0,14,155,FALSE,2022-03-17,FALSE,1,1
+"movie_0750","city dream","TV Series","History","Romance",2021,17,"TV-Y","English","USA",5.1,0,0,9,97,TRUE,2024-03-03,FALSE,1,1
+"movie_0751","city secret","Movie","Animation","",1997,120,"TV-MA","German","UK",4.8,19244906.2,0,0,0,FALSE,2024-12-29,FALSE,0,0
+"movie_0752","house story","Movie","Horror","Sci-Fi",2014,98,"PG-13","English","USA",4.6,0,99312954.4,0,0,TRUE,2021-12-28,FALSE,1,1
+"movie_0753","kingdom fire","Movie","Action","",2002,489.600000000001,"PG","English","USA",4.7,3194690,33685913,0,0,TRUE,2021-12-26,TRUE,0,0
+"movie_0754","kingdom princess","TV Series","Western","Music",2002,38,"PG-13","Hindi","USA",6.5,0,0,3,94,FALSE,2021-08-08,FALSE,1,1
+"movie_0755","adventure princess","TV Series","Action","",2005,67,"TV-Y7","English","UK",3.7,0,0,14,35,TRUE,2022-06-13,FALSE,1,1
+"movie_0756","dark day","Documentary","Fantasy","Horror",2002,105,"PG","Spanish","UK",5.9,0,0,1,12,TRUE,2025-07-06,FALSE,1,1
+"movie_0757","old night","Movie","War","",1994,128,"TV-Y","Korean","South Korea",6.2,1188048,1810400,0,0,FALSE,2022-06-27,FALSE,0,0
+"movie_0758","quest mystery","Documentary","Sport","Thriller",2006,124,"PG-13","English","USA",7.7,0,0,1,12,TRUE,2023-08-11,FALSE,1,1
+"movie_0759","legend king","Documentary","Action","Sci-Fi",2012,75,"PG-13","Spanish","South Korea",8.1,0,0,1,12,FALSE,2025-02-10,FALSE,1,1
+"movie_0760","empire love","TV Series","Sci-Fi","",2021,43,"TV-Y7","English","Japan",7.1,0,0,8,196.96,TRUE,2024-09-23,TRUE,1,1
+"movie_0761","dragon day","Movie","Sport","",2005,88,"PG","Korean","USA",9.5,1505916,0,0,0,TRUE,2025-06-16,FALSE,0,0
+"movie_0762","a mystery","Movie","Family","Western",1997,105,"R","English","Japan",7.8,2121696,0,0,0,TRUE,2021-09-23,FALSE,0,0
+"movie_0763","my dragon","Movie","Comedy","Family",2007,93,"TV-PG","Japanese","France",9.2,958475,1245159,0,0,FALSE,2023-05-22,TRUE,0,0
+"movie_0764","house day","Documentary","Biography","History",2011,82,"TV-14","English","USA",4.6,0,0,1,12,TRUE,2024-01-31,TRUE,1,1
+"movie_0765","war phoenix","TV Series","Documentary","",2003,439,"TV-Y","German","USA",9,0,0,7,6,FALSE,2021-05-12,FALSE,1,1
+"movie_0766","mission empire","Movie","Fantasy","",2000,131,"TV-Y7","English","UK",8.4,195174,0,0,0,TRUE,2021-04-01,TRUE,0,0
+"movie_0767","old fire","Movie","Mystery","",2007,94,"TV-14","English","USA",6.9,1521182,0,0,0,FALSE,2023-07-27,FALSE,0,0
+"movie_0768","hero secret","Stand-up Comedy","Biography","Music",2007,60,"PG","Hindi","UK",6.5,0,0,1,12,FALSE,2024-02-26,TRUE,1,1
+"movie_0769","king day","Movie","Music","",2016,129,"TV-Y7","English","Canada",7.7,0,59950273,0,0,FALSE,2024-06-24,FALSE,1,1
+"movie_0770","kingdom dream","Limited Series","Family","Drama",2008,30,"TV-G","English","USA",5.9,0,0,8,90,FALSE,2022-09-27,FALSE,1,1
+"movie_0771","first quest","Stand-up Comedy","Horror","",1992,30,"NC-17","English","USA",7.2,0,0,1,12,FALSE,2024-07-26,FALSE,1,1
+"movie_0772","the story","Documentary","Thriller","Fantasy",2012,101,"PG-13","English","France",5.5,0,0,1,12,TRUE,2023-09-03,FALSE,1,1
+"movie_0773","dragon princess","TV Series","Mystery","",2022,42,"G","English","USA",8.8,0,0,3,191,FALSE,2022-12-10,FALSE,1,1
+"movie_0774","war adventure","Movie","War","",2015,105,"TV-PG","English","USA",7.4,19244906.2,99312954.4,0,0,FALSE,2020-12-29,FALSE,0,0
+"movie_0775","an empire","Movie","Biography","",2002,137,"TV-Y7","English","South Korea",6.6,0,289539,0,0,FALSE,2025-04-13,FALSE,1,1
+"movie_0776","my quest","TV Series","Sport","Sci-Fi",2016,38,"TV-PG","English","USA",8.6,0,0,6,90,FALSE,2023-12-09,FALSE,1,1
+"movie_0777","house dragon","Movie","Comedy","Drama",2018,73,"TV-Y","English","USA",6.7,0,0,0,0,TRUE,2023-11-30,FALSE,1,1
+"movie_0778","princess house","TV Series","History","Crime",2012,61,"PG-13","English","India",0.5,0,0,1,15,FALSE,2025-07-18,FALSE,1,1
+"movie_0779","new family","Stand-up Comedy","Family","Family",2023,70,"TV-MA","English","South Korea",7,0,0,1,12,FALSE,2022-12-14,FALSE,1,1
+"movie_0780","dream warrior","Movie","Romance","Action",1998,93,"TV-Y","Spanish","USA",10,1359172,2925013,0,0,FALSE,2022-07-09,FALSE,0,0
+"movie_0781","first house","Documentary","War","",2003,86,"TV-14","English","UK",1.7,0,0,1,12,TRUE,2021-06-14,FALSE,1,1
+"movie_0782","last princess","Movie","Crime","",2020,98,"R","Hindi","France",8,0,99312954.4,0,0,TRUE,2023-12-21,TRUE,1,1
+"movie_0783","love journey","Movie","Horror","Animation",2015,109,"TV-G","Hindi","USA",7.9,19244906.2,99312954.4,0,0,FALSE,2025-01-08,FALSE,0,0
+"movie_0784","kingdom kingdom","Movie","Adventure","",2003,111,"G","German","Canada",3,0,0,0,0,FALSE,2025-01-02,FALSE,1,1
+"movie_0785","dragon family","TV Series","Adventure","Western",1993,46,"TV-Y7","English","USA",6.8,0,0,7,101,TRUE,2025-08-01,FALSE,1,1
+"movie_0786","war house","Stand-up Comedy","Comedy","",2017,82,"PG-13","German","France",6.4,0,0,1,12,TRUE,2025-06-08,FALSE,1,1
+"movie_0787","an family","Movie","Animation","",1999,11,"TV-PG","Italian","USA",6.5,0,3662515,0,0,FALSE,2024-02-08,FALSE,1,1
+"movie_0788","day warrior","Stand-up Comedy","Documentary","Animation",2024,44,"TV-Y7","Spanish","South Korea",6,0,0,1,12,TRUE,2021-10-10,FALSE,1,1
+"movie_0789","adventure quest","Movie","Action","Drama",1996,123,"PG","Hindi","UK",5.2,1252871,1563002,0,0,FALSE,2025-02-08,FALSE,0,0
+"movie_0790","an night","Documentary","War","Animation",2020,131,"TV-Y","English","USA",7.1,0,0,1,12,FALSE,2025-01-22,FALSE,1,1
+"movie_0791","city fire","TV Series","Documentary","",2023,36,"PG","English","Canada",6.1,0,0,3,144,FALSE,2021-05-06,FALSE,1,1
+"movie_0792","princess king","Movie","Biography","",1998,146,"TV-PG","English","Japan",6.8,2068155,57012483,0,0,FALSE,2025-06-10,FALSE,0,0
+"movie_0793","bright secret","TV Series","Sport","",2022,36,"TV-Y7","Spanish","USA",6,0,0,4,69,TRUE,2022-11-17,FALSE,1,1
+"movie_0794","warrior war","Movie","Sport","",1991,102,"TV-PG","English","Japan",5.1,5565586,16023137,0,0,FALSE,2022-10-20,TRUE,0,0
+"movie_0795","big fire","Movie","Documentary","",1993,89,"TV-Y7","Spanish","USA",5,19244906.2,10221506,0,0,FALSE,2020-12-09,FALSE,0,0
+"movie_0796","bright mystery","Movie","War","Documentary",1999,140,"TV-14","English","USA",5.1,301637,12090436,0,0,TRUE,2022-12-13,FALSE,0,0
+"movie_0797","fire night","TV Series","Animation","",1990,29,"TV-MA","Spanish","USA",6.6,0,0,9,90,TRUE,2021-06-06,FALSE,1,1
+"movie_0798","queen adventure","Movie","Adventure","Comedy",2019,108,"TV-PG","English","France",5.5,6555080,0,0,0,FALSE,2023-08-25,FALSE,0,0
+"movie_0799","fire secret","TV Series","Crime","",1992,39,"TV-PG","English","USA",8.3,0,0,11,163,TRUE,2023-03-11,FALSE,1,1
+"movie_0800","house fire","Stand-up Comedy","Horror","",1990,63,"TV-PG","English","USA",0.8,0,0,1,12,FALSE,2021-08-18,FALSE,1,1
+"movie_0801","house legend","Limited Series","Thriller","War",2022,83,"TV-MA","English","USA",6.3,0,0,12,22,TRUE,2025-04-11,FALSE,1,1
+"movie_0802","day dragon","TV Series","Adventure","",2006,45,"G","French","South Korea",6.2,0,0,2,174,FALSE,2021-03-13,FALSE,1,1
+"movie_0803","story mystery","Stand-up Comedy","Action","",2004,79,"TV-Y","Japanese","Japan",6.6,0,0,1,12,FALSE,2022-07-13,FALSE,1,1
+"movie_0804","battle queen","Movie","Mystery","",2000,118,"TV-Y","English","UK",7,0,0,0,0,FALSE,2025-01-22,FALSE,1,1
+"movie_0805","family kingdom","Stand-up Comedy","Action","Adventure",1990,70,"NC-17","English","France",2.9,0,0,1,12,TRUE,2024-11-23,FALSE,1,1
+"movie_0806","dream love","TV Series","Mystery","",2014,31,"TV-Y7","English","USA",0.5,0,0,3,113,TRUE,2022-01-25,FALSE,1,1
+"movie_0807","mystery quest","Movie","Sci-Fi","",2017,110,"TV-G","English","UK",7.2,0,1333829,0,0,FALSE,2024-12-02,FALSE,1,1
+"movie_0808","ice storm","TV Series","Fantasy","",2006,42,"TV-G","Japanese","USA",8.4,0,0,7,159,FALSE,2025-04-12,FALSE,1,1
+"movie_0809","kingdom dragon","Stand-up Comedy","Music","",2009,69,"TV-14","Korean","USA",6.3,0,0,1,12,FALSE,2020-08-08,FALSE,1,1
+"movie_0810","love battle","Movie","Documentary","",2001,94,"TV-Y","English","UK",7.5,2350232,0,0,0,FALSE,2024-05-09,FALSE,0,0
+"movie_0811","battle king","TV Series","Thriller","Drama",1998,22,"TV-MA","English","Canada",5.2,0,0,13,177,TRUE,2020-11-24,FALSE,1,1
+"movie_0812","quest night","Documentary","Music","Action",1992,98,"R","English","USA",6.6,0,0,1,12,FALSE,2021-07-20,FALSE,1,1
+"movie_0813","secret night","Movie","Documentary","Drama",2001,146,"TV-Y7","English","UK",6.3,14288760,3455247,0,0,TRUE,2021-07-08,FALSE,0,0
+"movie_0814","adventure legend","TV Series","Adventure","",2004,62,"TV-Y7","Korean","USA",6.3,0,0,11,13,FALSE,2022-03-04,FALSE,1,1
+"movie_0815","story battle","Stand-up Comedy","Thriller","",2012,50,"TV-PG","Italian","USA",5.1,0,0,1,12,FALSE,2021-08-09,FALSE,1,1
+"movie_0816","legend empire","Stand-up Comedy","Western","",2010,55,"PG-13","Japanese","South Korea",7,0,0,1,12,FALSE,2022-06-07,FALSE,1,1
+"movie_0817","story legend","Stand-up Comedy","Drama","Mystery",2006,47,"TV-G","Hindi","USA",6.6,0,0,1,12,TRUE,2021-09-11,FALSE,1,1
+"movie_0818","our king","Documentary","History","Biography",1997,71,"PG","English","South Korea",6.6,0,0,1,12,TRUE,2021-09-12,TRUE,1,1
+"movie_0819","night house","Movie","Horror","",2019,78,"NC-17","English","USA",0.6,0,0,0,0,FALSE,2024-10-15,TRUE,1,1
+"movie_0820","fire phoenix","TV Series","Fantasy","",1993,53,"TV-Y","French","UK",0.5,0,0,12,178,FALSE,2020-12-02,FALSE,1,1
+"movie_0821","hero king","Movie","Sci-Fi","",2011,109,"NC-17","Spanish","USA",4,821340,0,0,0,FALSE,2023-12-20,FALSE,0,0
+"movie_0822","family mystery","TV Series","War","Family",2002,47,"TV-PG","English","USA",6.8,0,0,9,91,FALSE,2021-02-19,FALSE,1,1
+"movie_0823","adventure ice","Movie","Comedy","",1992,87,"TV-PG","English","UK",6.5,527595,0,0,0,FALSE,2022-01-15,FALSE,0,0
+"movie_0824","war queen","Movie","Comedy","",1998,136,"PG-13","English","Japan",6.3,14508562,7872086,0,0,FALSE,2021-03-22,FALSE,0,0
+"movie_0825","warrior story","Movie","Romance","",2008,131,"TV-Y7","Spanish","USA",6.6,2565082,6970808,0,0,TRUE,2020-09-28,FALSE,0,0
+"movie_0826","dark adventure","Stand-up Comedy","Adventure","",2014,53,"TV-Y","English","USA",5,0,0,1,12,TRUE,2023-04-13,FALSE,1,1
+"movie_0827","mystery house","Movie","Family","Biography",2021,139,"R","Hindi","USA",6.5,0,2642562,0,0,TRUE,2024-10-22,FALSE,1,1
+"movie_0828","my fire","Movie","Sport","Adventure",2010,92,"PG-13","English","Canada",7.1,6655248,12028987,0,0,FALSE,2024-08-27,FALSE,0,0
+"movie_0829","a dream","Movie","Sci-Fi","Comedy",2017,149,"PG-13","English","USA",6.9,19244906.2,12557644,0,0,TRUE,2022-07-14,FALSE,0,0
+"movie_0830","storm mystery","Movie","Comedy","",2019,144,"TV-MA","French","USA",10,19244906.2,476337,0,0,FALSE,2023-09-25,FALSE,0,0
+"movie_0831","quest hero","Documentary","Fantasy","",2018,91,"G","English","France",7,0,0,1,12,TRUE,2023-09-01,FALSE,1,1
+"movie_0832","dark princess","Movie","Mystery","",2024,123,"R","English","USA",7.5,7530143,3531986,0,0,FALSE,2023-11-25,FALSE,0,0
+"movie_0833","mystery mystery","Movie","Biography","",1999,114,"PG","Korean","USA",4,19244906.2,4613013,0,0,FALSE,2022-09-13,FALSE,0,0
+"movie_0834","the mission","TV Series","Crime","",2009,25,"TV-14","Japanese","USA",7.1,0,0,1,118,FALSE,2024-01-22,FALSE,1,1
+"movie_0835","bright ice","Movie","Mystery","",2021,95,"TV-14","French","South Korea",7.9,1167789,819792,0,0,TRUE,2021-06-10,FALSE,0,0
+"movie_0836","our legend","Movie","War","",2015,113,"TV-Y7","Korean","USA",6.4,484647,99312954.4,0,0,FALSE,2021-07-04,TRUE,0,0
+"movie_0837","princess adventure","Movie","Action","Adventure",2015,140,"TV-Y","Korean","USA",4.9,0,0,0,0,FALSE,2024-07-06,TRUE,1,1
+"movie_0838","adventure hero","TV Series","Western","",2018,50,"TV-14","English","France",8.1,0,0,5,121,FALSE,2023-10-10,FALSE,1,1
+"movie_0839","journey war","Movie","War","Music",1991,153,"PG-13","English","UK",8.4,5258946,0,0,0,FALSE,2025-05-06,FALSE,0,0
+"movie_0840","family kingdom","Movie","Adventure","",2016,107,"TV-14","English","USA",5.1,1028211,0,0,0,FALSE,2024-02-17,FALSE,0,0
+"movie_0841","day mystery","Movie","Mystery","",1997,113,"PG","French","USA",6,4169507,99312954.4,0,0,FALSE,2024-02-03,FALSE,0,0
+"movie_0842","storm mission","Movie","Action","",1996,28,"PG","Korean","USA",4.4,0,2667223,0,0,TRUE,2022-09-24,TRUE,1,1
+"movie_0843","war fire","Movie","Comedy","Family",1998,60,"PG-13","English","USA",4.8,2630439,0,0,0,FALSE,2024-03-28,FALSE,0,0
+"movie_0844","journey story","Movie","Comedy","Comedy",2001,67,"R","English","USA",5.1,1204081,0,0,0,FALSE,2024-09-25,TRUE,0,0
+"movie_0845","little house","TV Series","Thriller","",1996,40,"TV-MA","Spanish","South Korea",8,0,0,12,52,FALSE,2024-03-16,FALSE,1,1
+"movie_0846","storm family","Stand-up Comedy","Action","Mystery",2024,61,"TV-MA","English","USA",4.8,0,0,1,12,FALSE,2024-03-03,TRUE,1,1
+"movie_0847","mystery war","TV Series","Action","",1992,63,"NC-17","English","Canada",9.1,0,0,9,176,FALSE,2024-10-05,TRUE,1,1
+"movie_0848","dark fire","Limited Series","Biography","Biography",2014,61,"NC-17","French","USA",3.8,0,0,5,55,TRUE,2021-12-16,FALSE,1,1
+"movie_0849","house king","Movie","Adventure","",1994,136,"TV-MA","English","South Korea",5.3,1868982,99312954.4,0,0,FALSE,2021-03-02,FALSE,0,0
+"movie_0850","mystery city","Movie","Horror","",1999,109,"TV-Y","English","USA",4.3,19244906.2,0,0,0,TRUE,2022-09-03,TRUE,0,0
+"movie_0851","city battle","Stand-up Comedy","Fantasy","",2003,58,"TV-MA","English","UK",6.8,0,0,1,12,FALSE,2025-01-06,FALSE,1,1
+"movie_0852","dream hero","TV Series","Family","Western",2004,34,"TV-PG","English","Canada",6.6,0,0,8,58,FALSE,2025-04-28,TRUE,1,1
+"movie_0853","family journey","TV Series","Fantasy","",2018,37,"TV-Y","French","South Korea",6.5,0,0,7,25,FALSE,2021-09-08,TRUE,1,1
+"movie_0854","dark house","Movie","Fantasy","",2012,117,"PG-13","English","USA",7.8,859774,0,0,0,TRUE,2024-07-16,FALSE,0,0
+"movie_0855","first night","Movie","Animation","",2024,137,"TV-PG","Korean","France",7,5430130,17526308,0,0,FALSE,2021-06-05,FALSE,0,0
+"movie_0856","big king","Movie","Fantasy","",2017,76,"R","English","South Korea",3.3,19244906.2,0,0,0,FALSE,2022-06-13,TRUE,0,0
+"movie_0857","day warrior","Stand-up Comedy","Sport","Thriller",2011,61,"R","English","Canada",3.7,0,0,1,12,FALSE,2024-01-19,FALSE,1,1
+"movie_0858","fire mystery","TV Series","Horror","",1997,28,"TV-PG","French","USA",4.6,0,0,5,68,TRUE,2024-03-21,FALSE,1,1
+"movie_0859","first mission","Documentary","Action","Western",2017,98,"PG-13","English","USA",5.3,0,0,1,12,TRUE,2022-06-24,TRUE,1,1
+"movie_0860","our love","Stand-up Comedy","Animation","",2020,40,"TV-14","English","USA",0.5,0,0,1,12,FALSE,2021-05-06,FALSE,1,1
+"movie_0861","night journey","Documentary","Western","History",2022,50,"PG-13","Italian","USA",7.7,0,0,1,12,TRUE,2024-06-16,FALSE,1,1
+"movie_0862","day quest","Stand-up Comedy","Family","",2002,489.600000000001,"TV-MA","Hindi","South Korea",6.3,0,0,1,12,FALSE,2020-11-27,FALSE,1,1
+"movie_0863","fire house","Movie","Music","Mystery",2003,139,"TV-14","French","USA",7.3,0,0,0,0,TRUE,2025-07-15,FALSE,1,1
+"movie_0864","dragon hero","Movie","Sci-Fi","",2012,100,"G","English","USA",5.7,0,17337817,0,0,FALSE,2024-01-30,FALSE,1,1
+"movie_0865","dark mission","Movie","Sport","Biography",2022,118,"R","French","USA",8.4,8577151,99312954.4,0,0,FALSE,2025-06-04,FALSE,0,0
+"movie_0866","love king","TV Series","Comedy","",1997,75,"G","English","Japan",4.1,0,0,10,44,FALSE,2022-10-18,FALSE,1,1
+"movie_0867","story legend","Documentary","Mystery","",2008,103,"TV-G","Spanish","South Korea",9.6,0,0,1,12,FALSE,2022-04-21,TRUE,1,1
+"movie_0868","war empire","TV Series","Crime","Horror",1965,77,"PG-13","English","France",6.5,0,0,1,150,FALSE,2021-09-29,FALSE,1,1
+"movie_0869","old city","Movie","Animation","",2001,74,"G","English","USA",5.8,341904,6047181,0,0,FALSE,2023-03-10,FALSE,0,0
+"movie_0870","little phoenix","Documentary","Music","Romance",2022,100,"TV-PG","English","France",4.6,0,0,1,12,TRUE,2021-03-14,FALSE,1,1
+"movie_0871","princess city","TV Series","Animation","",1994,80,"G","English","USA",5.6,0,0,2,144,TRUE,2023-01-01,FALSE,1,1
+"movie_0872","journey journey","Documentary","Action","",1996,46,"NC-17","English","USA",7.1,0,0,1,12,FALSE,2022-04-02,FALSE,1,1
+"movie_0873","the city","Movie","Western","Music",2000,130,"NC-17","English","USA",5.5,5203135,14104172,0,0,TRUE,2024-03-19,TRUE,0,0
+"movie_0874","family legend","Limited Series","Romance","",2017,81,"PG-13","English","USA",6,0,0,12,133,FALSE,2023-04-22,TRUE,1,1
+"movie_0875","empire dragon","Limited Series","Fantasy","Crime",2016,41,"NC-17","English","USA",6.2,0,0,8,156,TRUE,2024-01-10,FALSE,1,1
+"movie_0876","mystery war","TV Series","Action","",2018,31,"G","French","India",6.6,0,0,8,182,FALSE,2023-08-20,FALSE,1,1
+"movie_0877","family dragon","Movie","Sci-Fi","",2016,122,"TV-PG","Japanese","France",6.4,15085716,0,0,0,TRUE,2024-09-27,FALSE,0,0
+"movie_0878","mystery battle","TV Series","Animation","Biography",2021,65,"TV-Y","Spanish","Canada",7,0,0,8,48,FALSE,2020-10-29,FALSE,1,1
+"movie_0879","storm fire","TV Series","Action","Family",1998,37,"TV-Y","English","USA",7.5,0,0,7,65,FALSE,2025-03-16,FALSE,1,1
+"movie_0880","my dragon","Movie","Drama","",2002,94,"TV-Y7","Italian","USA",8.5,19244906.2,2421257,0,0,FALSE,2022-02-21,FALSE,0,0
+"movie_0881","adventure dream","Movie","Comedy","",1993,121,"TV-G","Italian","USA",4.5,0,13043639,0,0,FALSE,2024-11-23,FALSE,1,1
+"movie_0882","little mystery","TV Series","Horror","",2002,52,"TV-MA","English","USA",6.5,0,0,12,81,FALSE,2021-05-06,FALSE,1,1
+"movie_0883","an mission","TV Series","Mystery","",2008,17,"G","English","India",5.4,0,0,2,156,FALSE,2021-09-22,FALSE,1,1
+"movie_0884","queen king","Movie","Animation","",2000,74,"TV-G","English","Japan",9,3791520,0,0,0,FALSE,2021-07-30,FALSE,0,0
+"movie_0885","battle fire","Movie","Comedy","",2015,74,"TV-MA","English","USA",5.1,2627377,10816317,0,0,FALSE,2025-02-26,FALSE,0,0
+"movie_0886","empire king","Stand-up Comedy","Adventure","",2015,51,"R","German","Canada",5.7,0,0,1,12,FALSE,2023-12-17,FALSE,1,1
+"movie_0887","warrior phoenix","Movie","Music","Music",2004,115,"G","English","USA",4.1,19244906.2,99312954.4,0,0,FALSE,2023-03-09,FALSE,0,0
+"movie_0888","adventure phoenix","Limited Series","Documentary","Fantasy",2009,61,"PG","English","South Korea",7.1,0,0,14,196,TRUE,2024-06-20,FALSE,1,1
+"movie_0889","love princess","Stand-up Comedy","Crime","War",2002,71,"TV-Y","Spanish","Japan",5.9,0,0,1,12,FALSE,2024-06-21,FALSE,1,1
+"movie_0890","war fire","Movie","Music","",2008,14,"TV-Y7","English","USA",5.1,9796514,9922315,0,0,TRUE,2025-06-07,FALSE,0,0
+"movie_0891","ice house","Movie","Western","Thriller",2018,81,"TV-Y7","French","UK",8.6,6422267,1560245,0,0,FALSE,2024-08-29,FALSE,0,0
+"movie_0892","dark dragon","Documentary","Documentary","Documentary",1991,79,"NC-17","Spanish","South Korea",5.1,0,0,1,12,FALSE,2024-05-16,FALSE,1,1
+"movie_0893","love mission","Movie","Adventure","",2011,27,"G","English","USA",6.7,1945287,587723,0,0,TRUE,2025-07-15,TRUE,0,0
+"movie_0894","mystery secret","Movie","Thriller","Drama",2013,155,"NC-17","Italian","South Korea",6.5,5902404,99312954.4,0,0,FALSE,2021-04-12,TRUE,0,0
+"movie_0895","house war","Movie","Animation","",2014,82,"TV-PG","English","USA",7.5,1647411,0,0,0,FALSE,2025-03-18,FALSE,0,0
+"movie_0896","phoenix hero","Documentary","Romance","",2018,76,"NC-17","English","Japan",6.6,0,0,1,12,TRUE,2023-09-30,TRUE,1,1
+"movie_0897","first storm","Movie","Western","",1995,456,"TV-MA","English","USA",9.5,0,0,0,0,TRUE,2021-03-10,FALSE,1,1
+"movie_0898","first family","Movie","Adventure","Sci-Fi",2008,125,"TV-14","English","Canada",8.9,0,9257237,0,0,TRUE,2021-08-28,TRUE,1,1
+"movie_0899","city phoenix","Stand-up Comedy","History","",2002,43,"NC-17","Spanish","USA",6.6,0,0,1,12,FALSE,2020-12-19,FALSE,1,1
+"movie_0900","ice love","Documentary","Drama","",2001,66,"NC-17","Japanese","USA",9.5,0,0,1,12,TRUE,2022-07-24,FALSE,1,1
+"movie_0901","first hero","TV Series","War","Animation",2013,28,"PG-13","English","USA",4.7,0,0,2,30,FALSE,2020-08-12,FALSE,1,1
+"movie_0902","mystery ice","TV Series","Action","Drama",2004,41,"NC-17","English","USA",3.7,0,0,14,56,TRUE,2024-10-22,TRUE,1,1
+"movie_0903","secret battle","Stand-up Comedy","Animation","",2024,63,"TV-14","German","USA",8.3,0,0,1,12,FALSE,2023-08-30,FALSE,1,1
+"movie_0904","battle mission","Movie","Biography","",2007,106,"PG-13","Hindi","USA",5,15460729,12117921,0,0,FALSE,2023-07-20,FALSE,0,0
+"movie_0905","dark quest","Movie","Adventure","",2020,153,"TV-Y","English","USA",6.3,0,52461237,0,0,TRUE,2024-02-17,FALSE,1,1
+"movie_0906","mystery mystery","Movie","Fantasy","Western",2018,93,"PG-13","English","USA",3.5,2480786,0,0,0,TRUE,2023-06-07,FALSE,0,0
+"movie_0907","phoenix secret","Limited Series","Romance","",1993,59,"TV-Y","English","Japan",4.2,0,0,1,189,TRUE,2023-08-14,FALSE,1,1
+"movie_0908","love war","Movie","Sport","",1990,86,"TV-Y","English","USA",6.2,4103654,6858445,0,0,FALSE,2021-06-13,FALSE,0,0
+"movie_0909","day mission","Movie","Romance","Fantasy",2000,86,"PG-13","German","USA",7.1,3817917,7105587,0,0,FALSE,2021-09-12,FALSE,0,0
+"movie_0910","night battle","Stand-up Comedy","Thriller","Western",2000,62,"PG","English","USA",6.2,0,0,1,12,FALSE,2021-03-21,FALSE,1,1
+"movie_0911","bright dragon","Stand-up Comedy","Thriller","",2018,55,"TV-14","English","USA",7.9,0,0,1,12,FALSE,2022-09-23,TRUE,1,1
+"movie_0912","mission night","Stand-up Comedy","Adventure","",2015,72,"TV-Y7","English","USA",2.6,0,0,1,12,FALSE,2023-01-10,FALSE,1,1
+"movie_0913","empire secret","TV Series","Crime","Sport",2020,29,"TV-G","Japanese","UK",7.8,0,0,2,70,TRUE,2024-04-25,FALSE,1,1
+"movie_0914","love secret","Movie","Music","Western",2018,100,"R","English","USA",3.3,8658634,0,0,0,FALSE,2023-03-19,TRUE,0,0
+"movie_0915","journey adventure","TV Series","Romance","Fantasy",2004,36,"PG-13","English","France",8.8,0,0,11,27,TRUE,2025-07-10,FALSE,1,1
+"movie_0916","adventure dream","Movie","Documentary","",2017,97,"G","English","USA",7.7,5230091,99312954.4,0,0,TRUE,2022-03-28,FALSE,0,0
+"movie_0917","adventure ice","Movie","Adventure","",2004,65,"TV-PG","German","UK",4.6,2308408,37466547,0,0,FALSE,2021-07-21,FALSE,0,0
+"movie_0918","secret phoenix","Stand-up Comedy","Sport","",2002,59,"TV-PG","English","South Korea",6.4,0,0,1,12,FALSE,2021-02-08,FALSE,1,1
+"movie_0919","the war","Movie","War","Sport",2012,99,"TV-Y7","English","USA",4.5,2037924,6245998,0,0,FALSE,2022-10-08,TRUE,0,0
+"movie_0920","story warrior","Movie","Music","",1998,129,"R","English","Canada",10,1568923,910439,0,0,FALSE,2021-07-11,FALSE,0,0
+"movie_0921","phoenix house","Movie","War","Thriller",1998,114,"TV-MA","Hindi","Japan",7.1,0,17204463,0,0,FALSE,2024-01-14,FALSE,1,1
+"movie_0922","our story","Movie","Crime","",2017,118,"NC-17","French","Canada",8,0,0,0,0,TRUE,2024-11-29,TRUE,1,1
+"movie_0923","last phoenix","TV Series","Adventure","Fantasy",1995,45,"TV-Y7","English","USA",5.7,0,0,4,182,FALSE,2020-08-20,TRUE,1,1
+"movie_0924","fire king","TV Series","Drama","",2022,64,"PG","Spanish","USA",0.5,0,0,1,98,FALSE,2021-07-22,FALSE,1,1
+"movie_0925","quest princess","Movie","Mystery","",2005,134,"TV-G","English","France",6.2,16797086,0,0,0,FALSE,2025-06-16,FALSE,0,0
+"movie_0926","family queen","Movie","Sci-Fi","Action",2024,125,"NC-17","Spanish","USA",4.6,0,10714224,0,0,FALSE,2024-05-02,FALSE,1,1
+"movie_0927","fire ice","TV Series","Sci-Fi","",2008,40,"TV-G","French","France",6.7,0,0,12,37,TRUE,2022-09-03,TRUE,1,1
+"movie_0928","little dream","TV Series","Horror","",2008,54,"PG","Spanish","USA",5.9,0,0,5,131,FALSE,2023-12-13,FALSE,1,1
+"movie_0929","fire king","Movie","Adventure","",2001,144,"G","English","USA",6.4,6055248,54612,0,0,FALSE,2023-01-26,FALSE,0,0
+"movie_0930","dark day","Limited Series","Animation","History",1991,18,"TV-14","English","Canada",5.8,0,0,8,99,FALSE,2025-04-30,FALSE,1,1
+"movie_0931","family king","Movie","War","",2011,91,"TV-Y","English","USA",4.2,6878404,99312954.4,0,0,FALSE,2020-08-12,FALSE,0,0
+"movie_0932","hero empire","Limited Series","Sci-Fi","Adventure",1992,63,"NC-17","English","USA",9,0,0,6,46,FALSE,2021-04-22,FALSE,1,1
+"movie_0933","princess family","Movie","Horror","",2014,136,"TV-PG","Hindi","USA",7.5,1750334,8461465,0,0,FALSE,2023-01-06,FALSE,0,0
+"movie_0934","kingdom house","TV Series","Comedy","",2018,23,"TV-G","English","Canada",6.8,0,0,2,22,TRUE,2021-03-02,TRUE,1,1
+"movie_0935","day adventure","Movie","Thriller","",2003,122,"TV-PG","French","USA",4.6,0,0,0,0,TRUE,2021-10-31,FALSE,1,1
+"movie_0936","quest empire","Movie","Family","Crime",2019,85,"G","English","USA",3.7,0,212795,0,0,FALSE,2024-12-04,TRUE,1,1
+"movie_0937","journey house","Movie","History","",2010,108,"TV-Y7","English","USA",0.6,19244906.2,0,0,0,FALSE,2020-11-26,FALSE,0,0
+"movie_0938","old house","Movie","Crime","War",1995,116,"R","English","USA",1.7,6877911,65073829,0,0,TRUE,2021-04-05,TRUE,0,0
+"movie_0939","dragon war","TV Series","Crime","",2000,66,"TV-Y7","English","Canada",6.2,0,0,10,117,FALSE,2021-07-08,FALSE,1,1
+"movie_0940","fire warrior","Limited Series","Documentary","",2016,69,"TV-PG","English","USA",7.5,0,0,1,146,FALSE,2020-11-15,FALSE,1,1
+"movie_0941","a mystery","Movie","War","",2023,117,"TV-PG","Spanish","Germany",5.6,0,31526910,0,0,FALSE,2025-05-01,FALSE,1,1
+"movie_0942","king legend","Stand-up Comedy","Mystery","",1999,98,"TV-14","English","Canada",5.9,0,0,1,12,TRUE,2022-12-31,TRUE,1,1
+"movie_0943","dream adventure","TV Series","Music","",2021,49,"TV-MA","English","Japan",9.4,0,0,14,52,TRUE,2022-12-04,FALSE,1,1
+"movie_0944","dark love","Movie","Sci-Fi","Animation",1990,103,"G","English","Japan",8.3,755027,121486,0,0,FALSE,2023-07-21,FALSE,0,0
+"movie_0945","secret ice","Documentary","Sport","Sci-Fi",2010,97,"TV-Y7","English","USA",6.6,0,0,1,12,TRUE,2023-04-30,FALSE,1,1
+"movie_0946","quest warrior","Movie","Comedy","Action",2001,83,"G","English","France",6.5,10571426,2106307,0,0,FALSE,2023-09-28,FALSE,0,0
+"movie_0947","secret mission","Movie","Biography","",1999,84,"PG-13","Spanish","USA",9.3,7872425,5076773,0,0,FALSE,2023-04-23,FALSE,0,0
+"movie_0948","little night","TV Series","History","",2015,52,"TV-Y","English","USA",6.8,0,0,1,164,TRUE,2022-11-15,FALSE,1,1
+"movie_0949","warrior adventure","Movie","History","Adventure",2006,106,"G","Italian","USA",6,10082632,2344323,0,0,FALSE,2023-10-16,TRUE,0,0
+"movie_0950","war day","TV Series","Thriller","",2000,55,"TV-14","Korean","USA",6.1,0,0,11,184,FALSE,2024-03-30,FALSE,1,1
+"movie_0951","big house","TV Series","Horror","",2020,38,"G","English","USA",6.7,0,0,6,72,TRUE,2020-09-20,FALSE,1,1
+"movie_0952","queen day","Movie","Western","Music",2009,121,"PG","English","USA",8.8,9065794,0,0,0,FALSE,2023-07-21,FALSE,0,0
+"movie_0953","bright love","Documentary","Drama","Western",1999,108,"TV-G","Spanish","South Korea",5,0,0,1,12,FALSE,2020-11-27,FALSE,1,1
+"movie_0954","mission adventure","Movie","Comedy","",2020,151,"PG","German","USA",5.6,479995,31220059,0,0,TRUE,2020-10-20,FALSE,0,0
+"movie_0955","queen empire","Movie","Fantasy","",2022,87,"PG-13","Spanish","USA",7.2,0,0,0,0,TRUE,2022-03-03,FALSE,1,1
+"movie_0956","a love","Stand-up Comedy","Adventure","",2001,97,"G","English","USA",8.4,0,0,1,12,FALSE,2023-01-20,FALSE,1,1
+"movie_0957","storm love","Documentary","Sci-Fi","Family",2024,102,"TV-14","Italian","Canada",6.3,0,0,1,12,TRUE,2021-05-24,FALSE,1,1
+"movie_0958","story warrior","Movie","Thriller","",2022,104,"G","English","USA",9.1,7640901,8187582,0,0,FALSE,2021-05-19,FALSE,0,0
+"movie_0959","a dragon","TV Series","Animation","",2016,51,"R","French","USA",8.9,0,0,14,17,TRUE,2023-05-11,FALSE,1,1
+"movie_0960","quest quest","TV Series","Animation","",2015,29,"PG-13","English","Canada",7,0,0,3,46,TRUE,2022-02-23,TRUE,1,1
+"movie_0961","story mystery","Movie","Fantasy","",2014,115,"TV-Y7","Spanish","South Korea",7.3,0,99312954.4,0,0,TRUE,2025-04-30,FALSE,1,1
+"movie_0962","city ice","TV Series","History","",2018,45,"TV-PG","English","USA",6.8,0,0,9,196.96,FALSE,2022-05-03,TRUE,1,1
+"movie_0963","war dream","Limited Series","Sci-Fi","",1998,24,"NC-17","English","USA",6.7,0,0,11,30,TRUE,2025-05-18,FALSE,1,1
+"movie_0964","journey empire","TV Series","Crime","Documentary",1992,58,"TV-Y","English","UK",7.1,0,0,4,18,TRUE,2022-11-22,FALSE,1,1
+"movie_0965","empire legend","Movie","Sport","Western",1997,29,"PG-13","Spanish","Canada",3.5,1437629,5514939,0,0,FALSE,2020-08-06,FALSE,0,0
+"movie_0966","a adventure","Stand-up Comedy","Crime","",2024,70,"TV-G","English","USA",5.9,0,0,1,12,FALSE,2024-01-20,FALSE,1,1
+"movie_0967","our adventure","TV Series","Adventure","",2017,66,"TV-G","German","USA",7,0,0,11,107,FALSE,2025-04-20,FALSE,1,1
+"movie_0968","first queen","TV Series","Fantasy","",1996,46,"NC-17","English","USA",5.8,0,0,9,14,FALSE,2024-03-16,FALSE,1,1
+"movie_0969","adventure story","Movie","Crime","Music",1993,131,"TV-MA","English","India",6.1,1905142,389765,0,0,FALSE,2022-01-30,FALSE,0,0
+"movie_0970","house king","TV Series","Biography","",2005,52,"PG","Spanish","USA",4.6,0,0,7,159,FALSE,2021-12-21,TRUE,1,1
+"movie_0971","warrior empire","TV Series","Romance","",1998,48,"NC-17","German","Canada",6.3,0,0,9,107,FALSE,2022-04-21,FALSE,1,1
+"movie_0972","bright mystery","Stand-up Comedy","Sport","",1995,54,"PG-13","Spanish","USA",6.8,0,0,1,12,FALSE,2024-12-02,FALSE,1,1
+"movie_0973","dark kingdom","TV Series","Romance","",2001,66,"R","German","USA",6.2,0,0,3,133,TRUE,2022-10-03,FALSE,1,1
+"movie_0974","queen storm","TV Series","Crime","Drama",2002,50,"TV-14","English","Germany",5.8,0,0,1,11,FALSE,2024-06-28,FALSE,1,1
+"movie_0975","quest war","Movie","History","Adventure",2013,101,"TV-MA","French","USA",5.5,12437786,99312954.4,0,0,FALSE,2022-11-14,FALSE,0,0
+"movie_0976","dragon journey","Movie","Adventure","Documentary",2015,111,"G","Hindi","Japan",7.3,19244906.2,2099413,0,0,FALSE,2022-09-16,FALSE,0,0
+"movie_0977","little secret","Movie","Family","Romance",2021,131,"TV-PG","English","Germany",0.5,1815186,2039126,0,0,FALSE,2021-06-12,FALSE,0,0
+"movie_0978","city night","Movie","Romance","Music",2017,93,"PG-13","Korean","UK",8.5,1669938,5999880,0,0,TRUE,2022-03-23,TRUE,0,0
+"movie_0979","story legend","Movie","War","",2017,110,"R","French","USA",7.6,2371950,0,0,0,FALSE,2023-10-03,FALSE,0,0
+"movie_0980","war battle","TV Series","Adventure","Biography",1966,17,"TV-MA","Spanish","USA",8,0,0,13,166,FALSE,2024-03-11,FALSE,1,1
+"movie_0981","first dragon","Movie","Biography","",2008,90,"TV-14","English","India",5.4,0,99312954.4,0,0,TRUE,2025-02-07,FALSE,1,1
+"movie_0982","storm dream","Movie","Horror","",1998,99,"TV-PG","Japanese","Japan",9.2,9850569,8806633,0,0,FALSE,2024-05-09,FALSE,0,0
+"movie_0983","day legend","Movie","Action","Romance",2002,61,"R","Japanese","Canada",9.4,11539630,248879,0,0,FALSE,2022-03-13,FALSE,0,0
+"movie_0984","family day","Stand-up Comedy","History","",2006,59,"G","English","Canada",5.8,0,0,1,12,FALSE,2024-09-24,TRUE,1,1
+"movie_0985","queen night","Documentary","Sci-Fi","",2000,89,"TV-14","French","France",7.7,0,0,1,12,FALSE,2024-01-21,FALSE,1,1
+"movie_0986","love day","TV Series","Horror","",2022,37,"NC-17","English","USA",8.5,0,0,10,153,FALSE,2023-03-26,FALSE,1,1
+"movie_0987","phoenix storm","TV Series","Horror","Sci-Fi",2023,51,"TV-Y","English","USA",6.8,0,0,1,93,FALSE,2023-05-26,FALSE,1,1
+"movie_0988","little journey","Stand-up Comedy","War","",2006,72,"R","English","Canada",1.6,0,0,1,12,TRUE,2024-01-09,FALSE,1,1
+"movie_0989","empire family","Movie","Biography","Fantasy",2008,168,"TV-14","English","Canada",6.9,0,784225,0,0,FALSE,2025-07-15,FALSE,1,1
+"movie_0990","big quest","Documentary","Mystery","",1997,28,"G","English","USA",3.4,0,0,1,12,FALSE,2025-04-20,FALSE,1,1
+"movie_0991","last queen","Movie","Drama","",1992,76,"PG","Italian","USA",6.5,4303395,6895198,0,0,FALSE,2021-07-19,FALSE,0,0
+"movie_0992","the love","Movie","Horror","Music",2018,57,"TV-14","English","USA",6.2,461832,0,0,0,FALSE,2022-12-15,FALSE,0,0
+"movie_0993","old phoenix","Stand-up Comedy","Western","",2020,19,"PG","Spanish","Canada",3.7,0,0,1,12,FALSE,2025-05-08,FALSE,1,1
+"movie_0994","battle queen","Movie","Mystery","",1990,119,"TV-14","German","USA",1.4,0,28637,0,0,FALSE,2024-02-22,TRUE,1,1
+"movie_0995","big day","Movie","Horror","",2024,185,"TV-PG","Japanese","South Korea",7.9,436936,25050655,0,0,FALSE,2024-01-13,FALSE,0,0
+"movie_0996","secret mission","TV Series","Sci-Fi","",1997,69,"NC-17","English","South Korea",6.4,0,0,2,24,FALSE,2021-05-28,TRUE,1,1
+"movie_0997","house empire","TV Series","History","Biography",2024,21,"R","French","USA",7.1,0,0,11,124,FALSE,2024-02-29,FALSE,1,1
+"movie_0998","day legend","Limited Series","Fantasy","",2013,69,"TV-14","English","USA",6,0,0,8,162,TRUE,2022-09-25,FALSE,1,1
+"movie_0999","ice war","Movie","Crime","",1997,16,"TV-Y7","English","USA",7,19244906.2,139707,0,0,FALSE,2024-01-06,FALSE,0,0
+"movie_1000","last night","TV Series","Sport","",1993,42,"NC-17","English","UK",4.6,0,0,10,25,FALSE,2021-09-02,FALSE,1,1
+"movie_0305","legend house","Movie","Adventure","Fantasy",1984,113,"TV-MA","English","Japan",0.5,0,53455628,0,0,TRUE,2021-06-14,FALSE,1,1
+"movie_0618","first kingdom","TV Series","War","Romance",2014,58,"NC-17","English","South Korea",0.5,0,0,1,152,FALSE,2024-05-30,FALSE,1,1
+"movie_0452","family secret","Limited Series","Romance","",2024,56,"TV-Y7","French","USA",6.6,0,0,11,58,TRUE,2023-12-23,FALSE,1,1
+"movie_0600","big adventure","TV Series","History","Fantasy",1992,40,"TV-Y","Korean","South Korea",5.1,0,0,14,173,FALSE,2022-12-08,FALSE,1,1
+"movie_0625","day night","Movie","Documentary","",2003,105,"TV-Y","English","USA",0.5,0,0,0,0,FALSE,2021-10-13,FALSE,1,1
