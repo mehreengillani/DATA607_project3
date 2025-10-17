@@ -1,0 +1,693 @@
+---
+title: "Project3_watch_history_data_cleaning"
+Author: "Mehreen Ali Gillani"
+output: html_document
+date: "2025-10-12"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+##  Data Cleaning of watch_history table of Netflix
+
+### Step 1. Import Libraries
+
+```{r import libraries}
+library(tidyverse)
+library(dplyr)
+library(naniar)
+library(gtExtras)
+library(stringr)
+library(lubridate)
+```
+### Step 2. Read watch_history dataset and store it in a Dataframe
+
+```{r read csv}
+watch_history = read.csv('watch_history.csv')
+colnames(watch_history)
+
+#data structure
+str(watch_history)
+```
+
+### Step 3: Data Cleaning
+
+####  3.1 Handling missing values
+```{r identify missing values}
+
+# Identify missing values
+miss_var_summary(watch_history) %>%
+  gt() %>%
+  gt_theme_guardian() %>%
+  tab_header(title="Missing data in watch_history table")
+
+#plot
+gg_miss_var(watch_history)
+``` 
+
+Immediate Assessment
+
+High missingness (>79%): user_rating I will delete this column
+for watch_duration_minutes, progress_percentage missing variable percentage is 11.7 and 8.11 so we will replace missing values with multiple imputation 
+
+```{r user_rating column delete}
+
+library(mice)
+
+# Keep all columns, only impute the specific missing ones
+watch_history_clean <- watch_history %>%
+  select(-user_rating)  # Remove user_rating first
+
+# Create a temporary dataset for imputation
+temp_impute <- watch_history_clean %>%
+  select(watch_duration_minutes, progress_percentage, device_type, action, quality)
+
+# Perform imputation
+imputed_temp <- mice(temp_impute, m = 1, method = "pmm", printFlag = FALSE)
+imputed_temp_complete <- complete(imputed_temp)
+
+# Replace only the imputed columns in the main dataset
+watch_history_clean$watch_duration_minutes <- imputed_temp_complete$watch_duration_minutes
+watch_history_clean$progress_percentage <- imputed_temp_complete$progress_percentage
+
+#check for missing data
+miss_var_summary(watch_history_clean)
+```
+
+Check density plot after imputation to see if our distribution is still the same 
+```{r}
+# Density plots of imdb_ratings before and after imputation
+par(mfrow = c(1, 2))
+plot(density(watch_history$watch_duration_minutes, na.rm = TRUE), main = "watch_duration_minutes Density \n before multiple imputation")
+plot(density(watch_history_clean$watch_duration_minutes, na.rm = TRUE), main = "watch_duration_minutes \n Density after imputation")
+
+plot(density(watch_history$progress_percentage, na.rm = TRUE), main = "progress_percentage Density \n before multiple imputation")
+plot(density(watch_history_clean$progress_percentage, na.rm = TRUE), main = "progress_percentage \n Density after imputation")
+
+par(mfrow = c(1, 1))
+```
+
+Distribution is almost the same after imputation.
+
+Lets Calculate before/after statistics
+
+```{r}
+
+# Calculate before/after statistics of watch_duration_minutes
+before <- watch_history$watch_duration_minutes[!is.na(watch_history$watch_duration_minutes)]
+after <- watch_history_clean$watch_duration_minutes
+
+# Basic statistics comparison
+stats_before <- c(
+  mean = mean(before),
+  sd = sd(before),
+  median = median(before),
+  min = min(before),
+  max = max(before),
+  n = length(before)
+)
+
+stats_after <- c(
+  mean = mean(after),
+  sd = sd(after),
+  median = median(after),
+  min = min(after),
+  max = max(after),
+  n = length(after)
+)
+
+comparison <- data.frame(Before = stats_before, After = stats_after, Change = stats_after - stats_before, percentage = ((stats_after - stats_before)/stats_before) * 100)
+print(round(comparison, 3))
+```
+
+Watch Duration Minutes - Imputation Impact Summary
+
+✅ Minimal Impact - Excellent Results
+
+Mean: -0.471 minutes (-0.72%)
+
+Negligible decrease in average watch time
+Standard Deviation: -1.551 minutes (-2.27%)
+
+Slight reduction in variability, actually beneficial
+Median: +0.100 minutes (+0.20%)
+
+Virtually unchanged central tendency
+Range: Perfectly preserved
+
+Min (0.2 min) and Max (799.3 min) unchanged
+No artificial constraints introduced
+Sample Size: +12,332 records (+13.3%)
+
+Successfully recovered missing data points
+
+```{r}
+
+# Calculate before/after statistics of progress_percentage
+before <- watch_history$progress_percentage[!is.na(watch_history$progress_percentage)]
+after <- watch_history_clean$progress_percentage
+
+# Basic statistics comparison
+stats_before <- c(
+  mean = mean(before),
+  sd = sd(before),
+  median = median(before),
+  min = min(before),
+  max = max(before),
+  n = length(before)
+)
+
+stats_after <- c(
+  mean = mean(after),
+  sd = sd(after),
+  median = median(after),
+  min = min(after),
+  max = max(after),
+  n = length(after)
+)
+
+comparison <- data.frame(Before = stats_before, After = stats_after, Change = stats_after - stats_before, percentage = ((stats_after - stats_before)/stats_before) * 100)
+print(round(comparison, 3))
+```
+
+Progress Percentage - Imputation Impact Summary
+
+✅ Exceptional Preservation - Nearly Perfect
+
+Mean: -0.121% (-0.24%)
+
+Virtually identical average completion rate
+Standard Deviation: -0.081% (-0.28%)
+
+Minimal change in variability
+Median: -0.100% (-0.20%)
+
+Negligible shift in central tendency
+Range: Perfectly preserved
+
+Min (0%) and Max (100%) unchanged
+Full scale integrity maintained
+Sample Size: +8,514 records (+8.82%)
+
+Significant recovery of missing progress data
+
+
+```{r}
+#check categorical values and see their unique values
+unique(watch_history_clean$action)
+unique(watch_history_clean$quality)
+```
+Replace NA with unknown 
+```{r}
+watch_history_clean1 <- watch_history_clean %>%
+  mutate(
+    # Action: convert NA to "unknown" ← THIS LINE HANDLES ACTION NA
+    action = as.factor(ifelse(is.na(action), "unknown", as.character(action))),
+    
+    # Quality: preserve ordering, add "unknown" as lowest level
+    quality = case_when(
+      is.na(quality) ~ "unknown",
+      TRUE ~ as.character(quality)
+    ),
+    quality = factor(quality, levels = c("unknown", "SD", "HD", "4K", "HDR"), ordered = TRUE)
+  )
+unique(watch_history_clean$action)
+unique(watch_history_clean$quality)
+```
+
+#### Step 3.2: Removing Duplicates
+
+```{r check duplicates}
+# Identify total duplicates
+sum(duplicated(watch_history_clean1))
+duplicated_percent <- (sum(duplicated(watch_history_clean1)) / nrow(watch_history_clean1) * 100)
+print(duplicated_percent)
+
+```
+
+The percentage of duplicates is 4.07 so we will delete duplicated rows
+
+```{r remove duplicates}
+
+# Remove ALL duplicate rows (keeping first occurrence)
+watch_history_unique <- distinct(watch_history_clean1)
+
+# Verify removal
+print(paste("Before:", nrow(watch_history_clean1), "rows"))
+print(paste("After:", nrow(watch_history_unique), "rows"))
+print(paste("Removed:", nrow(watch_history_clean1) - nrow(watch_history_unique), "duplicate rows"))
+```
+
+####  Step: 3.3 Data Type Conversion
+
+```{r check data types}
+# Basic structure
+str(watch_history_unique)
+```
+```{r}
+unique(watch_history_unique$quality)
+```
+
+```{r data type conversion}
+
+library(lubridate)
+watch_history_final <- watch_history_unique %>%
+  mutate(
+    # Date conversion
+    watch_date = as.Date(watch_date),
+    
+    # Logical conversion
+    is_download = as.logical(is_download),
+    
+    # Ordered factors with logical hierarchies
+    device_type = factor(device_type, 
+                        levels = c("Mobile", "Tablet", "Laptop", "Desktop", "Smart TV"),
+                        ordered = TRUE),
+    
+    # FIXED: Removed trailing comma after "completed"
+    action = factor(action,
+                   levels = c("unknown", "stopped", "paused", "started", "completed"),
+                   ordered = TRUE),
+    
+    quality = factor(quality,
+                    levels = c("unknown", "SD", "HD", "4K", "HDR"),
+                    ordered = TRUE),
+    
+    # Regular factors
+    location_country = as.factor(location_country)
+  )
+  
+```
+
+We have converted watch_date to date format, is_download logical and
+categorical values to factors:
+device_type, action, genre_secondary, quality, location_country
+
+```{r}
+#check new structure 
+str(watch_history_final)
+```
+
+####  Step 3.4. Handling Outliers
+
+```{r fine numeric columns}
+# Find numeric columns
+numeric_cols <- names(watch_history_final)[sapply(watch_history_final, is.numeric)]
+
+cat("Numeric columns:\n")
+print(numeric_cols)
+
+```
+
+
+BoxPlot before Outlier handling 
+
+```{r before outlier detection}
+
+boxplot(watch_history_final$watch_duration_minutes, main = "watch_duration_minutes Outliers", col = "lightblue")
+boxplot(watch_history_final$progress_percentage, main = "progress_percentage Outliers", col = "lightgreen")
+
+```
+From these plots we can see there are no outliers for progress_percentage. But there are in watch_duration_minutes
+
+Create new column duration_category in dataset
+
+```{r}
+watch_history_final <- watch_history_final %>%
+  mutate(
+    duration_category = factor(
+      case_when(
+        watch_duration_minutes == 0 ~ "0 minutes",
+        watch_duration_minutes <= 5 ~ "1-5 minutes",
+        watch_duration_minutes <= 30 ~ "6-30 minutes",
+        watch_duration_minutes <= 60 ~ "31-60 minutes",
+        watch_duration_minutes <= 120 ~ "1-2 hours",
+        watch_duration_minutes <= 240 ~ "2-4 hours", 
+        watch_duration_minutes <= 480 ~ "4-8 hours",
+        TRUE ~ "Other"
+      ),
+      levels = c("0 minutes", "1-5 minutes", "6-30 minutes", "31-60 minutes", 
+                 "1-2 hours", "2-4 hours", "4-8 hours", "Other"),
+      ordered = TRUE
+    )
+  )
+
+```
+
+```{r}
+# Calculate outlier bounds using IQR method
+duration_data <- watch_history_final$watch_duration_minutes
+
+Q1 <- quantile(duration_data, 0.25)
+Q3 <- quantile(duration_data, 0.75)
+IQR <- Q3 - Q1
+
+lower_bound <- Q1 - 1.5 * IQR
+upper_bound <- Q3 + 1.5 * IQR
+
+cat("=== OUTLIER DETECTION ===\n")
+cat("Q1 (25th percentile):", Q1, "minutes\n")
+cat("Q3 (75th percentile):", Q3, "minutes\n") 
+cat("IQR:", IQR, "minutes\n")
+cat("Lower bound:", lower_bound, "minutes\n")
+cat("Upper bound:", upper_bound, "minutes\n")
+
+outliers <- sum(duration_data > upper_bound)
+cat("Outliers detected:", outliers, "(", round(outliers/length(duration_data)*100, 2), "%)\n")
+
+
+```
+Analysis of Results
+
+Key Issues Identified:
+❌ Lower bound is negative (-50.5 minutes) - impossible for watch duration
+❌ Upper bound seems too low (161.5 minutes = 2.7 hours)
+✅ Only 3.83% outliers - manageable amount
+
+Set lower value to 0 and upper value to 8 hours
+
+```{r}
+
+# Set the bounds
+LOWER_BOUND <- 0      # Minimum 0 minutes
+UPPER_BOUND <- 8 * 60 # Maximum 8 hours (480 minutes)
+
+# Apply the capping
+watch_history_final <- watch_history_final %>%
+  mutate(
+    watch_duration_minutes = case_when(
+      watch_duration_minutes < LOWER_BOUND ~ LOWER_BOUND,
+      watch_duration_minutes > UPPER_BOUND ~ UPPER_BOUND,
+      TRUE ~ watch_duration_minutes
+    )
+  )
+
+# Calculate statistics
+original_data <- watch_history_final$watch_duration_minutes  # Before any changes if you saved it
+capped_below <- sum(watch_history_final$watch_duration_minutes < LOWER_BOUND, na.rm = TRUE)
+capped_above <- sum(watch_history_final$watch_duration_minutes > UPPER_BOUND, na.rm = TRUE)
+
+cat("=== BOUNDS CAPPING RESULTS ===\n")
+cat("Lower bound:", LOWER_BOUND, "minutes\n")
+cat("Upper bound:", UPPER_BOUND, "minutes (", UPPER_BOUND/60, "hours)\n")
+cat("Values capped below:", capped_below, "\n")
+cat("Values capped above:", capped_above, "\n")
+cat("New range: [", min(watch_history_final$watch_duration_minutes), ", ", 
+    max(watch_history_final$watch_duration_minutes), "] minutes\n", sep = "")
+```
+
+
+
+BoxPlot after outlier handling with cap method
+
+```{r after outlier cap}
+
+boxplot(watch_history_final$watch_duration_minutes, main = "watch_duration_minutes after applying cap", col = "lightblue")
+
+# Reset plot layout
+par(mfrow = c(1, 1))
+```
+
+```{r}
+
+# Simple bar plot
+ggplot(watch_history_final, aes(x = duration_category)) +
+  geom_bar(fill = "steelblue", alpha = 0.7) +
+  labs(title = "Watch Duration Categories",
+       x = "Duration Category", 
+       y = "Number of Sessions") +
+  theme_minimal()
+```
+
+
+####  3.5 String Cleaning
+
+
+```{r find textCols_string_cleaning}
+# Find all text columns
+text_cols <- names(watch_history_final)[sapply(watch_history_final, function(x) is.character(x) | is.factor(x))]
+
+cat("Text columns found:\n")
+print(text_cols)
+```
+
+Text cleaning: convert to lower case, convert empty string, remove whitespace
+```{r text_cleaning_p2}
+# Perform comprehensive text cleaning
+watch_history_cleaned <- watch_history_final %>%
+  mutate(across(all_of(text_cols), ~ {
+    if(is.character(.)) {
+      # Remove leading/trailing whitespace
+      cleaned <- trimws(.)
+      # Convert to lowercase for standardization
+      cleaned <- tolower(cleaned)
+      # Remove multiple spaces
+      cleaned <- gsub("\\s+", " ", cleaned)
+      # Convert empty strings to NA
+      cleaned <- ifelse(cleaned == "", NA, cleaned)
+      return(cleaned)
+    } else {
+      return(.)
+    }
+  }))
+```
+
+
+```{r}
+colnames(watch_history_cleaned)
+
+unique(watch_history_cleaned$quality)
+```
+
+####  3.6 Data Validation
+
+```{r Validate variables}
+library(dplyr)
+library(ggplot2)
+
+# Comprehensive data validation function
+validate_cleaned_data <- function(df) {
+  cat("=== COMPREHENSIVE DATA VALIDATION REPORT ===\n\n")
+  
+  # 1. Basic Structure Validation
+  cat("1. BASIC STRUCTURE VALIDATION\n")
+  cat("   Total rows:", nrow(df), "\n")
+  cat("   Total columns:", ncol(df), "\n")
+  cat("   Complete cases:", sum(complete.cases(df)), "(", 
+      round(mean(complete.cases(df)) * 100, 1), "%)\n")
+  
+  duplicates <- sum(duplicated(df))
+  cat("   Duplicate rows:", duplicates, "\n")
+  
+  # 2. Missing Values Check
+  cat("\n2. MISSING VALUES VALIDATION\n")
+  missing_summary <- sapply(df, function(x) sum(is.na(x)))
+  missing_df <- data.frame(
+    Variable = names(missing_summary),
+    Missing_Count = missing_summary,
+    Missing_Percent = round(missing_summary / nrow(df) * 100, 2)
+  ) %>% arrange(desc(Missing_Percent))
+  
+  print(missing_df)
+  
+  # 3. Data Type Validation
+  cat("\n3. DATA TYPE VALIDATION\n")
+  data_types <- sapply(df, class)
+  type_validation <- data.frame(
+    Column = names(data_types),
+    Data_Type = data_types,
+    Valid = c(
+      is.character(df$session_id),
+      is.character(df$user_id),
+      is.character(df$movie_id),
+      inherits(df$watch_date, "Date"),
+      is.factor(df$device_type) | is.character(df$device_type),
+      is.numeric(df$watch_duration_minutes),
+      is.numeric(df$progress_percentage),
+      is.factor(df$action) | is.character(df$action),
+      is.factor(df$quality) | is.character(df$quality),
+      is.factor(df$location_country) | is.character(df$location_country),
+      is.logical(df$is_download),
+      is.factor(df$duration_category) | is.character(df$duration_category)
+    )
+  )
+  print(type_validation)
+  
+  # 4. Value Range Validation
+  cat("\n4. VALUE RANGE VALIDATION\n")
+  
+  # watch_duration_minutes
+  duration_stats <- c(
+    Min = min(df$watch_duration_minutes),
+    Max = max(df$watch_duration_minutes),
+    Mean = mean(df$watch_duration_minutes),
+    Negative_Values = sum(df$watch_duration_minutes < 0)
+  )
+  cat("   watch_duration_minutes:\n")
+  cat("     Range: [", duration_stats["Min"], ", ", duration_stats["Max"], "]\n", sep = "")
+  cat("     Negative values:", duration_stats["Negative_Values"], "\n")
+  
+  # progress_percentage
+  progress_stats <- c(
+    Min = min(df$progress_percentage),
+    Max = max(df$progress_percentage),
+    Out_of_Bounds = sum(df$progress_percentage < 0 | df$progress_percentage > 100)
+  )
+  cat("   progress_percentage:\n")
+  cat("     Range: [", progress_stats["Min"], ", ", progress_stats["Max"], "]\n", sep = "")
+  cat("     Values outside 0-100%:", progress_stats["Out_of_Bounds"], "\n")
+  
+  # 5. Categorical Value Validation
+  cat("\n5. CATEGORICAL VALUE VALIDATION\n")
+  
+  categorical_vars <- c("device_type", "action", "quality", "location_country", "duration_category")
+  for(var in categorical_vars) {
+    unique_vals <- unique(df[[var]])
+    cat("   ", var, ": ", length(unique_vals), " unique values\n", sep = "")
+    
+    # Check for empty strings
+    if(is.character(df[[var]])) {
+      empty_count <- sum(df[[var]] == "" | is.na(df[[var]]), na.rm = TRUE)
+      if(empty_count > 0) cat("     Empty/NA values:", empty_count, "\n")
+    }
+  }
+  
+  # 6. Logical Variable Check
+  cat("\n6. LOGICAL VARIABLE VALIDATION\n")
+  if("is_download" %in% names(df)) {
+    download_stats <- table(df$is_download, useNA = "always")
+    cat("   is_download values:\n")
+    print(download_stats)
+  }
+  
+  # 7. Date Validation
+  cat("\n7. DATE VALIDATION\n")
+  if("watch_date" %in% names(df)) {
+    date_range <- range(df$watch_date, na.rm = TRUE)
+    cat("   watch_date range:", as.character(date_range[1]), "to", as.character(date_range[2]), "\n")
+    
+    future_dates <- sum(df$watch_date > Sys.Date(), na.rm = TRUE)
+    cat("   Future dates:", future_dates, "\n")
+  }
+  
+  # 8. Business Logic Validation
+  cat("\n8. BUSINESS LOGIC VALIDATION\n")
+  logic_checks <- data.frame(
+    Check = character(),
+    Violations = integer(),
+    stringsAsFactors = FALSE
+  )
+  
+  # Progress should not exceed 100% for non-completed actions
+  if("progress_percentage" %in% names(df) && "action" %in% names(df)) {
+    high_progress_not_completed <- sum(df$progress_percentage > 90 & df$action != "completed", na.rm = TRUE)
+    logic_checks <- rbind(logic_checks, data.frame(
+      Check = "High progress but not completed",
+      Violations = high_progress_not_completed
+    ))
+  }
+  
+  # Watch duration should be positive
+  negative_duration <- sum(df$watch_duration_minutes < 0, na.rm = TRUE)
+  logic_checks <- rbind(logic_checks, data.frame(
+    Check = "Negative watch duration",
+    Violations = negative_duration
+  ))
+  
+  print(logic_checks)
+  
+  # 9. Calculate Overall Quality Score
+  cat("\n9. OVERALL DATA QUALITY SCORE\n")
+  
+  quality_metrics <- c(
+    completeness = mean(complete.cases(df)),
+    uniqueness = 1 - (duplicates / nrow(df)),
+    valid_ranges = 1 - ((duration_stats["Negative_Values"] + progress_stats["Out_of_Bounds"]) / (nrow(df) * 2)),
+    business_rules = 1 - (sum(logic_checks$Violations) / (nrow(df) * nrow(logic_checks)))
+  )
+  
+  # Handle any NaN values
+  quality_metrics <- sapply(quality_metrics, function(x) ifelse(is.nan(x), 1, x))
+  
+  quality_score <- mean(quality_metrics) * 100
+  
+  # Display quality metrics
+  for(i in seq_along(quality_metrics)) {
+    cat("   ", names(quality_metrics)[i], ": ", round(quality_metrics[i] * 100, 1), "%\n", sep = "")
+  }
+  
+  cat("\n   OVERALL DATA QUALITY SCORE: ", round(quality_score, 1), "%\n", sep = "")
+  
+  # Quality rating
+  if(quality_score >= 95) {
+    rating <- "EXCELLENT"
+    emoji <- "🎯"
+  } else if(quality_score >= 85) {
+    rating <- "VERY GOOD" 
+    emoji <- "✅"
+  } else if(quality_score >= 75) {
+    rating <- "GOOD"
+    emoji <- "✓"
+  } else if(quality_score >= 65) {
+    rating <- "ACCEPTABLE"
+    emoji <- "⚠️"
+  } else {
+    rating <- "NEEDS IMPROVEMENT"
+    emoji <- "❌"
+  }
+  
+  cat("   ", emoji, " DATA QUALITY: ", rating, "\n\n", sep = "")
+  
+  # 10. Quick Visual Checks
+  cat("10. VISUAL DISTRIBUTION CHECKS\n")
+  
+  # Plot duration categories
+  p1 <- ggplot(df, aes(x = duration_category)) +
+    geom_bar(fill = "steelblue", alpha = 0.7) +
+    labs(title = "Duration Categories", x = "", y = "Count") +
+    theme_minimal() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  
+  # Plot watch duration distribution
+  p2 <- ggplot(df, aes(x = watch_duration_minutes)) +
+    geom_histogram(fill = "coral", alpha = 0.7, bins = 30) +
+    labs(title = "Watch Duration Distribution", x = "Minutes", y = "Count") +
+    theme_minimal()
+  
+  print(p1)
+  print(p2)
+  
+  return(list(
+    quality_score = quality_score,
+    rating = rating,
+    missing_summary = missing_df,
+    logic_violations = logic_checks
+  ))
+}
+
+# Run the validation
+validation_results <- validate_cleaned_data(watch_history_cleaned)
+
+```
+
+
+
+This validation step is crucial before any analysis to ensure your results are reliable and meaningful!
+
+Write cleaned data to another csv file:
+
+```{r}
+# Write to CSV file
+write.csv(watch_history_cleaned, "watch_history_clean.csv", row.names = FALSE)
+
+cat("Cleaned data saved as 'watch_history_clean.csv'\n")
+cat("File location:", getwd(), "\n")
+
+```
+
+```{r check new file}
+watch_history_cleaned_data <- read_csv('watch_history_clean.csv')
+str(watch_history_cleaned_data)
+
+```
+
