@@ -1,20 +1,59 @@
 # DATA607_project3
 
 Data Cleaning (Mehreen)
-Users data
-  1. Handle missing data 
-  2. Removing Duplicates (2.34% Duplicates)
-  3. Data type conversion
-      categorical variables
-      Text to date format for created_at
-      Removing negative values from age
-    4. outliers detection and removal (performed cap with IQR, didn't remove values)
-  factoring for categorical data
-    5. String sonversion
-    6. Data validation
-Cleaned data saved in users_clean.csv file
 
-Data Cleaning Summary for movies.csv
+Users Data Cleaning Summary code(Users_data_cleaning.rmd)
+
+  1. Missing Value Handling
+
+  Identified: Missing values in age (11.93%), monthly_spend (9.87%), and household_size (15%)
+  Imputed: Used Multiple Imputation (MICE) with PMM method to preserve data relationships
+  Verified: Distribution patterns maintained across all variables after imputation
+  
+2. Duplicate Removal
+
+  Identified: 2.34% duplicate user records
+  Removed: All duplicate rows using distinct() function
+  Result: Unique user profiles for analysis
+  
+3. Data Type Conversion
+
+  Dates: Converted subscription_start_date to Date format and created_at to POSIXct
+  Logical: Converted is_active from character to proper boolean values
+  Ordered Factor: Applied logical hierarchy to subscription_plan (Basic → Premium+)
+  Factors: Converted categorical variables (gender, country, state_province, etc.)
+  Numeric: Ensured age and household_size as integers, monthly_spend as numeric
+  
+4. Data Quality Fixes
+
+  Negative Ages: Replaced negative age values with median age
+  Gender Categories: Consolidated empty strings and similar categories into "Unknown" and "Other"
+  Factor Ordering: Applied proper ordering to subscription plans
+  
+5. Outlier Treatment
+
+  Applied: IQR-based capping for all numeric variables (age, monthly_spend, household_size)
+  Preserved: All data points while handling extreme values appropriately
+  Verified: Box plots show cleaned distributions without losing data integrity
+  
+6. Text Cleaning
+
+  Standardized: All text to lowercase for consistency
+  Cleaned: Removed whitespace and multiple spaces
+  Handled: Converted empty strings to NA values
+  
+7. Data Validation
+
+  Achieved: No impossible values (negative ages, unrealistic household sizes)
+  Verified: All data types correctly converted and ranges validated
+  Confirmed: Clean categorical variables with proper factor levels
+  
+Final Output
+Cleaned dataset: users_clean.csv
+Records: Complete, consistent user profiles ready for analysis
+Ready for: Customer segmentation, subscription analysis, user behavior studies, and demographic insights
+
+Data Cleaning Summary for movies.csv code(movies_data_cleaning.rmd)
 
 1. Missing Value Handling
   High missingness variables (>60%): Set number_of_seasons and number_of_episodes to 0 for movies, used median for TV shows
@@ -22,26 +61,20 @@ Data Cleaning Summary for movies.csv
   IMDB ratings (14.4% missing): Used multiple imputation (MICE) with PMM method using duration_minutes and rating as predictors
 
 2. Duplicate Removal
-Identified and removed 34 duplicate rows (3.36% of data)
-Kept first occurrence of each duplicate
+  Identified and removed 34 duplicate rows (3.36% of data)
+  Kept first occurrence of each duplicate
 
-4. Data Type Conversion
+3. Data Type Conversion
   Logical: Converted is_netflix_original and content_warning from character to logical
-
   Date: Converted added_to_platform to proper Date format
-
   Factors: Converted categorical variables (content_type, genre_primary, rating, etc.) to factors
-  
   Ordered factor: Applied proper rating hierarchy from TV-Y to TV-MA
 
 4. Outlier Treatment
-Applied column-specific capping strategies:
-
-Years: 1900 to current year+5
-
-Duration: 1 minute to 99th percentile
-
-Ratings: 0.5 to 10.0 (actual IMDB scale)
+  Applied column-specific capping strategies:
+  Years: 1900 to current year+5
+  Duration: 1 minute to 99th percentile
+  Ratings: 0.5 to 10.0 (actual IMDB scale)
   Financial data: 0 to 95th percentile
   Seasons/Episodes: 0 to 99th percentile
 
@@ -63,7 +96,7 @@ Cleaned dataset saved as movies_clean.csv
   1005 observations × 20 variables  
   string conversion for text data
   
-Watch_history Data Cleaning Summary
+Watch_history Data Cleaning Summary code(watch_history_data_cleaning.rmd)
 
 1. Missing Value Handling
   Removed: user_rating column (79.9% missing - too high for meaningful analysis)
