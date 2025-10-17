@@ -1,0 +1,488 @@
+---
+title: "Project3_recommendation_logs_data_cleaning"
+Author: "Mehreen Ali Gillani"
+output: html_document
+date: "2025-10-12"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+##  Data Cleaning of recommendation_logs table of Netflix
+
+### Step 1. Import Libraries
+
+```{r import libraries}
+library(tidyverse)
+library(dplyr)
+library(naniar)
+library(gtExtras)
+library(stringr)
+library(lubridate)
+```
+### Step 2. Read recommendation_logs dataset and store it in a Dataframe
+
+```{r read csv}
+recommendation_logs = read.csv('recommendation_logs.csv')
+#column names
+colnames(recommendation_logs)
+#dimension 
+dim(recommendation_logs)
+#data structure
+str(recommendation_logs)
+```
+
+### Step 3: Data Cleaning
+
+####  3.1 Handling missing values
+```{r identify missing values}
+
+# Identify missing values
+miss_var_summary(recommendation_logs) %>%
+  gt() %>%
+  gt_theme_guardian() %>%
+  tab_header(title="Missing data in recommendation_logs table")
+
+#plot
+gg_miss_var(recommendation_logs)
+``` 
+
+Immediate Assessment
+
+Onlyone columns has missing values, recommendation_score	5216	10%
+
+```{r recommendation_score missing values}
+
+library(mice)
+# Use other variables to predict missing scores
+temp_df <- recommendation_logs %>%
+  select(recommendation_score, was_clicked, position_in_list, device_type)
+
+imputed_temp <- mice(temp_df, m = 1, method = "pmm", printFlag = FALSE)
+imputed_temp_complete <- complete(imputed_temp)
+
+recommendation_clean <- recommendation_logs
+recommendation_clean$recommendation_score <- imputed_temp_complete$recommendation_score
+
+# Final check
+miss_var_summary(recommendation_clean)
+```
+
+Check density plot after imputation to see if our distribution is still the same 
+```{r}
+# Density plots of imdb_ratings before and after imputation
+par(mfrow = c(1, 2))
+plot(density(recommendation_logs$recommendation_score, na.rm = TRUE), main = "recommendation_score Density \n before multiple imputation")
+plot(density(recommendation_clean$recommendation_score, na.rm = TRUE), main = "recommendation_score Density \n after imputation")
+
+par(mfrow = c(1, 1))
+```
+
+Distribution is almost the same after imputation. It has minor changes in the graph
+
+Lets Calculate before/after statistics
+
+```{r before after missing value statstics}
+
+# Calculate before/after statistics of \n 
+before <- recommendation_logs$recommendation_score[!is.na(recommendation_logs$recommendation_score)]
+after <- recommendation_clean$recommendation_score
+
+# Basic statistics comparison
+stats_before <- c(
+  mean = mean(before),
+  sd = sd(before),
+  median = median(before),
+  min = min(before),
+  max = max(before),
+  n = length(before)
+)
+
+stats_after <- c(
+  mean = mean(after),
+  sd = sd(after),
+  median = median(after),
+  min = min(after),
+  max = max(after),
+  n = length(after)
+)
+
+comparison <- data.frame(Before = stats_before, After = stats_after, Change = stats_after - stats_before, percentage = ((stats_after - stats_before)/stats_before) * 100)
+print(round(comparison, 3))
+```
+
+recommendation_score - Imputation Impact Summary
+
+✅ Minimal Impact - Excellent Results
+
+Mean: change 0.005 (0.899%)
+
+Negligible decrease in recommendation_score
+Standard Deviation: -0.004 minutes (-1.684%)
+
+No change in 
+Median, min, max values 
+
+No artificial constraints introduced
+Sample Size: +5216 records (+11.1%)
+
+Successfully recovered missing data points
+
+
+```{r}
+#check categorical values and see their unique values
+cat("recommendation_type:\n")
+print(unique(recommendation_clean$recommendation_type))
+
+cat("\ndevice_type:\n") 
+print(unique(recommendation_clean$device_type))
+
+cat("\nwas_clicked:\n")
+print(unique(recommendation_clean$was_clicked))
+```
+
+#### Step 3.2: Removing Duplicates
+
+```{r check duplicates}
+# Identify total duplicates
+sum(duplicated(recommendation_clean))
+duplicated_percent <- (sum(duplicated(recommendation_clean)) / nrow(recommendation_clean) * 100)
+print(duplicated_percent)
+
+```
+
+The percentage of duplicates is 3.525 so we will delete duplicated rows
+
+```{r remove duplicates}
+
+# Remove ALL duplicate rows (keeping first occurrence)
+recommendation_logs_unique <- distinct(recommendation_clean)
+
+# Verify removal
+print(paste("Before:", nrow(recommendation_clean), "rows"))
+print(paste("After:", nrow(recommendation_logs_unique), "rows"))
+print(paste("Removed:", nrow(recommendation_clean) - nrow(recommendation_logs_unique), "duplicate rows"))
+```
+
+####  Step: 3.3 Data Type Conversion
+
+```{r check data types}
+# Basic structure
+str(recommendation_logs_unique)
+```
+
+```{r data type conversion}
+
+library(lubridate)
+# If you want better ordering for analysis
+recommendation_logs_final <- recommendation_logs_unique %>%
+  mutate(
+    # Date conversion
+    recommendation_date = as.Date(recommendation_date),
+    
+    # Logical conversion
+    was_clicked = as.logical(was_clicked),
+    
+    # Ordered factors with meaningful hierarchies
+    recommendation_type = factor(recommendation_type,
+                               levels = c("personalized", "genre_based", "trending", "new_releases", "similar_users"),
+                               ordered = TRUE),
+    
+    device_type = factor(device_type,
+                        levels = c("Mobile", "Tablet", "Laptop", "Desktop", "Smart TV"),
+                        ordered = TRUE),
+    
+    time_of_day = factor(time_of_day,
+                        levels = c("morning", "afternoon", "evening", "night"),
+                        ordered = TRUE),
+    
+    algorithm_version = factor(algorithm_version)  # Regular factor
+  )
+  
+```
+
+We have converted recommendation_date to date format, was_clicked logical and
+categorical values to factors:
+recommendation_type, device_type, time_of_day, algorithm_version
+
+```{r}
+#check new structure 
+str(recommendation_logs_final)
+```
+
+####  Step 3.4. Handling Outliers
+
+```{r fine numeric columns}
+# Find numeric columns
+numeric_cols <- names(recommendation_logs_final)[sapply(recommendation_logs_final, is.numeric)]
+
+cat("Numeric columns:\n")
+print(numeric_cols)
+
+```
+
+
+BoxPlot before Outlier handling 
+
+```{r before outlier detection}
+
+boxplot(recommendation_logs_final$recommendation_score, main = "recommendation_score Outliers", col = "lightblue")
+boxplot(recommendation_logs_final$position_in_list, main = "position_in_list Outliers", col = "lightgreen")
+
+```
+From these plots we can see there are no outliers for recommendation_score and for position_in_list.  
+
+
+####  3.5 String Cleaning
+
+
+```{r find textCols_string_cleaning}
+# Find all text columns
+text_cols <- names(recommendation_logs_final)[sapply(recommendation_logs_final, function(x) is.character(x) | is.factor(x))]
+
+cat("Text columns found:\n")
+print(text_cols)
+```
+
+Text cleaning: convert to lower case, convert empty string, remove whitespace
+
+```{r text_cleaning_p2}
+# Perform comprehensive text cleaning
+recommendation_logs_clean <- recommendation_logs_final %>%
+  mutate(across(all_of(text_cols), ~ {
+    if(is.character(.)) {
+      # Remove leading/trailing whitespace
+      cleaned <- trimws(.)
+      # Convert to lowercase for standardization
+      cleaned <- tolower(cleaned)
+      # Remove multiple spaces
+      cleaned <- gsub("\\s+", " ", cleaned)
+      # Convert empty strings to NA
+      cleaned <- ifelse(cleaned == "", NA, cleaned)
+      return(cleaned)
+    } else {
+      return(.)
+    }
+  }))
+```
+
+
+```{r}
+colnames(recommendation_logs_clean)
+
+```
+
+####  3.6 Data Validation
+
+```{r Validate variables}
+validate_cleaned_data <- function(df) {
+  cat("=== COMPREHENSIVE DATA VALIDATION REPORT ===\n\n")
+  
+  # 1. Basic Structure Validation
+  cat("1. BASIC STRUCTURE VALIDATION\n")
+  cat("   Total rows:", nrow(df), "\n")
+  cat("   Total columns:", ncol(df), "\n")
+  cat("   Complete cases:", sum(complete.cases(df)), "(", 
+      round(mean(complete.cases(df)) * 100, 1), "%)\n")
+  
+  duplicates <- sum(duplicated(df))
+  cat("   Duplicate rows:", duplicates, "\n")
+  
+  # 2. Missing Values Check
+  cat("\n2. MISSING VALUES VALIDATION\n")
+  missing_summary <- sapply(df, function(x) sum(is.na(x)))
+  missing_df <- data.frame(
+    Variable = names(missing_summary),
+    Missing_Count = missing_summary,
+    Missing_Percent = round(missing_summary / nrow(df) * 100, 2)
+  ) %>% arrange(desc(Missing_Percent))
+  
+  print(missing_df)
+  
+  # 3. Data Type Validation (FIXED)
+  cat("\n3. DATA TYPE VALIDATION\n")
+  
+  # Get data types safely
+  data_types <- sapply(df, function(x) paste(class(x), collapse = ", "))
+  type_validation <- data.frame(
+    Column = names(data_types),
+    Data_Type = as.character(data_types),
+    stringsAsFactors = FALSE
+  )
+  print(type_validation)
+  
+  # 4. Value Range Validation
+  cat("\n4. VALUE RANGE VALIDATION\n")
+  
+  # recommendation_score
+  if("recommendation_score" %in% names(df)) {
+    score_stats <- c(
+      Min = min(df$recommendation_score, na.rm = TRUE),
+      Max = max(df$recommendation_score, na.rm = TRUE),
+      Mean = mean(df$recommendation_score, na.rm = TRUE),
+      Out_of_Bounds = sum(df$recommendation_score < 0 | df$recommendation_score > 1, na.rm = TRUE)
+    )
+    cat("   recommendation_score:\n")
+    cat("     Range: [", score_stats["Min"], ", ", score_stats["Max"], "]\n", sep = "")
+    cat("     Values outside 0-1:", score_stats["Out_of_Bounds"], "\n")
+  }
+  
+  # position_in_list
+  if("position_in_list" %in% names(df)) {
+    position_stats <- c(
+      Min = min(df$position_in_list, na.rm = TRUE),
+      Max = max(df$position_in_list, na.rm = TRUE),
+      Negative_Values = sum(df$position_in_list < 0, na.rm = TRUE)
+    )
+    cat("   position_in_list:\n")
+    cat("     Range: [", position_stats["Min"], ", ", position_stats["Max"], "]\n", sep = "")
+    cat("     Negative values:", position_stats["Negative_Values"], "\n")
+  }
+  
+  # 5. Categorical Value Validation
+  cat("\n5. CATEGORICAL VALUE VALIDATION\n")
+  
+  categorical_vars <- names(df)[sapply(df, function(x) is.factor(x) | is.character(x))]
+  # Remove ID columns from categorical analysis
+  categorical_vars <- categorical_vars[!grepl("_id$", categorical_vars)]
+  
+  for(var in categorical_vars) {
+    unique_vals <- unique(df[[var]])
+    cat("   ", var, ": ", length(unique_vals), " unique values\n", sep = "")
+    
+    # Show top 5 values if not too many
+    if(length(unique_vals) <= 10) {
+      cat("     Values: ", paste(unique_vals, collapse = ", "), "\n", sep = "")
+    }
+    
+    # Check for empty strings
+    if(is.character(df[[var]])) {
+      empty_count <- sum(df[[var]] == "" | is.na(df[[var]]), na.rm = TRUE)
+      if(empty_count > 0) cat("     Empty/NA values:", empty_count, "\n")
+    }
+  }
+  
+  # 6. Logical Variable Check
+  cat("\n6. LOGICAL VARIABLE VALIDATION\n")
+  if("was_clicked" %in% names(df)) {
+    click_stats <- table(df$was_clicked, useNA = "always")
+    cat("   was_clicked values:\n")
+    print(click_stats)
+  }
+  
+  # 7. Date Validation
+  cat("\n7. DATE VALIDATION\n")
+  if("recommendation_date" %in% names(df)) {
+    date_range <- range(df$recommendation_date, na.rm = TRUE)
+    cat("   recommendation_date range:", as.character(date_range[1]), "to", as.character(date_range[2]), "\n")
+    
+    future_dates <- sum(df$recommendation_date > Sys.Date(), na.rm = TRUE)
+    cat("   Future dates:", future_dates, "\n")
+  }
+  
+  # 8. Business Logic Validation
+  cat("\n8. BUSINESS LOGIC VALIDATION\n")
+  logic_checks <- data.frame(
+    Check = character(),
+    Violations = integer(),
+    stringsAsFactors = FALSE
+  )
+  
+  # Recommendation score should be between 0-1
+  if("recommendation_score" %in% names(df)) {
+    invalid_scores <- sum(df$recommendation_score < 0 | df$recommendation_score > 1, na.rm = TRUE)
+    logic_checks <- rbind(logic_checks, data.frame(
+      Check = "Invalid recommendation scores (not 0-1)",
+      Violations = invalid_scores
+    ))
+  }
+  
+  # Position should be positive
+  if("position_in_list" %in% names(df)) {
+    negative_positions <- sum(df$position_in_list < 0, na.rm = TRUE)
+    logic_checks <- rbind(logic_checks, data.frame(
+      Check = "Negative positions in list",
+      Violations = negative_positions
+    ))
+  }
+  
+  print(logic_checks)
+  
+  # 9. Calculate Overall Quality Score
+  cat("\n9. OVERALL DATA QUALITY SCORE\n")
+  
+  total_rows <- nrow(df)
+  total_logic_checks <- max(nrow(logic_checks), 1)  # Avoid division by zero
+  
+  quality_metrics <- c(
+    completeness = mean(complete.cases(df)),
+    uniqueness = ifelse(total_rows > 0, 1 - (duplicates / total_rows), 1),
+    valid_ranges = 1 - ((sum(df$recommendation_score < 0 | df$recommendation_score > 1, na.rm = TRUE) + 
+                         sum(df$position_in_list < 0, na.rm = TRUE)) / (total_rows * 2)),
+    business_rules = 1 - (sum(logic_checks$Violations) / (total_rows * total_logic_checks))
+  )
+  
+  # Handle any NaN values
+  quality_metrics <- sapply(quality_metrics, function(x) ifelse(is.nan(x), 1, x))
+  
+  quality_score <- mean(quality_metrics) * 100
+  
+  # Display quality metrics
+  for(i in seq_along(quality_metrics)) {
+    cat("   ", names(quality_metrics)[i], ": ", round(quality_metrics[i] * 100, 1), "%\n", sep = "")
+  }
+  
+  cat("\n   OVERALL DATA QUALITY SCORE: ", round(quality_score, 1), "%\n", sep = "")
+  
+  # Quality rating
+  if(quality_score >= 95) {
+    rating <- "EXCELLENT"
+    emoji <- "🎯"
+  } else if(quality_score >= 85) {
+    rating <- "VERY GOOD" 
+    emoji <- "✅"
+  } else if(quality_score >= 75) {
+    rating <- "GOOD"
+    emoji <- "✓"
+  } else if(quality_score >= 65) {
+    rating <- "ACCEPTABLE"
+    emoji <- "⚠️"
+  } else {
+    rating <- "NEEDS IMPROVEMENT"
+    emoji <- "❌"
+  }
+  
+  cat("   ", emoji, " DATA QUALITY: ", rating, "\n\n", sep = "")
+  
+  return(list(
+    quality_score = quality_score,
+    rating = rating,
+    missing_summary = missing_df,
+    logic_violations = logic_checks
+  ))
+}
+
+# Run the validation
+validation_results <- validate_cleaned_data(recommendation_logs_clean)
+
+```
+
+This validation step is crucial before any analysis to ensure your results are reliable and meaningful!
+
+Write cleaned data to another csv file:
+
+```{r}
+# Write to CSV file
+write.csv(recommendation_logs_clean, "recommendation_logs_clean.csv", row.names = FALSE)
+
+cat("Cleaned data saved as 'recommendation_logs_clean.csv'\n")
+cat("File location:", getwd(), "\n")
+
+```
+
+```{r check new file}
+recommendation_logs_clean_data <- read_csv('recommendation_logs_clean.csv')
+#str(recommendation_logs_cleaned_data)
+
+```
+
