@@ -7,6 +7,7 @@ date: "2025-10-12"
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+set.seed(123)
 ```
 ##  Data Cleaning of Users dataset of Netflix
 
@@ -17,15 +18,16 @@ library(tidyverse)
 library(dplyr)
 library(naniar)
 library(gtExtras)
+library(lubridate)
+library(forcats) #for categorical variables
 ```
 ### Step 2. Read users dataset and store it in a Dataframe
 
 ```{r read csv}
-users = read.csv('users.csv')
+users_url = 'https://raw.githubusercontent.com/mehreengillani/DATA607_project3/refs/heads/main/users.csv'
+users = read.csv(users_url)
 colnames(users)
-user <- users %>%
-  distinct(user_id)
-print(user)
+str(users$user)
 ```
 
 ### Step 3: Data Cleaning
@@ -165,8 +167,7 @@ print(paste("Removed:", nrow(users_complete) - nrow(users_unique), "duplicate ro
 str(users_unique)
 ```
 ```{r data type conversion}
-library(dplyr)
-library(lubridate)
+
 
 users_improved <- users_unique %>%
   mutate(
@@ -247,8 +248,6 @@ summary(users_improved$age)
 I have noticed an empty strings ("") in the gender column, which should be handled. Here are the best approaches:
 
 ```{r}
-
-library(forcats)
 
 users_improved <- users_improved %>%
   mutate(
@@ -426,4 +425,3 @@ users_clean_data <- read_csv('users_clean.csv')
 str(users_clean_data)
 
 ```
-
