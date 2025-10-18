@@ -7,6 +7,7 @@ date: "2025-10-12"
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+set.seed(123)
 ```
 ##  Data Cleaning of recommendation_logs table of Netflix
 
@@ -18,12 +19,14 @@ library(dplyr)
 library(naniar)
 library(gtExtras)
 library(stringr)
+library(mice)
 library(lubridate)
 ```
 ### Step 2. Read recommendation_logs dataset and store it in a Dataframe
 
 ```{r read csv}
-recommendation_logs = read.csv('recommendation_logs.csv')
+recommendation_logs_url = 'https://raw.githubusercontent.com/mehreengillani/DATA607_project3/refs/heads/main/recommendation_logs.csv'
+recommendation_logs = read.csv(recommendation_logs_url)
 #column names
 colnames(recommendation_logs)
 #dimension 
@@ -53,7 +56,7 @@ Onlyone columns has missing values, recommendation_score	5216	10%
 
 ```{r recommendation_score missing values}
 
-library(mice)
+
 # Use other variables to predict missing scores
 temp_df <- recommendation_logs %>%
   select(recommendation_score, was_clicked, position_in_list, device_type)
@@ -173,7 +176,7 @@ str(recommendation_logs_unique)
 
 ```{r data type conversion}
 
-library(lubridate)
+
 # If you want better ordering for analysis
 recommendation_logs_final <- recommendation_logs_unique %>%
   mutate(
