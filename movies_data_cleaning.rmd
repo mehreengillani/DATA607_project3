@@ -426,16 +426,14 @@ boxplot(movies_improved$box_office_revenue, main = "box_office_revenue Size Outl
 par(mfrow = c(1, 1))
 ```
 ```{r}
-
-
 # Create comparison plots for key variables
 create_comparison_plot <- function(col) {
-  p1 <- ggplot(movies_improved, aes_string(x = col)) +
+  p1 <- ggplot(movies_improved, aes(x = .data[[col]])) +
     geom_histogram(fill = "red", alpha = 0.6, bins = 30) +
     ggtitle(paste("Original", col)) +
     theme_minimal()
   
-  p2 <- ggplot(movies_outlier_treated, aes_string(x = col)) +
+  p2 <- ggplot(movies_outlier_treated, aes(x = .data[[col]])) +
     geom_histogram(fill = "blue", alpha = 0.6, bins = 30) +
     ggtitle(paste("Treated", col)) +
     theme_minimal()
@@ -448,6 +446,7 @@ key_columns <- c("production_budget", "box_office_revenue", "duration_minutes", 
 for(col in key_columns) {
   print(create_comparison_plot(col))
 }
+
 ```
 
 BoxPlot after outlier handling with cap method
