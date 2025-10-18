@@ -7,6 +7,7 @@ date: "2025-10-12"
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+set.seed(123)
 ```
 ##  Data Cleaning of watch_history table of Netflix
 
@@ -18,12 +19,14 @@ library(dplyr)
 library(naniar)
 library(gtExtras)
 library(stringr)
+library(mice)
 library(lubridate)
 ```
 ### Step 2. Read watch_history dataset and store it in a Dataframe
 
 ```{r read csv}
-watch_history = read.csv('watch_history.csv')
+watch_history_url = 'https://raw.githubusercontent.com/mehreengillani/DATA607_project3/refs/heads/main/watch_history.csv'
+watch_history = read.csv(watch_history_url)
 colnames(watch_history)
 
 #data structure
@@ -52,7 +55,7 @@ for watch_duration_minutes, progress_percentage missing variable percentage is 1
 
 ```{r user_rating column delete}
 
-library(mice)
+
 
 # Keep all columns, only impute the specific missing ones
 watch_history_clean <- watch_history %>%
@@ -250,7 +253,7 @@ unique(watch_history_unique$quality)
 
 ```{r data type conversion}
 
-library(lubridate)
+
 watch_history_final <- watch_history_unique %>%
   mutate(
     # Date conversion
@@ -432,6 +435,7 @@ print(text_cols)
 ```
 
 Text cleaning: convert to lower case, convert empty string, remove whitespace
+
 ```{r text_cleaning_p2}
 # Perform comprehensive text cleaning
 watch_history_cleaned <- watch_history_final %>%
@@ -462,8 +466,7 @@ unique(watch_history_cleaned$quality)
 ####  3.6 Data Validation
 
 ```{r Validate variables}
-library(dplyr)
-library(ggplot2)
+
 
 # Comprehensive data validation function
 validate_cleaned_data <- function(df) {
@@ -687,7 +690,7 @@ cat("File location:", getwd(), "\n")
 
 ```{r check new file}
 watch_history_cleaned_data <- read_csv('watch_history_clean.csv')
-str(watch_history_cleaned_data)
+#str(watch_history_cleaned_data)
 
 ```
 
