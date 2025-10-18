@@ -7,6 +7,7 @@ date: "2025-10-12"
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+set.seed(123)
 ```
 ##  Data Cleaning of movies table of Netflix
 
@@ -19,11 +20,15 @@ library(naniar)
 library(gtExtras)
 library(stringr)
 library(lubridate)
+library(mice)
+library(lubridate)
+library(patchwork)
 ```
 ### Step 2. Read movies dataset and store it in a Dataframe
 
 ```{r read csv}
-movies = read.csv('movies.csv')
+movie_url = 'https://raw.githubusercontent.com/mehreengillani/DATA607_project3/refs/heads/main/movies.csv'
+movies = read.csv(movie_url)
 colnames(movies)
 
 #printing unique movie id's
@@ -82,8 +87,7 @@ For budgeting and revenue:
 
 ```{r}
 # Final comprehensive missing data handling
-library(mice)
-library(naniar)
+
 
 movies_handle_missing <- movies %>%
   mutate(
@@ -121,7 +125,7 @@ print(miss_var_summary(movies_handle_missing))
 ####  Perform multiple imputation
 ```{r}
 # Multiple Imputation on imdb_rating
-library(mice)
+
 
 # Create a clean dataset first
 movies_impute <- movies_handle_missing %>%
@@ -261,7 +265,7 @@ str(movies_unique)
 
 ```{r data type conversion}
 
-library(lubridate)
+
 rating_order <- c("TV-Y", "TV-Y7", "G", "TV-G", "PG", "TV-PG", "PG-13", "TV-14", "R", "NC-17", "TV-MA")
 movies_improved <- movies_unique %>%
   mutate(
@@ -422,8 +426,7 @@ boxplot(movies_improved$box_office_revenue, main = "box_office_revenue Size Outl
 par(mfrow = c(1, 1))
 ```
 ```{r}
-library(ggplot2)
-library(patchwork)
+
 
 # Create comparison plots for key variables
 create_comparison_plot <- function(col) {
