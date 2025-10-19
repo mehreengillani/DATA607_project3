@@ -52,28 +52,28 @@ Immediate Assessment
 
 High missingness (>79%): user_rating I will delete this column
 for watch_duration_minutes, progress_percentage missing variable percentage is 11.7 and 8.11 so we will replace missing values with multiple imputation 
+```{r}
+summary(watch_history$user_rating)
+```
 
-```{r user_rating column delete}
 
-
+```{r handling missing data}
 
 # Keep all columns, only impute the specific missing ones
-watch_history_clean <- watch_history %>%
-  select(-user_rating)  # Remove user_rating first
 
-# Create a temporary dataset for imputation
-temp_impute <- watch_history_clean %>%
+# Perform imputation on selected columns only
+temp_impute <- watch_history %>%
   select(watch_duration_minutes, progress_percentage, device_type, action, quality)
 
-# Perform imputation
 imputed_temp <- mice(temp_impute, m = 1, method = "pmm", printFlag = FALSE)
 imputed_temp_complete <- complete(imputed_temp)
 
-# Replace only the imputed columns in the main dataset
+# Create clean dataset keeping original user_rating as-is
+watch_history_clean <- watch_history
 watch_history_clean$watch_duration_minutes <- imputed_temp_complete$watch_duration_minutes
 watch_history_clean$progress_percentage <- imputed_temp_complete$progress_percentage
 
-#check for missing data
+# Check for missing data - user_rating should still have NAs
 miss_var_summary(watch_history_clean)
 ```
 
@@ -88,6 +88,9 @@ plot(density(watch_history$progress_percentage, na.rm = TRUE), main = "progress_
 plot(density(watch_history_clean$progress_percentage, na.rm = TRUE), main = "progress_percentage \n Density after imputation")
 
 par(mfrow = c(1, 1))
+```
+```{r}
+summary(watch_history_clean$user_rating)
 ```
 
 Distribution is almost the same after imputation.
@@ -467,214 +470,63 @@ unique(watch_history_cleaned$quality)
 
 ```{r Validate variables}
 
+# data validation function
 
-# Comprehensive data validation function
 validate_cleaned_data <- function(df) {
-  cat("=== COMPREHENSIVE DATA VALIDATION REPORT ===\n\n")
+  cat("=== DATA VALIDATION REPORT ===\n\n")
   
-  # 1. Basic Structure Validation
-  cat("1. BASIC STRUCTURE VALIDATION\n")
-  cat("   Total rows:", nrow(df), "\n")
-  cat("   Total columns:", ncol(df), "\n")
-  cat("   Complete cases:", sum(complete.cases(df)), "(", 
-      round(mean(complete.cases(df)) * 100, 1), "%)\n")
+  # 1. Basic info
+  cat("1. BASIC INFO\n")
+  cat("   Rows:", nrow(df), "\n")
+  cat("   Columns:", ncol(df), "\n")
+  cat("   Column names:", paste(names(df), collapse = ", "), "\n\n")
   
-  duplicates <- sum(duplicated(df))
-  cat("   Duplicate rows:", duplicates, "\n")
-  
-  # 2. Missing Values Check
-  cat("\n2. MISSING VALUES VALIDATION\n")
-  missing_summary <- sapply(df, function(x) sum(is.na(x)))
-  missing_df <- data.frame(
-    Variable = names(missing_summary),
-    Missing_Count = missing_summary,
-    Missing_Percent = round(missing_summary / nrow(df) * 100, 2)
-  ) %>% arrange(desc(Missing_Percent))
-  
-  print(missing_df)
-  
-  # 3. Data Type Validation
-  cat("\n3. DATA TYPE VALIDATION\n")
-  data_types <- sapply(df, class)
-  type_validation <- data.frame(
-    Column = names(data_types),
-    Data_Type = data_types,
-    Valid = c(
-      is.character(df$session_id),
-      is.character(df$user_id),
-      is.character(df$movie_id),
-      inherits(df$watch_date, "Date"),
-      is.factor(df$device_type) | is.character(df$device_type),
-      is.numeric(df$watch_duration_minutes),
-      is.numeric(df$progress_percentage),
-      is.factor(df$action) | is.character(df$action),
-      is.factor(df$quality) | is.character(df$quality),
-      is.factor(df$location_country) | is.character(df$location_country),
-      is.logical(df$is_download),
-      is.factor(df$duration_category) | is.character(df$duration_category)
-    )
-  )
-  print(type_validation)
-  
-  # 4. Value Range Validation
-  cat("\n4. VALUE RANGE VALIDATION\n")
-  
-  # watch_duration_minutes
-  duration_stats <- c(
-    Min = min(df$watch_duration_minutes),
-    Max = max(df$watch_duration_minutes),
-    Mean = mean(df$watch_duration_minutes),
-    Negative_Values = sum(df$watch_duration_minutes < 0)
-  )
-  cat("   watch_duration_minutes:\n")
-  cat("     Range: [", duration_stats["Min"], ", ", duration_stats["Max"], "]\n", sep = "")
-  cat("     Negative values:", duration_stats["Negative_Values"], "\n")
-  
-  # progress_percentage
-  progress_stats <- c(
-    Min = min(df$progress_percentage),
-    Max = max(df$progress_percentage),
-    Out_of_Bounds = sum(df$progress_percentage < 0 | df$progress_percentage > 100)
-  )
-  cat("   progress_percentage:\n")
-  cat("     Range: [", progress_stats["Min"], ", ", progress_stats["Max"], "]\n", sep = "")
-  cat("     Values outside 0-100%:", progress_stats["Out_of_Bounds"], "\n")
-  
-  # 5. Categorical Value Validation
-  cat("\n5. CATEGORICAL VALUE VALIDATION\n")
-  
-  categorical_vars <- c("device_type", "action", "quality", "location_country", "duration_category")
-  for(var in categorical_vars) {
-    unique_vals <- unique(df[[var]])
-    cat("   ", var, ": ", length(unique_vals), " unique values\n", sep = "")
-    
-    # Check for empty strings
-    if(is.character(df[[var]])) {
-      empty_count <- sum(df[[var]] == "" | is.na(df[[var]]), na.rm = TRUE)
-      if(empty_count > 0) cat("     Empty/NA values:", empty_count, "\n")
+  # 2. Missing values
+  cat("2. MISSING VALUES\n")
+  missing_count <- sapply(df, function(x) sum(is.na(x)))
+  for(col in names(missing_count)) {
+    if(missing_count[col] > 0) {
+      cat("   ", col, ":", missing_count[col], "missing values\n")
     }
   }
+  if(all(missing_count == 0)) cat("   No missing values found\n")
+  cat("\n")
   
-  # 6. Logical Variable Check
-  cat("\n6. LOGICAL VARIABLE VALIDATION\n")
-  if("is_download" %in% names(df)) {
-    download_stats <- table(df$is_download, useNA = "always")
-    cat("   is_download values:\n")
-    print(download_stats)
+  # 3. Data types - FIXED
+  cat("3. DATA TYPES\n")
+  for(col in names(df)) {
+    cat("   ", col, ":", class(df[[col]])[1], "\n")
+  }
+  cat("\n")
+  
+  # 4. Basic value checks
+  cat("4. VALUE CHECKS\n")
+  
+  # Check numeric columns
+  numeric_cols <- names(df)[sapply(df, is.numeric)]
+  for(col in numeric_cols) {
+    cat("   ", col, ":\n")
+    cat("      Min:", min(df[[col]], na.rm = TRUE), "\n")
+    cat("      Max:", max(df[[col]], na.rm = TRUE), "\n")
+    cat("      NA's:", sum(is.na(df[[col]])), "\n")
   }
   
-  # 7. Date Validation
-  cat("\n7. DATE VALIDATION\n")
-  if("watch_date" %in% names(df)) {
-    date_range <- range(df$watch_date, na.rm = TRUE)
-    cat("   watch_date range:", as.character(date_range[1]), "to", as.character(date_range[2]), "\n")
-    
-    future_dates <- sum(df$watch_date > Sys.Date(), na.rm = TRUE)
-    cat("   Future dates:", future_dates, "\n")
+  # Check categorical columns
+  cat_cols <- names(df)[sapply(df, is.character) | sapply(df, is.factor)]
+  for(col in cat_cols) {
+    unique_vals <- length(unique(df[[col]]))
+    cat("   ", col, ":", unique_vals, "unique categories\n")
   }
   
-  # 8. Business Logic Validation
-  cat("\n8. BUSINESS LOGIC VALIDATION\n")
-  logic_checks <- data.frame(
-    Check = character(),
-    Violations = integer(),
-    stringsAsFactors = FALSE
-  )
-  
-  # Progress should not exceed 100% for non-completed actions
-  if("progress_percentage" %in% names(df) && "action" %in% names(df)) {
-    high_progress_not_completed <- sum(df$progress_percentage > 90 & df$action != "completed", na.rm = TRUE)
-    logic_checks <- rbind(logic_checks, data.frame(
-      Check = "High progress but not completed",
-      Violations = high_progress_not_completed
-    ))
-  }
-  
-  # Watch duration should be positive
-  negative_duration <- sum(df$watch_duration_minutes < 0, na.rm = TRUE)
-  logic_checks <- rbind(logic_checks, data.frame(
-    Check = "Negative watch duration",
-    Violations = negative_duration
-  ))
-  
-  print(logic_checks)
-  
-  # 9. Calculate Overall Quality Score
-  cat("\n9. OVERALL DATA QUALITY SCORE\n")
-  
-  quality_metrics <- c(
-    completeness = mean(complete.cases(df)),
-    uniqueness = 1 - (duplicates / nrow(df)),
-    valid_ranges = 1 - ((duration_stats["Negative_Values"] + progress_stats["Out_of_Bounds"]) / (nrow(df) * 2)),
-    business_rules = 1 - (sum(logic_checks$Violations) / (nrow(df) * nrow(logic_checks)))
-  )
-  
-  # Handle any NaN values
-  quality_metrics <- sapply(quality_metrics, function(x) ifelse(is.nan(x), 1, x))
-  
-  quality_score <- mean(quality_metrics) * 100
-  
-  # Display quality metrics
-  for(i in seq_along(quality_metrics)) {
-    cat("   ", names(quality_metrics)[i], ": ", round(quality_metrics[i] * 100, 1), "%\n", sep = "")
-  }
-  
-  cat("\n   OVERALL DATA QUALITY SCORE: ", round(quality_score, 1), "%\n", sep = "")
-  
-  # Quality rating
-  if(quality_score >= 95) {
-    rating <- "EXCELLENT"
-    emoji <- "🎯"
-  } else if(quality_score >= 85) {
-    rating <- "VERY GOOD" 
-    emoji <- "✅"
-  } else if(quality_score >= 75) {
-    rating <- "GOOD"
-    emoji <- "✓"
-  } else if(quality_score >= 65) {
-    rating <- "ACCEPTABLE"
-    emoji <- "⚠️"
-  } else {
-    rating <- "NEEDS IMPROVEMENT"
-    emoji <- "❌"
-  }
-  
-  cat("   ", emoji, " DATA QUALITY: ", rating, "\n\n", sep = "")
-  
-  # 10. Quick Visual Checks
-  cat("10. VISUAL DISTRIBUTION CHECKS\n")
-  
-  # Plot duration categories
-  p1 <- ggplot(df, aes(x = duration_category)) +
-    geom_bar(fill = "steelblue", alpha = 0.7) +
-    labs(title = "Duration Categories", x = "", y = "Count") +
-    theme_minimal() +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1))
-  
-  # Plot watch duration distribution
-  p2 <- ggplot(df, aes(x = watch_duration_minutes)) +
-    geom_histogram(fill = "coral", alpha = 0.7, bins = 30) +
-    labs(title = "Watch Duration Distribution", x = "Minutes", y = "Count") +
-    theme_minimal()
-  
-  print(p1)
-  print(p2)
-  
-  return(list(
-    quality_score = quality_score,
-    rating = rating,
-    missing_summary = missing_df,
-    logic_violations = logic_checks
-  ))
+  return(TRUE)
 }
 
 # Run the validation
-validation_results <- validate_cleaned_data(watch_history_cleaned)
+validate_cleaned_data(watch_history_cleaned)
 
 ```
 
-
-
+Although user_rating has 80468 missing values. we are keeping this column because it is important for data analysis.
 This validation step is crucial before any analysis to ensure your results are reliable and meaningful!
 
 Write cleaned data to another csv file:
