@@ -1,0 +1,14 @@
+column,type,n_non_na
+session_id,character,100727
+user_id,character,100727
+movie_id,character,100727
+watch_date,Date,100727
+device_type,character,100727
+watch_duration_minutes,numeric,100727
+progress_percentage,numeric,100727
+action,character,100727
+quality,character,95701
+location_country,character,100727
+is_download,logical,100727
+user_rating,numeric,20259
+duration_category,character,100727

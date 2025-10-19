@@ -1,0 +1,21 @@
+user_id,email,first_name,last_name,age,gender,country,state_province,city,subscription_plan,subscription_start_date,is_active,monthly_spend,primary_device,household_size,created_at,total_sessions,mean_duration,median_progress
+user_06554,rojaskenneth@example.net,zachary,martinez,37,Female,USA,Michigan,Melindaton,Premium,2023-08-06,TRUE,17.1,Desktop,4,2024-07-29,23,44.3304347826087,41.6
+user_06589,hgreen@example.com,raymond,kim,20,Male,USA,Wisconsin,West Lauren,Premium,2022-08-21,TRUE,21.65,Smart TV,1,2025-05-05,23,59.54782608695652,36.1
+user_01824,dcurry@example.net,thomas,parker,9,Male,USA,North Carolina,Kinghaven,Standard,2022-11-01,TRUE,7.39,Tablet,4,2024-10-07,22,60.418181818181814,50.75
+user_02512,hallleslie@example.com,kyle,nelson,34,Male,USA,North Carolina,Lake Luketown,Premium,2024-05-03,TRUE,30.47,Smart TV,4,2024-12-04,22,52.86363636363636,58.65
+user_02666,davidsmith@example.net,arthur,watson,41,Male,USA,Illinois,Port Crystal,Basic,2023-08-30,TRUE,34.3,Smart TV,2,2024-12-20,22,47.513636363636365,65.55
+user_05244,catherine73@example.org,sandra,jennings,21,Male,USA,New York,Brittanyview,Basic,2024-04-20,TRUE,11.21,Smart TV,3,2024-03-23,22,68.63181818181818,46.4
+user_05600,joycewalker@example.com,bethany,jackson,38,Male,USA,North Carolina,Butlerland,Premium,2023-09-27,TRUE,10.56,Smart TV,4,2022-12-01,22,66.52272727272727,45.55
+user_06474,crystaltaylor@example.net,christopher,jensen,57,Male,USA,Michigan,Phelpsstad,Premium,2023-07-30,TRUE,4.9,Laptop,2,2023-06-03,22,43.25454545454546,46.75
+user_02416,halljames@example.com,julie,davis,66,Unknown,Canada,Prince Edward Island,Thompsonberg,Basic,2024-06-01,TRUE,8.51,Mobile,4,2023-11-05,21,88.03333333333333,59.8
+user_04295,joseph31@example.org,nicholas,gomez,35,Male,Canada,Nova Scotia,Tammyview,Premium+,2023-10-16,FALSE,11.09,Laptop,2,2023-07-03,21,62.15238095238095,53.8
+user_04720,zclark@example.net,jeremy,jones,37,Other,USA,Tennessee,South Ashleystad,Standard,2025-05-25,FALSE,18.85,Desktop,2,2024-05-27,21,62.04761904761905,48.5
+user_07191,rebeccacasey@example.net,thomas,shaw,32,Male,Canada,Prince Edward Island,Arnoldton,Standard,2022-11-25,TRUE,19.33,Laptop,2,2023-06-30,21,92.22380952380952,26.9
+user_08103,jibarra@example.net,amanda,contreras,38,Female,USA,California,New Danielland,Standard,2022-12-06,FALSE,14.66,Smart TV,2,2022-08-15,21,74.18571428571428,33
+user_08996,michaelporter@example.org,tyler,bailey,53,Unknown,Canada,Prince Edward Island,Andrewfort,Premium,2023-04-26,TRUE,7.03,Mobile,4,2025-04-10,21,44.06666666666667,53.4
+user_00028,rsims@example.com,jennifer,nelson,36,Male,USA,Indiana,East Edwardfurt,Standard,2024-09-14,TRUE,41.44,Laptop,3,2023-10-31,20,60.965,77.6
+user_00646,scottfox@example.org,mark,moon,36,Other,USA,Texas,Arthurview,Premium,2023-10-12,TRUE,15.87,Desktop,1,2023-05-30,20,59.315,38.099999999999994
+user_00816,vramos@example.com,andrew,harris,51,Female,USA,Virginia,Clarkehaven,Standard,2023-07-20,TRUE,2.77,Mobile,5,2024-02-10,20,74.49,55.7
+user_00988,sarahrollins@example.com,evelyn,hayes,33,Female,Canada,Alberta,East Elizabeth,Standard,2024-01-20,TRUE,4.29,Desktop,1,2023-03-01,20,50.435,45.7
+user_01621,jeffreyfinley@example.org,patrick,hayes,55,Male,Canada,Alberta,West Christian,Basic,2024-02-21,TRUE,11.17,Desktop,5,2025-01-24,20,51.9,57.2
+user_01655,williamsthomas@example.net,christopher,perez,31,Male,Canada,Nova Scotia,Kathrynport,Standard,2023-01-12,TRUE,20.02,Smart TV,4,2024-01-02,20,83.94,40.35

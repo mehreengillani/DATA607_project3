@@ -1,0 +1,6 @@
+
+Call:
+roc.default(response = response_num, predictor = preds)
+
+Data: preds in 40463 controls (response_num 0) < 7174 cases (response_num 1).
+Area under the curve: 0.5084

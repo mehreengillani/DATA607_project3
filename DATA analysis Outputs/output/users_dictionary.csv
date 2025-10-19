@@ -1,0 +1,17 @@
+column,type,n_non_na
+user_id,character,10059
+email,character,10059
+first_name,character,10059
+last_name,character,10059
+age,numeric,10059
+gender,character,10059
+country,character,10059
+state_province,character,10059
+city,character,10059
+subscription_plan,character,10059
+subscription_start_date,Date,10059
+is_active,logical,10059
+monthly_spend,numeric,10059
+primary_device,character,10059
+household_size,numeric,10059
+created_at,Date,10059

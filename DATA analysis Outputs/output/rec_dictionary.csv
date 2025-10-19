@@ -1,0 +1,12 @@
+column,type,n_non_na
+recommendation_id,character,50167
+user_id,character,50167
+movie_id,character,50167
+recommendation_date,Date,50167
+recommendation_type,character,50167
+recommendation_score,numeric,50167
+was_clicked,logical,50167
+position_in_list,numeric,50167
+device_type,character,50167
+time_of_day,character,50167
+algorithm_version,character,47637
