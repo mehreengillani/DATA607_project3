@@ -1,0 +1,287 @@
+---
+title: "Project3"
+Author: "Mehreen ALi Gillani"
+output: html_document
+date: "2025-10-12"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+####  Import Libraries
+
+```{r import libraries}
+library(tidyverse)
+
+```
+### Read users, movies, watch_history and recommendation_logs csv file put them in Dataframes
+
+```{r}
+users = read.csv('https://raw.githubusercontent.com/mehreengillani/DATA607_project3/refs/heads/main/users_clean.csv')
+
+watch_history = read.csv('https://raw.githubusercontent.com/mehreengillani/DATA607_project3/refs/heads/main/watch_history_clean.csv')
+
+movies = read.csv('https://raw.githubusercontent.com/mehreengillani/DATA607_project3/refs/heads/main/movies_clean.csv')
+
+recommendation_logs = read.csv('https://raw.githubusercontent.com/mehreengillani/DATA607_project3/refs/heads/main/recommendation_logs_clean.csv')
+
+```
+### 1. Content Engagement Analysis
+
+####  Question: Which subscription plans have the highest user engagement (watch time per user) and does engagement correlate with monthly spend?
+
+```{r}
+engagement_by_plan <- watch_history %>%
+  group_by(user_id) %>%
+  summarize(total_watch_time = sum(watch_duration_minutes, na.rm = TRUE)) %>%
+  inner_join(users %>% select(user_id, subscription_plan, monthly_spend), by = "user_id") %>%
+  group_by(subscription_plan) %>%
+  summarize(
+    avg_watch_time_per_user = mean(total_watch_time),
+    avg_monthly_spend = mean(monthly_spend),
+    user_count = n()
+  )
+
+engagement_by_plan
+```
+```{r}
+library(ggplot2)
+library(dplyr)
+library(scales)
+
+# Prepare data
+engagement_plot <- watch_history %>%
+  group_by(user_id) %>%
+  summarize(total_watch_time = sum(watch_duration_minutes, na.rm = TRUE)) %>%
+  inner_join(users %>% select(user_id, subscription_plan, monthly_spend), by = "user_id") %>%
+  group_by(subscription_plan) %>%
+  summarize(
+    avg_watch_hours = mean(total_watch_time) / 60,
+    avg_monthly_spend = mean(monthly_spend),
+    user_count = n()
+  )
+engagement_plot
+
+# Plot
+p1 <- ggplot(engagement_plot, aes(x = subscription_plan, y = avg_watch_hours, fill = subscription_plan)) +
+  geom_col(alpha = 0.7) +
+  geom_text(aes(label = paste0(round(avg_watch_hours, 1), " hrs")), vjust = 0.5) +
+  labs(title = "Average Watch Time by Subscription Plan",
+       subtitle = "Higher-tier plans show increased engagement",
+       x = "Subscription Plan", y = "Average Watch Hours per User") +
+  scale_fill_brewer(palette = "Set2") +
+  theme_minimal()
+
+p2 <- ggplot(engagement_plot, aes(x = avg_monthly_spend, y = avg_watch_hours, 
+                                 color = subscription_plan, size = user_count)) +
+  geom_point(alpha = 0.7) +
+  geom_text(aes(label = subscription_plan), vjust = -1, size = 5) +
+  labs(title = "Monthly Spend vs Watch Time",
+       x = "Average Monthly Spend ($)", y = "Average Watch Hours",
+       size = "Number of Users") +
+  theme_minimal()
+
+p1 / p2  # Using patchwork for layout
+```
+
+####  key findings:
+
+Minimal engagement differences - All plans show nearly identical watch times (10.74-10.93 hours) despite different price points
+
+Standard plan offers poorest value - Highest monthly cost ($16.24) with mid-range viewing time
+
+Premium+ provides best value - Second-lowest cost with comparable engagement to more expensive plans
+
+### 2. Content Performance vs. Production Cost
+
+####  Question: Do higher production budgets lead to better user ratings and engagement for Netflix Originals?
+
+```{r}
+# Prepare data
+budget_performance <- movies %>%
+  filter(is_netflix_original == TRUE & 
+         !is.na(production_budget) & 
+         production_budget > 0) %>%  # Added filter for non-zero budgets
+  inner_join(
+    watch_history %>% 
+      group_by(movie_id) %>%
+      summarize(
+        avg_user_rating = mean(user_rating, na.rm = TRUE),
+        total_watch_hours = sum(watch_duration_minutes, na.rm = TRUE) / 60
+      ),
+    by = "movie_id"
+  ) %>%
+  select(
+    movie_id,
+    title,
+    production_budget,
+    genre_primary,
+    release_year,
+    avg_user_rating,
+    total_watch_hours
+  )
+# Plot showing both metrics against budget
+p3 <- ggplot(budget_performance, aes(x = production_budget/1e6)) +
+  geom_point(aes(y = avg_user_rating, size = total_watch_hours, color = "User Rating"), alpha = 0.7) +
+  geom_smooth(aes(y = avg_user_rating), method = "lm", se = FALSE, color = "red", linetype = "dashed") +
+  geom_point(aes(y = total_watch_hours/30, color = "Watch Hours"), alpha = 0.7) +  # Scaled for visibility
+  geom_smooth(aes(y = total_watch_hours/30), method = "lm", se = FALSE, color = "blue", linetype = "dashed") +
+  scale_x_continuous(labels = dollar_format(prefix = "$", suffix = "M")) +
+  scale_y_continuous(
+    name = "Average User Rating",
+    sec.axis = sec_axis(~ . * 30, name = "Total Watch Hours")
+  ) +
+  scale_color_manual(values = c("User Rating" = "red", "Watch Hours" = "blue")) +
+  labs(title = "Production Budget Impact on User Ratings & Engagement",
+       subtitle = "Relationship between investment, user satisfaction, and viewing hours",
+       x = "Production Budget (Millions)",
+       color = "Metric") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+
+p3
+```
+
+#### Based on the Netflix Originals budget performance analysis:
+
+No clear correlation between budget and ratings - High-budget films ($19M) show similar user ratings (3.0-3.8) as low-budget titles ($200K)
+
+Cost efficiency varies widely - Some low-budget films achieve high engagement (129 watch hours for $220K) while expensive productions sometimes underperform
+
+Optimal budget range emerges - Mid-budget films ($5-15M) often deliver balanced performance in both ratings and viewership hours
+
+### 3. Recommendation Engine Effectiveness
+
+####  Question: How effective are our recommendations? What's the click-through rate by recommendation type and position?
+
+```{r}
+
+recommendation_effectiveness <- recommendation_logs %>%
+  group_by(recommendation_type, position_in_list) %>%
+  summarize(
+    total_recommendations = n(),
+    clicks = sum(was_clicked),
+    click_through_rate = clicks / total_recommendations * 100
+  ) %>%
+  arrange(position_in_list, desc(click_through_rate))
+
+recommendation_effectiveness
+
+```
+
+3. Recommendation Engine Effectiveness
+
+```{r}
+# Focus on positions 1-5 only (usually most important)
+rec_effectiveness_overall <- recommendation_logs %>%
+  group_by(recommendation_type) %>%
+  summarize(
+    total_recommendations = n(),
+    clicks = sum(was_clicked),
+    click_through_rate = clicks / total_recommendations * 100,
+    .groups = 'drop'
+  )
+
+# Plot overall performance by recommendation type
+p4_overall <- ggplot(rec_effectiveness_overall, 
+                     aes(x = reorder(recommendation_type, click_through_rate), 
+                         y = click_through_rate, 
+                         fill = recommendation_type)) +
+  geom_col(alpha = 0.9, width = 0.7) +
+  geom_text(aes(label = paste0(round(click_through_rate, 1), "%")), 
+            vjust = -0.5, size = 4, fontface = "bold") +
+  labs(title = "OVERALL CLICK-THROUGH RATE BY RECOMMENDATION TYPE",
+       subtitle = "Which recommendation strategies perform best overall",
+       x = "Recommendation Type", 
+       y = "Click-Through Rate (%)",
+       fill = "Recommendation Type") +
+  scale_fill_brewer(palette = "Pastel1") +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.15))) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 11, hjust = 0.5, margin = margin(b = 10)),
+    plot.background = element_rect(fill = "#faf9f7", color = NA),
+    panel.background = element_rect(fill = "#fefefe", color = NA),
+    panel.grid.major = element_line(color = "#f0f0f0"),
+    panel.grid.minor = element_blank(),
+    legend.position = "none"  # Remove legend since x-axis shows types
+  )
+
+p4_overall
+```
+
+####  Based on the overall recommendation engine performance:
+
+  * New releases drive highest engagement - 15.55% CTR, suggesting users are most interested in fresh content
+  * All algorithms perform similarly well - CTRs cluster tightly between 14.76-15.55%, indicating balanced strategy effectiveness
+  * Genre-based recommendations lag slightly - 14.76% CTR, potentially due to less personalization than other methods
+  * Minimal performance gaps - Only 0.79% difference between best and worst performing recommendation types
+
+
+### 4. Geographical Content Preferences
+
+####  Question: How do content preferences (genres, ratings) vary across different countries and age groups?
+
+```{r}
+
+
+geo_preferences <- watch_history %>%
+  inner_join(users %>% select(user_id, country, age), by = "user_id") %>%
+  inner_join(movies %>% select(movie_id, genre_primary, rating, imdb_rating), by = "movie_id") %>%
+  group_by(country, age_group = cut(age, breaks = c(0, 25, 35, 50, 100))) %>%
+  summarize(
+    top_genre = names(which.max(table(genre_primary))),
+    avg_imdb_rating = mean(imdb_rating, na.rm = TRUE),
+    avg_user_rating = mean(user_rating, na.rm = TRUE),
+    total_watch_hours = sum(watch_duration_minutes, na.rm = TRUE) / 60
+  ) %>%
+  arrange(country, age_group)
+
+geo_preferences
+```
+
+#### Key Findings:
+
+Adventure genre dominates universally - All age groups in both Canada and USA consistently prefer Adventure content over other genres
+Minimal rating variation across demographics - IMDB ratings (6.07-6.09) and user ratings (3.29-3.42) show remarkably little difference between countries and age groups
+
+Middle-aged users drive highest engagement - 35-50 age group watches the most content in both countries (12,578 hours in Canada, 28,625 hours in USA)
+
+USA shows significantly higher consumption - American users watch 2-3x more content than Canadian users across all age segments
+
+
+4. Geographical Content Preferences
+
+```{r}
+p7_top <- ggplot(top_genres, aes(x = age_group, y = percentage, fill = genre_primary)) +
+  geom_col(alpha = 0.9, position = "dodge", width = 0.8) +
+  facet_wrap(~country, ncol = 2) +
+  geom_text(aes(label = paste0(round(percentage, 1), "%")), 
+            position = position_dodge(0.8), vjust = -0.5, size = 2.8) +
+  labs(title = "TOP 3 GENRES BY AGE AND COUNTRY",
+       subtitle = "Most popular genres in each demographic segment",
+       x = "Age Group", y = "Percentage of Views", 
+       fill = "Top Genres") +
+  scale_fill_brewer(palette = "Set3") +  # Also try "Paired", "Set2", "Pastel1"
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 12, hjust = 0.5, margin = margin(b = 15)),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = "bottom"
+  )
+
+p7_top
+
+```
+####  Key findings:
+
+Adventure genre consistently ranks #1 across all age groups in both Canada and USA (6.7-7.2% of views)
+
+Genre preferences shift with age - Younger audiences prefer Animation and Sci-Fi, while older groups favor Action and War content
+
+USA shows stronger genre concentration - Top genres capture higher percentage of total views compared to Canada
+
+Older demographics (50+) show most distinct tastes - Different secondary genres emerge compared to younger age groups
