@@ -199,3 +199,151 @@ Data transformation (Paula)
 Data analysis (Taha)
 
 Data visualization (Mehreen, Paula, Taha)
+
+----Taha----
+# Platform Content and User Analysis
+
+A reproducible analysis of platform content, user demographics, watch behavior, and the recommendation system using cleaned operational data.
+
+## Summary
+
+This project analyzes cleaned operational CSVs to evaluate:
+- The content catalog (movies): composition, quality, and financials.
+- User demographics and activity patterns.
+- Watch-session behavior and temporal patterns.
+- The recommendation system's performance and its impact on engagement.
+- Correlations between content features (e.g., budgets and revenues).
+
+Key dataset sizes and metrics:
+- Titles (movies): n = 1,005
+- Users: n = 10,000
+- Watch sessions: n = 100,727
+- Recommendation system overall CTR: 15.096%
+- Recommendation model AUC (click prediction): ≈ 0.505
+- Successful links between recommendations and watches (within 24h): n = 2
+
+---
+
+## Repository / Analysis Structure
+
+The analysis is organized into numbered sections that match the narrative and output in the final report:
+
+0. Data Loading and Quality Control
+1. Content Catalog (Movies) Analysis
+2. User Demographics and Activity
+3. Watch History and Temporal Patterns
+4. Recommendation System — Performance
+5. Recommendation System — Impact on Engagement
+6. Content Feature Correlations
+
+Each section contains code and narrative that:
+- Loads the relevant cleaned CSV(s) from the configured data directory.
+- Runs sanity checks and generates summary tables/visualizations.
+- Produces the text conclusions and figures included in the final report.
+
+---
+
+## Data
+
+Expected cleaned CSVs (examples):
+- movies_clean.csv
+- users_clean.csv
+- watch_sessions_clean.csv
+- recommendations_clean.csv
+- (Other cleaned datasets as used in the analysis)
+
+Data directory is provided via a parameter (e.g., `params$data_dir` in a pipeline or notebook).
+
+Notes about loading:
+- A safe read helper (safe_read) prefers the faster `vroom` package but falls back gracefully if files are missing. Missing files are skipped with warnings so the overall report still runs.
+- A Data Dictionary is produced during QC that lists each column, its type, and number of missing values.
+
+Sanity checks include:
+- Presence of required key columns (e.g., user_id, movie_id).
+- Range constraints (e.g., `progress_percentage` ∈ [0, 100]).
+
+---
+
+## Section Highlights and Key Findings
+
+1) Content Catalog (Movies)
+- Catalog size: n = 1,005 titles.
+- IMDb rating: distribution is left-skewed and concentrated between 6.0 and 8.5 (mean slightly below median).
+- Release years: heavily features post-1990s content; growth in recent decades.
+- Runtime: right-skewed; peak at standard feature length (90–120 min).
+- Content rating: longer titles tend to have mature ratings (R, TV‑MA, PG‑13).
+- Financials: positive correlation between log(Budget) and log(Revenue); non-Netflix originals show higher and wider revenue distributions.
+- Popular genres: Adventure, Comedy, and War are most common primary genres.
+
+2) User Demographics and Activity
+- Users: n = 10,000.
+- Age distribution: approximately normal, centered in the late 30s to early 40s.
+- Geography: concentrated in the USA and Canada.
+- Signups: acquisition rate slowed after an initial rapid growth period (proxied by first-watch dates).
+- Power users: defined as users with 20+ sessions; aggregated metrics (e.g., average watch duration) are joined back to user profiles.
+
+3) Watch History and Temporal Patterns
+- Sessions: n = 100,727.
+- Watch duration: highly right-skewed with a mode at 10–20 minutes.
+- Progress percentage: bimodal — peaks at low progress (abandonment) and 100% (completion).
+- Device usage: multi-platform (Desktop, Laptop, Mobile, Smart TV, Tablet) with relatively uniform session counts.
+- Temporal patterns: session volume stable day-to-day; no significant weekday vs. weekend difference.
+- Content engagement: Top-20 movies by views show a long-tail distribution; no clear correlation between IMDb rating and average watch duration.
+
+4) Recommendation System — Performance
+- Overall CTR: 15.096%.
+- CTR is consistent across `recommendation_type` values.
+- Strong position bias: CTR decays significantly after position ≈ 5 in the recommendation list.
+- Logistic regression to predict clicks (features: algorithm_version, position_in_list, time_of_day) produced an AUC ≈ 0.505, indicating no meaningful predictive power.
+- After controlling for covariates, none of the analyzed features had statistically significant effects on click odds.
+
+5) Recommendation System — Impact on Engagement
+- Attempted linkage of watch sessions to a recommendation delivered within 24 hours failed due to insufficient data; only n = 2 successful links.
+- With such limited linkage, no statistically valid conclusion can be drawn about whether recommended titles lead to higher watch progress (`progress_percentage`).
+
+6) Content Feature Correlations
+- Strongest relationship observed: production_budget positively correlates with box_office_revenue.
+- Missingness flags (e.g., `budget_missing`, `revenue_missing`) show expected inverse correlations with their respective numeric fields.
+
+---
+
+## Reproducibility & Running the Analysis
+
+- Parameters:
+  - data directory: set `params$data_dir` (or the equivalent parameter in the analysis environment).
+  - The pipeline/notebook expects cleaned CSVs in that directory.
+
+- Suggested software stack (used or compatible):
+  - R with tidyverse (dplyr, ggplot2), vroom (or readr fallback), broom, and caret/ROCR for modeling/metrics
+  - OR equivalent Python stack (pandas, seaborn/matplotlib, scikit-learn) if the analysis is ported
+
+- Typical workflow:
+  1. Place cleaned CSVs into the configured `data_dir`.
+  2. Run the analysis notebook or pipeline (which executes sections 0–6).
+  3. Review generated artifacts: data dictionary, summary tables, plots, and the final report.
+
+- Handling missing files:
+  - The safe reader will emit warnings and skip missing files so other analyses continue to run.
+
+---
+
+## Limitations
+
+- Linking recommendations to subsequent watch sessions is limited by available instrumentation; only 2 successful recommendation-watch links were identified in this run, preventing causal or robust impact analysis.
+- Logistic model for click prediction had near-random AUC (≈ 0.505); additional features or improved instrumentation may be required to build a meaningful predictive model.
+- Financial data (budget/revenue) frequently contains missingness; analyses rely on missingness flags and log-transformations where appropriate.
+
+---
+
+## Outputs
+
+Typical outputs produced by the analysis:
+- Data Dictionary (CSV / table)
+- Summary tables for movies, users, sessions
+- Distribution plots (ratings, runtime, age, watch duration, progress)
+- Time-series and temporal heatmaps
+- Top-N lists (e.g., Top-20 movies by views)
+- Recommendation system metrics and diagnostic plots (CTR by position, AUC, logistic regression outputs)
+- Correlation matrix / scatter plots for financial features
+
+---Taha End---
